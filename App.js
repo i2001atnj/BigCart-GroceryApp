@@ -3,8 +3,8 @@ import HomeStack from './src/HomeStack'
 import AuthStack from './src/AuthStack'
 import { NavigationContainer } from '@react-navigation/native';
 import { FIREBASE_AUTH } from './src/config/firebase';
-import { onAuthStateChanged } from 'firebase/auth';
 import { StatusBar } from 'expo-status-bar';
+import { onAuthStateChanged } from 'firebase/auth';
 
 export default function App() {
 
