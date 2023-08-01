@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         justifyContent: 'center',
         paddingHorizontal: 17,
-        marginTop: 90
+        marginTop: 90,
     },
     Button: {
         height: '100%',

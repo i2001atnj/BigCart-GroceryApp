@@ -9,11 +9,9 @@ import { useProduct } from '../hooks/useProduct';
 
 export default function HomeScreen(){
   const products = useProduct();
-  console.log(products[0].length);
   return (
     <SafeAreaView style={styles.Homepage}>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <LinearGradient colors={['#FFFFFF', '#F4F5F9']}>
+      <LinearGradient colors={['#FFFFFF', '#F4F5F9']}>
           <View style={styles.SearchbarSection}>
             <Searchbar/>
           </View>
@@ -26,8 +24,7 @@ export default function HomeScreen(){
           <View style={styles.FeaturedProductsSection}>
             <FeaturedProducts products={products[0]}/>
           </View>
-        </LinearGradient>
-      </ScrollView>
+      </LinearGradient>
     </SafeAreaView>
   )
 }

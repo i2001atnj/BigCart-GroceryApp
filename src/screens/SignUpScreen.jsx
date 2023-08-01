@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground, StyleSheet, Image, TextInput } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
 import React, { useState } from 'react'
 import {LinearGradient} from 'expo-linear-gradient'
 import { FIREBASE_AUTH } from '../config/firebase';
@@ -10,6 +10,10 @@ export default function SignUp({navigation}) {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const auth = FIREBASE_AUTH;
+
+  if (loading === true) {
+    return <ActivityIndicator size='small'/>;
+  }
 
   const SIGNUP = async () => {
     setLoading(true);
@@ -58,7 +62,7 @@ export default function SignUp({navigation}) {
           <View style={styles.InputContainer}>
             <Image source={require('../assets/phoneVector.png')}/>
             <TextInput 
-            placeholder='Phone number' 
+            placeholder='Phone number (optional)' 
             placeholderTextColor='#868889'
             style={styles.Input}/>
           </View>
@@ -167,7 +171,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     justifyContent: 'center',
     paddingHorizontal: 17,
-    marginTop: 10
+    marginTop: 10,
   },
   Button: {
     height: '100%',

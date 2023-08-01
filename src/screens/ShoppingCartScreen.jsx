@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     shadowColor: '#AEDC81',
     shadowOffset: { height: 8, width: 1 },
     shadowOpacity: 0.5,
-    shadowRadius: 2
+    shadowRadius: 2,
   },
   Button: {
     height: '100%',

@@ -2,7 +2,6 @@ import React from 'react'
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native'
 
 export default ProductItem = (props) => {
-    console.log(props);
     return (
         <View style={styles.Products}>
             <View style={{backgroundColor: 'white', paddingVertical: 2, alignItems: 'center', justifyContent: 'center'}}>

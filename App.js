@@ -17,8 +17,8 @@ export default function App() {
 
   return (
     <NavigationContainer>
+      <StatusBar style="auto"/>
       {user !== null ? <HomeStack/> : <AuthStack/>}
-      <StatusBar style="auto" />
     </NavigationContainer>
   );
 }

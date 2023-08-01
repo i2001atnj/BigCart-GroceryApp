@@ -1,10 +1,12 @@
 import { View, Text, TouchableOpacity, SafeAreaView, ImageBackground, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
+import { StatusBar } from 'expo-status-bar'
 
 export default function WelcomeScreen({navigation}) {
   return (
     <SafeAreaView style={styles.WelcomePage}>
+      <StatusBar style='light'/>
       <>
         <ImageBackground source={require('../assets/welcomebg.png')} resizeMode='cover' style={styles.BackgroundImage}>
           <View style={styles.Title}>
