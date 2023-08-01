@@ -1,0 +1,60 @@
+import {createServer} from 'miragejs';
+
+export function makeServer() {
+  createServer({
+    routes() {
+      this.get('/api/products', () => {
+        return [
+          {
+            id: 1,
+            name: 'Fresh Peach',
+            image: require('../assets/peach.png'),
+            price: '$8.00',
+            quantity: 'dozen',
+            color: '#FFCEC1',
+          },
+          {
+            id: 2,
+            name: 'Avocado',
+            image: require('../assets/avocado.png'),
+            price: '$7.00',
+            quantity: '2.0 lbs',
+            color: '#FCFFD9',
+          },
+          {
+            id: 3,
+            name: 'Pineapple',
+            image: require('../assets/pineapple.png'),
+            price: '$9.90',
+            quantity: '1.50 lbs',
+            color: '#FFE6C2',
+          },
+          {
+            id: 4,
+            name: 'Black Grapes',
+            image: require('../assets/grapes.png'),
+            price: '$7.05',
+            quantity: '5.0 lbs',
+            color: '#FEE1ED',
+          },
+          {
+            id: 5,
+            name: 'Pomegranate',
+            image: require('../assets/pomegranate.png'),
+            price: '$2.09',
+            quantity: '1.50 lbs',
+            color: '#FFE3E2',
+          },
+          {
+            id: 6,
+            name: 'Fresh Broccoli',
+            image: require('../assets/broccoli.png'),
+            price: '$3.00',
+            quantity: '1 kg',
+            color: '#D2FFD0',
+          },
+        ];
+      });
+    },
+  });
+}

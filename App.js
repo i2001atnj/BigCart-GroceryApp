@@ -1,20 +1,24 @@
+import React, { useState, useEffect } from 'react';
+import HomeStack from './src/HomeStack'
+import AuthStack from './src/AuthStack'
+import { NavigationContainer } from '@react-navigation/native';
+import { FIREBASE_AUTH } from './src/config/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    onAuthStateChanged(FIREBASE_AUTH, (user) => {
+      setUser(user);
+    });
+  }, [])
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <NavigationContainer>
+      {user !== null ? <HomeStack/> : <AuthStack/>}
       <StatusBar style="auto" />
-    </View>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
