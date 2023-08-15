@@ -1,43 +1,32 @@
-import { View, Text, SafeAreaView, TouchableOpacity, ImageBackground, StyleSheet, Image, TextInput, ActivityIndicator } from 'react-native'
-import React, { useState } from 'react'
-import {LinearGradient} from 'expo-linear-gradient'
-import { FIREBASE_AUTH } from '../config/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  ImageBackground,
+  StyleSheet,
+  Image,
+  TextInput,
+} from "react-native";
+import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
-export default function SignUp({navigation}) {
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const auth = FIREBASE_AUTH;
-
-  if (loading === true) {
-    return <ActivityIndicator size='small'/>;
-  }
-
-  const SIGNUP = async () => {
-    setLoading(true);
-    try {
-      const response = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(response);
-      setLoading(false);
-    } catch (error) {
-      setLoading(false);
-      alert(error.message);
-    } finally {
-      setLoading(false);
-    }
-  }
-  
+export default function SignUp({ navigation }) {
   return (
     <SafeAreaView>
       <>
-        <ImageBackground source={require('../assets/createbg.png')} style={styles.BackgroundImage}>
+        <ImageBackground
+          source={require("../assets/createbg.png")}
+          style={styles.BackgroundImage}
+        >
           <View style={styles.Title}>
-            <TouchableOpacity onPress={() => navigation.goBack()} style={{position: 'relative', top: 30}}>
-              <Image source={require('../assets/backVector.png')}/>
+            <TouchableOpacity
+              onPress={() => navigation.goBack()}
+              style={{ position: "relative", top: 30 }}
+            >
+              <Image source={require("../assets/backVector.png")} />
             </TouchableOpacity>
-            <View style={{position: 'relative', right: 156}}>
+            <View style={{ position: "relative", right: 156 }}>
               <Text style={styles.TitleText}>Welcome</Text>
             </View>
           </View>
@@ -50,147 +39,147 @@ export default function SignUp({navigation}) {
         </View>
         <View style={styles.SignUpSection}>
           <View style={styles.InputContainer}>
-            <Image source={require('../assets/mailVector.png')}/>
-            <TextInput 
-            placeholder='Email address' 
-            placeholderTextColor='#868889'
-            style={styles.Input}
-            onChangeText={(text) => setEmail(text)}
-            autoCapitalize="none"
+            <Image source={require("../assets/mailVector.png")} />
+            <TextInput
+              placeholder="Email address"
+              placeholderTextColor="#868889"
+              style={styles.Input}
+              autoCapitalize="none"
             />
           </View>
           <View style={styles.InputContainer}>
-            <Image source={require('../assets/phoneVector.png')}/>
-            <TextInput 
-            placeholder='Phone number (optional)' 
-            placeholderTextColor='#868889'
-            style={styles.Input}/>
+            <Image source={require("../assets/phoneVector.png")} />
+            <TextInput
+              placeholder="Phone number (optional)"
+              placeholderTextColor="#868889"
+              style={styles.Input}
+            />
           </View>
           <View style={styles.InputContainer}>
-            <Image source={require('../assets/lockVector.png')}/>
-            <TextInput 
-            placeholder='Create password' 
-            placeholderTextColor='#868889'
-            style={styles.Input}
-            secureTextEntry={true}
-            onChangeText={(text) => setPassword(text)}
+            <Image source={require("../assets/lockVector.png")} />
+            <TextInput
+              placeholder="Create password"
+              placeholderTextColor="#868889"
+              style={styles.Input}
+              secureTextEntry={true}
             />
           </View>
         </View>
         <View style={styles.ButtonContainer}>
-        <LinearGradient 
-            colors={['#AEDC81', '#6CC51D']}
-            start={{ x: 0, y: 1}}
-            end={{ x: 1, y: 0 }}>
-            <TouchableOpacity style={styles.Button} onPress={SIGNUP}>
+          <LinearGradient
+            colors={["#AEDC81", "#6CC51D"]}
+            start={{ x: 0, y: 1 }}
+            end={{ x: 1, y: 0 }}
+          >
+            <TouchableOpacity style={styles.Button}>
               <Text style={styles.ButtonText}>Sign up</Text>
             </TouchableOpacity>
           </LinearGradient>
         </View>
         <View style={styles.OptionalSection}>
-          <Text style={{color: '#868889'}}>Already have an account ?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('Login screen')}>
-            <Text style={{color: '#000000', fontWeight: 600}}>Login</Text>
+          <Text style={{ color: "#868889" }}>Already have an account ?</Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Log in")}>
+            <Text style={{ color: "#000000", fontWeight: 600 }}>Login</Text>
           </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   BackgroundImage: {
     height: 481,
     zIndex: 1,
-    position: 'absolute',
-    width: '100%'
+    position: "absolute",
+    width: "100%",
   },
   Title: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginHorizontal: 17,
-    alignItems: 'center'
+    alignItems: "center",
   },
   TitleText: {
     fontSize: 20,
     fontWeight: 500,
-    color: '#FFF',
-    textAlign: 'center',
-    marginTop: 60
+    color: "#FFF",
+    textAlign: "center",
+    marginTop: 60,
   },
   Section: {
     zIndex: 2,
-    position: 'relative',
-    top: '80%',
-    backgroundColor: '#F4F5F9',
+    position: "relative",
+    top: "80%",
+    backgroundColor: "#F4F5F9",
     height: 453,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     gap: 20,
-    paddingTop: 30
+    paddingTop: 30,
   },
   Text: {
-    alignItems: 'center',
-    gap: 5
+    alignItems: "center",
+    gap: 5,
   },
   TextTitle: {
     fontSize: 24,
     fontWeight: 600,
   },
   TextInfo: {
-    color: '#868889',
+    color: "#868889",
     fontSize: 15,
-    fontWeight: 400
+    fontWeight: 400,
   },
   SignUpSection: {
-    gap: 15
+    gap: 15,
   },
   InputContainer: {
     height: 60,
-    backgroundColor: '#FFF',
+    backgroundColor: "#FFF",
     paddingHorizontal: 28,
-    display: 'flex',
-    flexDirection: 'row',
+    display: "flex",
+    flexDirection: "row",
     marginHorizontal: 17,
     borderRadius: 5,
-    alignItems: 'center',
-    gap: 21
+    alignItems: "center",
+    gap: 21,
   },
   Input: {
     fontSize: 16,
-    width: '80%'
+    width: "80%",
   },
   ButtonContainer: {
-    width: '100%',
+    width: "100%",
     height: 60,
     borderRadius: 5,
-    shadowColor: '#AEDC81',
+    shadowColor: "#AEDC81",
     shadowOffset: { height: 10, width: 1 },
     shadowOpacity: 0.3,
     shadowRadius: 2,
-    justifyContent: 'center',
+    justifyContent: "center",
     paddingHorizontal: 17,
     marginTop: 10,
   },
   Button: {
-    height: '100%',
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'row',
+    height: "100%",
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    display: "flex",
+    flexDirection: "row",
   },
   ButtonText: {
-    color: '#FFF',
-    textAlign: 'center',
+    color: "#FFF",
+    textAlign: "center",
     fontSize: 16,
-    fontWeight: 500
+    fontWeight: 500,
   },
   OptionalSection: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
     gap: 10,
-  }
-})
+  },
+});

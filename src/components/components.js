@@ -1,0 +1,12 @@
+export { default as AboutMe } from "./AboutMe";
+export { default as Banner } from "./Banner";
+export { default as Categories } from "./Categories";
+export { default as CreditCards } from "./CreditCards";
+export { default as FeaturedProducts } from "./FeaturedProducts";
+export { default as MyAddress } from "./MyAddress";
+export { default as MyFavorites } from "./MyFavorites";
+export { default as MyOrders } from "./MyOrders";
+export { default as Notifications } from "./Notifications";
+export { default as ProductItem } from "./ProductItem";
+export { default as Searchbar } from "./Searchbar";
+export { default as Transactions } from "./Transactions";
