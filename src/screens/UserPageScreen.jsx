@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
-import { FIREBASE_AUTH } from "../config/firebase";
 
 export default function UserPage({ navigation }) {
   return (
@@ -95,10 +94,7 @@ export default function UserPage({ navigation }) {
           <Image source={require("../assets/rightVector.png")} />
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.UserSignOut}
-          onPress={() => FIREBASE_AUTH.signOut()}
-        >
+        <TouchableOpacity style={styles.UserSignOut}>
           <Image source={require("../assets/signOutVector.png")} />
           <View style={styles.SettingNameSectionSignOut}>
             <Text style={styles.SettingName}>Sign out</Text>

@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import ProductItem from "./ProductItem";
 
-export default function FeaturedProducts({ products = [] }) {
+export default function FeaturedProducts({ products }) {
   const renderItem = ({ item }) => <ProductItem product={item} />;
   return (
     <View style={styles.FeaturedProducts}>

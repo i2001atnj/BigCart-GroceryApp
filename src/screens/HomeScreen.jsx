@@ -17,15 +17,17 @@ export default function HomeScreen() {
         <View style={styles.SearchbarSection}>
           <Searchbar />
         </View>
-        <View style={styles.BannerSection}>
-          <Banner />
-        </View>
-        <View style={styles.CategoriesSection}>
-          <Categories />
-        </View>
-        <View style={styles.FeaturedProductsSection}>
-          <FeaturedProducts products={products[0]} />
-        </View>
+        <ScrollView>
+          <View style={styles.BannerSection}>
+            <Banner />
+          </View>
+          <View style={styles.CategoriesSection}>
+            <Categories />
+          </View>
+          <View style={styles.FeaturedProductsSection}>
+            <FeaturedProducts products={products[0]} />
+          </View>
+        </ScrollView>
       </LinearGradient>
     </SafeAreaView>
   );
@@ -44,6 +46,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: "100%",
     paddingHorizontal: 27,
+    paddingVertical: 5,
   },
   BannerSection: {
     alignItems: "center",
