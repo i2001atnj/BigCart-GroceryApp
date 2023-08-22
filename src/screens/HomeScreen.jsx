@@ -7,11 +7,9 @@ import {
   FeaturedProducts,
 } from "../components/components";
 import { LinearGradient } from "expo-linear-gradient";
-import { useProduct } from "../hooks/useProduct";
 import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
-  const products = useProduct();
   return (
     <SafeAreaView style={styles.Homepage}>
       <StatusBar style="auto" />
@@ -19,15 +17,17 @@ export default function HomeScreen() {
         <View style={styles.SearchbarSection}>
           <Searchbar />
         </View>
-        <View style={styles.BannerSection}>
-          <Banner />
-        </View>
-        <View style={styles.CategoriesSection}>
-          <Categories />
-        </View>
-        <View style={styles.FeaturedProductsSection}>
-          <FeaturedProducts products={products[0]} />
-        </View>
+        <ScrollView>
+          <View style={styles.BannerSection}>
+            <Banner />
+          </View>
+          <View style={styles.CategoriesSection}>
+            <Categories />
+          </View>
+          <View style={styles.FeaturedProductsSection}>
+            <FeaturedProducts />
+          </View>
+        </ScrollView>
       </LinearGradient>
     </SafeAreaView>
   );

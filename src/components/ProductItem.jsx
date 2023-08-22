@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { addToCartIcon, heartVector1 } from "../assets/assets";
 
-export default ProductItem = (props) => {
+export default ProductItem = ({ color, image, price, quantity, name }) => {
   return (
     <View style={styles.Products}>
       <View
@@ -14,7 +15,7 @@ export default ProductItem = (props) => {
       >
         <TouchableOpacity>
           <Image
-            source={require("../assets/heartVector1.png")}
+            source={heartVector1}
             style={{ marginLeft: 150, marginTop: 1 }}
           />
         </TouchableOpacity>
@@ -25,20 +26,18 @@ export default ProductItem = (props) => {
             <View>
               <View
                 style={{
-                  backgroundColor: `${props.product.color}`,
+                  backgroundColor: `${color}`,
                   width: 84,
                   height: 84,
                   borderRadius: 50,
                 }}
               >
-                <Image source={props.product.image} style={styles.Image} />
+                <Image source={image} style={styles.Image} />
               </View>
               <View style={styles.ProductsDetailsSection}>
-                <Text style={styles.ProductPrice}>{props.product.price}</Text>
-                <Text style={styles.ProductName}>{props.product.name}</Text>
-                <Text style={styles.ProductQuantity}>
-                  {props.product.quantity}
-                </Text>
+                <Text style={styles.ProductPrice}>{price}</Text>
+                <Text style={styles.ProductName}>{name}</Text>
+                <Text style={styles.ProductQuantity}>{quantity}</Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -46,7 +45,7 @@ export default ProductItem = (props) => {
         <View style={styles.ProductsBottomContainer}>
           <View style={styles.ProductsAddToCartSection}>
             <TouchableOpacity style={styles.AddToCartButton}>
-              <Image source={require("../assets/addToCartIcon.png")} />
+              <Image source={addToCartIcon} />
               <Text style={styles.AddToCartText}>Add to cart</Text>
             </TouchableOpacity>
           </View>
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
   Products: {
     backgroundColor: "#EBEBEB",
     height: 240,
-    width: "47.5%",
+    width: "47.4%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",

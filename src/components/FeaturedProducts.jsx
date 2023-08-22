@@ -1,16 +1,9 @@
 import React from "react";
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import ProductItem from "./ProductItem";
+import { DATA } from "../mocks/data";
 
-export default function FeaturedProducts({ products }) {
-  const renderItem = ({ item }) => <ProductItem product={item} />;
+export default function FeaturedProducts() {
   return (
     <View style={styles.FeaturedProducts}>
       <TouchableOpacity style={styles.Header}>
@@ -22,14 +15,16 @@ export default function FeaturedProducts({ products }) {
         </TouchableOpacity>
       </TouchableOpacity>
       <View style={styles.ListContainer}>
-        <FlatList
-          numColumns={2}
-          key={1}
-          scrollEnabled={true}
-          data={products}
-          renderItem={renderItem}
-          style={styles.ProductsList}
-        />
+        {DATA.map((product) => (
+          <ProductItem
+            color={product.color}
+            image={product.image}
+            price={product.price}
+            quantity={product.quantity}
+            name={product.name}
+            key={product.id}
+          />
+        ))}
       </View>
     </View>
   );
@@ -51,6 +46,9 @@ const styles = StyleSheet.create({
   },
   ListContainer: {
     marginBottom: 20,
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
   },
   ProductsList: {
     display: "flex",
