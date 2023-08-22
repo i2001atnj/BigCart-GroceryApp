@@ -8,13 +8,34 @@ import {
   StyleSheet,
   TextInput,
   Switch,
+  ActivityIndicator,
+  KeyboardAvoidingView,
 } from "react-native";
 import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import { FIREBASE_AUTH } from "../../FirebaseConfig.js";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login({ navigation }) {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const auth = FIREBASE_AUTH;
+
+  const logIn = async () => {
+    setLoading(true);
+    try {
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+      alert("Login failed, error: " + error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.LoginPage}>
@@ -43,23 +64,31 @@ export default function Login({ navigation }) {
           <Text style={styles.TextInfo}>Sign in to your account</Text>
         </View>
         <View style={styles.LoginSection}>
-          <View style={styles.InputContainer}>
-            <Image source={require("../assets/mailVector.png")} />
-            <TextInput
-              placeholder="Email address"
-              placeholderTextColor="#868889"
-              style={styles.Input}
-            />
-          </View>
-          <View style={styles.InputContainer}>
-            <Image source={require("../assets/lockVector.png")} />
-            <TextInput
-              placeholder="Enter password"
-              placeholderTextColor="#868889"
-              style={styles.Input}
-              secureTextEntry={true}
-            />
-          </View>
+          <KeyboardAvoidingView behavior="padding">
+            <View style={styles.InputContainer}>
+              <Image source={require("../assets/mailVector.png")} />
+              <TextInput
+                style={styles.Input}
+                placeholder="Email address"
+                placeholderTextColor="#868889"
+                autoCapitalize="none"
+                onChangeText={(text) => setEmail(text)}
+                value={email}
+              />
+            </View>
+            <View style={styles.InputContainer}>
+              <Image source={require("../assets/lockVector.png")} />
+              <TextInput
+                style={styles.Input}
+                placeholder="Enter password"
+                placeholderTextColor="#868889"
+                secureTextEntry={true}
+                autoCapitalize="none"
+                onChangeText={(text) => setPassword(text)}
+                value={password}
+              />
+            </View>
+          </KeyboardAvoidingView>
         </View>
         <View style={styles.PasswordOptions}>
           <View style={styles.RememberMe}>
@@ -82,15 +111,30 @@ export default function Login({ navigation }) {
           </TouchableOpacity>
         </View>
         <View style={styles.ButtonContainer}>
-          <LinearGradient
-            colors={["#AEDC81", "#6CC51D"]}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 1, y: 0 }}
-          >
-            <TouchableOpacity style={styles.Button}>
-              <Text style={styles.ButtonText}>Login</Text>
-            </TouchableOpacity>
-          </LinearGradient>
+          {loading ? (
+            <LinearGradient
+              colors={["#AEDC81", "#6CC51D"]}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 0 }}
+              style={{ opacity: 0.5 }}
+            >
+              <ActivityIndicator
+                size="small"
+                style={{ paddingVertical: 20 }}
+                color="#fff"
+              />
+            </LinearGradient>
+          ) : (
+            <LinearGradient
+              colors={["#AEDC81", "#6CC51D"]}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 0 }}
+            >
+              <TouchableOpacity onPress={logIn} style={styles.Button}>
+                <Text style={styles.ButtonText}>Login</Text>
+              </TouchableOpacity>
+            </LinearGradient>
+          )}
         </View>
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Don't have an account ?</Text>

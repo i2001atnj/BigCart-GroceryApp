@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 import React, { useState } from "react";
-import { BannerList } from "../data/bannerList";
+import { BannerList } from "../data/bannerList.js";
 
 const Dot = ({ active }) => (
   <View style={active ? styles.DotActive : styles.Dot} />

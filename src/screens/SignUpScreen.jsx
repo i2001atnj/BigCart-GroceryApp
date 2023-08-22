@@ -7,11 +7,38 @@ import {
   StyleSheet,
   Image,
   TextInput,
+  ActivityIndicator,
+  KeyboardAvoidingView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import { FIREBASE_AUTH } from "../../FirebaseConfig";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUp({ navigation }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const auth = FIREBASE_AUTH;
+
+  const signUp = async () => {
+    setLoading(true);
+    try {
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      console.log(response);
+      alert("Account saved successfully");
+    } catch (error) {
+      console.log(error);
+      alert("Login failed, error: " + error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <SafeAreaView>
       <>
@@ -38,43 +65,65 @@ export default function SignUp({ navigation }) {
           <Text style={styles.TextInfo}>Quickly create account</Text>
         </View>
         <View style={styles.SignUpSection}>
-          <View style={styles.InputContainer}>
-            <Image source={require("../assets/mailVector.png")} />
-            <TextInput
-              placeholder="Email address"
-              placeholderTextColor="#868889"
-              style={styles.Input}
-              autoCapitalize="none"
-            />
-          </View>
-          <View style={styles.InputContainer}>
-            <Image source={require("../assets/phoneVector.png")} />
-            <TextInput
-              placeholder="Phone number (optional)"
-              placeholderTextColor="#868889"
-              style={styles.Input}
-            />
-          </View>
-          <View style={styles.InputContainer}>
-            <Image source={require("../assets/lockVector.png")} />
-            <TextInput
-              placeholder="Create password"
-              placeholderTextColor="#868889"
-              style={styles.Input}
-              secureTextEntry={true}
-            />
-          </View>
+          <KeyboardAvoidingView behavior="padding">
+            <View style={styles.InputContainer}>
+              <Image source={require("../assets/mailVector.png")} />
+              <TextInput
+                placeholder="Email address"
+                placeholderTextColor="#868889"
+                style={styles.Input}
+                autoCapitalize="none"
+                onChangeText={(text) => setEmail(text)}
+                value={email}
+              />
+            </View>
+            <View style={styles.InputContainer}>
+              <Image source={require("../assets/phoneVector.png")} />
+              <TextInput
+                placeholder="Phone number (optional)"
+                placeholderTextColor="#868889"
+                style={styles.Input}
+              />
+            </View>
+            <View style={styles.InputContainer}>
+              <Image source={require("../assets/lockVector.png")} />
+              <TextInput
+                placeholder="Create password"
+                placeholderTextColor="#868889"
+                style={styles.Input}
+                secureTextEntry={true}
+                autoCapitalize="none"
+                onChangeText={(text) => setPassword(text)}
+                value={password}
+              />
+            </View>
+          </KeyboardAvoidingView>
         </View>
         <View style={styles.ButtonContainer}>
-          <LinearGradient
-            colors={["#AEDC81", "#6CC51D"]}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 1, y: 0 }}
-          >
-            <TouchableOpacity style={styles.Button}>
-              <Text style={styles.ButtonText}>Sign up</Text>
-            </TouchableOpacity>
-          </LinearGradient>
+          {loading ? (
+            <LinearGradient
+              colors={["#AEDC81", "#6CC51D"]}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 0 }}
+              style={{ opacity: 0.5 }}
+            >
+              <ActivityIndicator
+                size="small"
+                style={{ paddingVertical: 20 }}
+                color="#fff"
+              />
+            </LinearGradient>
+          ) : (
+            <LinearGradient
+              colors={["#AEDC81", "#6CC51D"]}
+              start={{ x: 0, y: 1 }}
+              end={{ x: 1, y: 0 }}
+            >
+              <TouchableOpacity onPress={signUp} style={styles.Button}>
+                <Text style={styles.ButtonText}>Sign up</Text>
+              </TouchableOpacity>
+            </LinearGradient>
+          )}
         </View>
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
