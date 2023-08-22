@@ -8,8 +8,20 @@ import {
 } from "react-native";
 import React from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
+import UserOption from "../components/UserOption";
+import {
+  profilePhoto,
+  changeProfilePhotoVector,
+  myOrdersVector,
+  myFavoritesVector,
+  addressVector,
+  creditCardsVector,
+  transactionsVector,
+  notificationsVector,
+  signOutVector,
+} from "../assets/assets";
 
-export default function UserPage({ navigation }) {
+export default function UserPage() {
   return (
     <SafeAreaView style={styles.UserPage}>
       <View
@@ -24,82 +36,54 @@ export default function UserPage({ navigation }) {
         <View>
           <Image
             style={{ borderRadius: 100, position: "relative", left: 15 }}
-            source={require("../assets/profilePhoto.png")}
+            source={profilePhoto}
           />
         </View>
         <TouchableOpacity style={styles.ProfilePhotoButton}>
-          <Image source={require("../assets/changeProfilePhotoVector.png")} />
+          <Image source={changeProfilePhotoVector} />
         </TouchableOpacity>
         <View style={styles.UserInfo}>
-          <Text style={styles.UserName}>Olivia Austin</Text>
-          <Text style={styles.UserMail}>oliviaaustin@gmail.com</Text>
+          <Text style={styles.UserName}>Admin</Text>
+          <Text style={styles.UserMail}>admin@bigcart.com</Text>
         </View>
       </View>
       <View style={styles.SettingsSection}>
-        <TouchableOpacity
-          style={styles.UserSetting}
-          onPress={() => navigation.navigate("About me")}
-        >
-          <Image source={require("../assets/aboutMeVector.png")} />
-          <View style={styles.SettingNameSection}>
-            <Text style={styles.SettingName}>About me</Text>
-          </View>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.UserSetting}>
-          <Image source={require("../assets/myOrdersVector.png")} />
-          <View style={styles.SettingNameSection}>
-            <Text style={styles.SettingName}>My orders</Text>
-          </View>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.UserSetting}>
-          <Image source={require("../assets/myFavoritesVector.png")} />
-          <View style={styles.SettingNameSection}>
-            <Text style={styles.SettingName}>My favorites</Text>
-          </View>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.UserSetting}>
-          <Image source={require("../assets/addressVector.png")} />
-          <View style={styles.SettingNameSection}>
-            <Text style={styles.SettingName}>My address</Text>
-          </View>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.UserSetting}>
-          <Image source={require("../assets/creditCardsVector.png")} />
-          <View style={styles.SettingNameSection}>
-            <Text style={styles.SettingName}>Credit cards</Text>
-          </View>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.UserSetting}>
-          <Image source={require("../assets/transactionsVector.png")} />
-          <View style={styles.SettingNameSection}>
-            <Text style={styles.SettingName}>Transactions</Text>
-          </View>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.UserSetting}>
-          <Image source={require("../assets/notificationsVector.png")} />
-          <View style={styles.SettingNameSection}>
-            <Text style={styles.SettingName}>Notifications</Text>
-          </View>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
+        <UserOption
+          image={myOrdersVector}
+          title="My orders"
+          screen="My orders"
+        />
+        <UserOption
+          image={myFavoritesVector}
+          title="My favorites"
+          screen="My favorites"
+        />
+        <UserOption
+          image={addressVector}
+          title="My address"
+          screen="My address"
+        />
+        <UserOption
+          image={creditCardsVector}
+          title="Credit cards"
+          screen="Credit cards"
+        />
+        <UserOption
+          image={transactionsVector}
+          title="Transactions"
+          screen="Transactions"
+        />
+        <UserOption
+          image={notificationsVector}
+          title="Notifications"
+          screen="Notifications"
+        />
 
         <TouchableOpacity
           onPress={() => FIREBASE_AUTH.signOut()}
           style={styles.UserSignOut}
         >
-          <Image source={require("../assets/signOutVector.png")} />
+          <Image source={signOutVector} />
           <View style={styles.SettingNameSectionSignOut}>
             <Text style={styles.SettingName}>Sign out</Text>
           </View>
@@ -150,25 +134,11 @@ const styles = StyleSheet.create({
     gap: 30,
     width: "100%",
   },
-  UserSetting: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginHorizontal: 38,
-  },
   UserSignOut: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     marginHorizontal: 38,
-  },
-  SettingName: {
-    position: "relative",
-    fontSize: 16,
-    fontWeight: 600,
-  },
-  SettingNameSection: {
-    width: "80%",
   },
   SettingNameSectionSignOut: {
     width: "89%",

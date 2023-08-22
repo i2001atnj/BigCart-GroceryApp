@@ -1,15 +1,12 @@
 import React from "react";
 import { Image } from "react-native";
-//bottom-tab
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// screens
 import {
   HomeScreen,
   UserPageScreen,
   FavoritesScreen,
   ShoppingCartScreen,
 } from "../screens/screens.js";
-// assets
 import {
   homeVector,
   homeVector2,
