@@ -7,17 +7,15 @@ import {
   FeaturedProducts,
 } from "../components/components";
 import { LinearGradient } from "expo-linear-gradient";
-import { StatusBar } from "expo-status-bar";
 
 export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.Homepage}>
-      <StatusBar style="auto" />
       <LinearGradient colors={["#FFFFFF", "#F4F5F9"]}>
-        <View style={styles.SearchbarSection}>
-          <Searchbar />
-        </View>
         <ScrollView>
+          <View style={styles.SearchbarSection}>
+            <Searchbar />
+          </View>
           <View style={styles.BannerSection}>
             <Banner />
           </View>

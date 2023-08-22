@@ -23,6 +23,8 @@ export default function FeaturedProducts() {
             quantity={product.quantity}
             name={product.name}
             key={product.id}
+            type={product.type}
+            discount={product.discount}
           />
         ))}
       </View>
@@ -41,14 +43,17 @@ const styles = StyleSheet.create({
     borderRadius: 50,
   },
   Title: {
-    fontWeight: 600,
+    fontWeight: "600",
     fontSize: 18,
   },
   ListContainer: {
-    marginBottom: 20,
+    marginVertical: 20,
     display: "flex",
     flexDirection: "row",
     flexWrap: "wrap",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 20,
   },
   ProductsList: {
     display: "flex",

@@ -2,131 +2,110 @@ import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { addToCartIcon, heartVector1 } from "../assets/assets";
 
-export default ProductItem = ({ color, image, price, quantity, name }) => {
+export default ProductItem = ({
+  color,
+  image,
+  price,
+  quantity,
+  name,
+  type,
+}) => {
   return (
-    <View style={styles.Products}>
-      <View
-        style={{
-          backgroundColor: "white",
-          paddingVertical: 2,
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <TouchableOpacity>
-          <Image
-            source={heartVector1}
-            style={{ marginLeft: 150, marginTop: 1 }}
-          />
+    <View style={styles.ProductContainer}>
+      <View style={styles.ProductHeader}>
+        {type === "new" ? (
+          <View
+            style={{
+              backgroundColor: "#FDEFD5",
+              height: 18,
+              width: 38,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ color: "#E8AD41" }}>NEW</Text>
+          </View>
+        ) : (
+          <Text></Text>
+        )}
+        <TouchableOpacity
+          style={{
+            height: 32,
+            width: 32,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image source={heartVector1} />
         </TouchableOpacity>
       </View>
-      <View style={{ gap: 1 }}>
-        <View style={{ backgroundColor: "white" }}>
-          <TouchableOpacity style={styles.ProductsTopContainer}>
-            <View>
-              <View
-                style={{
-                  backgroundColor: `${color}`,
-                  width: 84,
-                  height: 84,
-                  borderRadius: 50,
-                }}
-              >
-                <Image source={image} style={styles.Image} />
-              </View>
-              <View style={styles.ProductsDetailsSection}>
-                <Text style={styles.ProductPrice}>{price}</Text>
-                <Text style={styles.ProductName}>{name}</Text>
-                <Text style={styles.ProductQuantity}>{quantity}</Text>
-              </View>
-            </View>
-          </TouchableOpacity>
+      <TouchableOpacity style={styles.ProductMain}>
+        <View
+          style={{
+            backgroundColor: `${color}`,
+            height: 84,
+            width: 84,
+            borderRadius: 50,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image source={image} />
         </View>
-        <View style={styles.ProductsBottomContainer}>
-          <View style={styles.ProductsAddToCartSection}>
-            <TouchableOpacity style={styles.AddToCartButton}>
-              <Image source={addToCartIcon} />
-              <Text style={styles.AddToCartText}>Add to cart</Text>
-            </TouchableOpacity>
-          </View>
+        <View style={styles.ProductInfo}>
+          <Text style={{ color: "#6CC51D" }}>{price}</Text>
+          <Text style={{ color: "#000", fontWeight: "600", fontSize: 16 }}>
+            {name}
+          </Text>
+          <Text style={{ fontSize: 13, fontWeight: "500", color: "#868889" }}>
+            {quantity}
+          </Text>
         </View>
-      </View>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.ProductBottom}>
+        <Image source={addToCartIcon} />
+        <Text>Add to cart</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  Products: {
-    backgroundColor: "#EBEBEB",
+  ProductContainer: {
     height: 240,
-    width: "47.4%",
+    width: 181,
+    backgroundColor: "#fff",
     display: "flex",
-    flexDirection: "column",
     justifyContent: "space-between",
-    marginVertical: 15,
-    marginHorizontal: 5,
   },
-  ProductsTopContainer: {
+  ProductHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "start",
+    height: 25,
+    flexDirection: "row",
+  },
+  ProductMain: {
+    flex: 1,
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "#FFF",
-    width: "100%",
     justifyContent: "center",
-    height: 197,
-    paddingBottom: 20,
+    alignItems: "center",
   },
-  Image: {
-    position: "relative",
-    top: 20,
+  ProductInfo: {
+    alignItems: "center",
+    marginTop: 5,
+    gap: 5,
   },
-  ProductsBottomContainer: {
+  ProductBottom: {
+    borderTopWidth: 2,
+    height: 41,
+    paddingHorizontal: 10,
     display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "#FFF",
-    width: "100%",
-    height: 42,
-  },
-  ProductsHeaderSection: {
-    height: 40,
-    alignItems: "center",
-    justifyContent: "flex-end",
-  },
-  ProductsDetailsSection: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginTop: 20,
-  },
-  ProductPrice: {
-    color: "#6CC51D",
-  },
-  ProductName: {
-    fontSize: 15,
-    fontWeight: 600,
-  },
-  ProductQuantity: {
-    fontSize: 14,
-    fontWeight: 500,
-    color: "#868889",
-  },
-  ProductsAddToCartSection: {
-    backgroundColor: "#FFF",
     justifyContent: "center",
-    width: "100%",
-  },
-  AddToCartButton: {
-    display: "flex",
+    alignItems: "center",
+    borderColor: "#F4F5F9",
     flexDirection: "row",
     gap: 10,
-    justifyContent: "center",
-    width: "100%",
-    height: "100%",
-    alignItems: "center",
-  },
-  AddToCartText: {
-    fontSize: 14,
-    fontWeight: 500,
   },
 });

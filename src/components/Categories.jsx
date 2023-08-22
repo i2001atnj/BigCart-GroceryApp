@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   CategoriesTitle: {
-    fontWeight: 600,
+    fontWeight: "600",
     fontSize: 18,
   },
   CategoriesMenu: {

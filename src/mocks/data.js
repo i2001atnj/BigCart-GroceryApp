@@ -14,6 +14,7 @@ export const DATA = [
     price: "$7.00",
     quantity: "2.0 lbs",
     color: "#FCFFD9",
+    type: "new",
   },
   {
     id: 3,
@@ -30,6 +31,8 @@ export const DATA = [
     price: "$7.05",
     quantity: "5.0 lbs",
     color: "#FEE1ED",
+    type: "discount",
+    discount: "-16%",
   },
   {
     id: 5,
@@ -38,6 +41,7 @@ export const DATA = [
     price: "$2.09",
     quantity: "1.50 lbs",
     color: "#FFE3E2",
+    type: "new",
   },
   {
     id: 6,
