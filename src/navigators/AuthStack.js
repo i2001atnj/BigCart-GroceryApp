@@ -24,21 +24,6 @@ export default function Auth() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Search"
-        component={SearchScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Filters"
-        component={FiltersScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Categories"
-        component={CategoriesScreen}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="Log in"
         component={LoginScreen}
         options={{ headerShown: false }}
@@ -56,11 +41,6 @@ export default function Auth() {
       <Stack.Screen
         name="Recovery"
         component={PasswordRecovery}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="About me"
-        component={AboutMeScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
