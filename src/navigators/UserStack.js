@@ -1,21 +1,21 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import {
-  HomeScreen,
   SearchScreen,
   FiltersScreen,
   CategoriesScreen,
   AboutMeScreen,
 } from "../screens/screens.js";
+import HomeStack from "./HomeStack.js";
 
 const Stack = createStackNavigator();
 
-export default function Auth() {
+export default function UserStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Home"
-        component={HomeScreen}
+        name="HomeStack"
+        component={HomeStack}
         options={{ headerShown: false }}
       />
       <Stack.Screen

@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   CategoriesMenu: {
     display: "flex",
     flexDirection: "row",
-    marginTop: 20,
+    marginTop: 10,
     gap: 20,
   },
   Category: {

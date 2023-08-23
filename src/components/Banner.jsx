@@ -15,7 +15,7 @@ const Dot = ({ active }) => (
 
 export default function Banner() {
   const window = useWindowDimensions();
-  const ITEM_SIZE = window.width - 1 * 34;
+  const ITEM_SIZE = window.width - 1 * 30;
   const [activeIndicator, setActiveIndicator] = useState(0);
   const onScroll = (evt) => {
     const index = Math.floor(evt.nativeEvent.contentOffset.x / ITEM_SIZE);

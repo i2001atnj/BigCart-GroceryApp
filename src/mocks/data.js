@@ -6,6 +6,7 @@ export const DATA = [
     price: "$8.00",
     quantity: "dozen",
     color: "#FFCEC1",
+    screen: "Peach",
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ export const DATA = [
     quantity: "2.0 lbs",
     color: "#FCFFD9",
     type: "new",
+    screen: "Avocado",
   },
   {
     id: 3,
@@ -23,6 +25,7 @@ export const DATA = [
     price: "$9.90",
     quantity: "1.50 lbs",
     color: "#FFE6C2",
+    screen: "Pineapple",
   },
   {
     id: 4,
@@ -33,6 +36,7 @@ export const DATA = [
     color: "#FEE1ED",
     type: "discount",
     discount: "-16%",
+    screen: "Grapes",
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ export const DATA = [
     quantity: "1.50 lbs",
     color: "#FFE3E2",
     type: "new",
+    screen: "Pomegranate",
   },
   {
     id: 6,
@@ -50,5 +55,6 @@ export const DATA = [
     price: "$3.00",
     quantity: "1 kg",
     color: "#D2FFD0",
+    screen: "Broccoli",
   },
 ];

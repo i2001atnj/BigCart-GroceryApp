@@ -9,10 +9,9 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
-import { CATEGORIES } from "../components/Categories";
+import { CATEGORIES } from "../data/categories";
 
 export default function CategoriesScreen({ navigation }) {
-  const category = CATEGORIES;
   return (
     <SafeAreaView style={styles.CategoriesScreen}>
       <View style={styles.Header}>
@@ -25,11 +24,8 @@ export default function CategoriesScreen({ navigation }) {
         </TouchableOpacity>
       </View>
       <ScrollView contentContainerStyle={styles.ItemsContainer} horizontal>
-        {category.map((item) => (
-          <TouchableOpacity
-            onPress={() => navigation.navigate()}
-            style={styles.Item}
-          >
+        {CATEGORIES.map((item) => (
+          <TouchableOpacity style={styles.Item} key={item.id}>
             <View
               style={{
                 backgroundColor: `${item.color}`,
@@ -39,7 +35,6 @@ export default function CategoriesScreen({ navigation }) {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              key={category.id}
             >
               <Image source={item.image} style={styles.Image} />
             </View>
@@ -75,7 +70,6 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     width: "100%",
     alignItems: "center",
-    justifyContent: "center",
     gap: 10,
     backgroundColor: "#F4F5F9",
     paddingTop: 21,

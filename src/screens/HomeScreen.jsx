@@ -1,7 +1,7 @@
 import React from "react";
 import { View, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import {
-  Searchbar,
+  SearchBar,
   Banner,
   Categories,
   FeaturedProducts,
@@ -12,10 +12,10 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.Homepage}>
       <LinearGradient colors={["#FFFFFF", "#F4F5F9"]}>
+        <View style={styles.SearchBarSection}>
+          <SearchBar />
+        </View>
         <ScrollView>
-          <View style={styles.SearchbarSection}>
-            <Searchbar />
-          </View>
           <View style={styles.BannerSection}>
             <Banner />
           </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFFFFF",
   },
-  SearchbarSection: {
+  SearchBarSection: {
     alignItems: "center",
     width: "100%",
     paddingHorizontal: 27,
@@ -52,15 +52,13 @@ const styles = StyleSheet.create({
     height: 300,
     width: "100%",
     zIndex: 1,
-    marginTop: 10,
     paddingHorizontal: 17,
   },
   CategoriesSection: {
-    marginTop: -25,
     paddingHorizontal: 17,
   },
   FeaturedProductsSection: {
-    marginTop: 25,
+    marginTop: 20,
     paddingHorizontal: 17,
   },
 });

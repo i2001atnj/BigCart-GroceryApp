@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { onAuthStateChanged } from "firebase/auth";
 import { FIREBASE_AUTH } from "./FirebaseConfig";
 import AuthStack from "./src/navigators/AuthStack";
-import HomeStack from "./src/navigators/HomeStack";
+import UserStack from "./src/navigators/UserStack";
 
 export default function App() {
   const [user, setUser] = useState(null);
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      {user ? <HomeStack /> : <AuthStack />}
+      {user ? <UserStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }

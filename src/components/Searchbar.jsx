@@ -7,13 +7,12 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import UserStack from "../navigators/UserStack";
 
 export default function SearchBar() {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity
-      onPress={() => navigation.navigate("Search", { screen: "Search" })}
-    >
+    <TouchableOpacity onPress={() => navigation.navigate("Search")}>
       <View style={styles.SearchBar}>
         <TouchableOpacity>
           <Image source={require("../assets/search.png")} />
