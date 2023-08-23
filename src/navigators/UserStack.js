@@ -1,35 +1,41 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import {
-  WelcomeScreen,
-  SignUpScreen,
-  PasswordRecovery,
-  LoginScreen,
+  HomeScreen,
+  SearchScreen,
+  FiltersScreen,
+  CategoriesScreen,
+  AboutMeScreen,
 } from "../screens/screens.js";
 
 const Stack = createStackNavigator();
 
-export default function AuthStack() {
+export default function Auth() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Welcome"
-        component={WelcomeScreen}
+        name="Home"
+        component={HomeScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Log in"
-        component={LoginScreen}
+        name="Search"
+        component={SearchScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Sign up"
-        component={SignUpScreen}
+        name="Filters"
+        component={FiltersScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Recovery"
-        component={PasswordRecovery}
+        name="Categories"
+        component={CategoriesScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="About"
+        component={AboutMeScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

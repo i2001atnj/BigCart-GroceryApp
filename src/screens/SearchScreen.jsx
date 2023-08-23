@@ -16,7 +16,7 @@ export default function SearchScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Image source={require("../assets/blackArrow.png")} />
         </TouchableOpacity>
-        <View style={styles.Searchbar}>
+        <View style={styles.SearchBar}>
           <TouchableOpacity>
             <Image source={require("../assets/search.png")} />
           </TouchableOpacity>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
     padding: 16,
   },
-  Searchbar: {
+  SearchBar: {
     display: "flex",
     flexDirection: "row",
     width: "91%",

@@ -19,7 +19,7 @@ import {
 
 const Tab = createBottomTabNavigator();
 
-export default function Home() {
+export default function HomeStack() {
   return (
     <Tab.Navigator
       initialRouteName="Home"

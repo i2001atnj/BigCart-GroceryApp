@@ -8,11 +8,13 @@ import {
   StyleSheet,
 } from "react-native";
 
-export default function Searchbar() {
+export default function SearchBar() {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-      <View style={styles.Searchbar}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("Search", { screen: "Search" })}
+    >
+      <View style={styles.SearchBar}>
         <TouchableOpacity>
           <Image source={require("../assets/search.png")} />
         </TouchableOpacity>
@@ -32,7 +34,7 @@ export default function Searchbar() {
 }
 
 const styles = StyleSheet.create({
-  Searchbar: {
+  SearchBar: {
     display: "flex",
     flexDirection: "row",
     width: "100%",

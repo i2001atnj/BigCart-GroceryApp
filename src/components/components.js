@@ -8,5 +8,5 @@ export { default as MyFavorites } from "./MyFavorites";
 export { default as MyOrders } from "./MyOrders";
 export { default as Notifications } from "./Notifications";
 export { default as ProductItem } from "./ProductItem";
-export { default as Searchbar } from "./Searchbar";
+export { default as SearchBar } from "./SearchBar";
 export { default as Transactions } from "./Transactions";
