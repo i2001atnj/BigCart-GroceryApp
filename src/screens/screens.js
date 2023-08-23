@@ -10,3 +10,4 @@ export { default as ShoppingCartScreen } from "./ShoppingCartScreen";
 export { default as SignUpScreen } from "./SignUpScreen";
 export { default as UserPageScreen } from "./UserPageScreen";
 export { default as WelcomeScreen } from "./WelcomeScreen";
+export { default as DetailsScreen } from "./DetailsScreen";

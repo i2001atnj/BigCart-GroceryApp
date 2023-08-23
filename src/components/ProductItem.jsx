@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { addToCartIcon, heartVector1 } from "../assets/assets";
+import { useNavigation } from "@react-navigation/native";
 
 export default ProductItem = ({
   color,
@@ -9,7 +10,9 @@ export default ProductItem = ({
   quantity,
   name,
   type,
+  id,
 }) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.ProductContainer}>
       <View style={styles.ProductHeader}>
@@ -39,7 +42,19 @@ export default ProductItem = ({
           <Image source={heartVector1} />
         </TouchableOpacity>
       </View>
-      <TouchableOpacity style={styles.ProductMain}>
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("Details", {
+            id: id,
+            name: name,
+            image: image,
+            price: price,
+            quantity: quantity,
+            color: color,
+          })
+        }
+        style={styles.ProductMain}
+      >
         <View
           style={{
             backgroundColor: `${color}`,

@@ -5,6 +5,7 @@ import {
   FiltersScreen,
   CategoriesScreen,
   AboutMeScreen,
+  DetailsScreen,
 } from "../screens/screens.js";
 import HomeStack from "./HomeStack.js";
 
@@ -36,6 +37,11 @@ export default function UserStack() {
       <Stack.Screen
         name="About"
         component={AboutMeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={DetailsScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>
