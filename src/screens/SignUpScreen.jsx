@@ -2,20 +2,28 @@ import {
   View,
   Text,
   SafeAreaView,
-  TouchableOpacity,
   ImageBackground,
   StyleSheet,
-  Image,
-  TextInput,
-  ActivityIndicator,
   KeyboardAvoidingView,
 } from "react-native";
+import {
+  mailVector,
+  phoneVector,
+  lockVector,
+  createbg,
+} from "../assets/assets";
 import React, { useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  Loader,
+  AccessButton,
+  AccessInput,
+  OptionalButton,
+} from "../components/components";
+import { BackArrowWhite } from "../components/components";
 
-export default function SignUp({ navigation }) {
+export default function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -35,95 +43,45 @@ export default function SignUp({ navigation }) {
 
   return (
     <SafeAreaView>
-      <>
-        <ImageBackground
-          source={require("../assets/createbg.png")}
-          style={styles.BackgroundImage}
-        >
-          <View style={styles.Title}>
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={{ position: "relative", top: 30 }}
-            >
-              <Image source={require("../assets/backVector.png")} />
-            </TouchableOpacity>
-            <View style={{ position: "relative", right: 156 }}>
-              <Text style={styles.TitleText}>Welcome</Text>
-            </View>
-          </View>
-        </ImageBackground>
-      </>
+      <ImageBackground source={createbg} style={styles.BackgroundImage}>
+        <View style={styles.Title}>
+          <BackArrowWhite />
+          <Text style={styles.TitleText}>Welcome</Text>
+        </View>
+      </ImageBackground>
       <View style={styles.Section}>
-        <View style={styles.Text}>
-          <Text style={styles.TextTitle}>Create account</Text>
-          <Text style={styles.TextInfo}>Quickly create account</Text>
+        <View style={{ alignItems: "center", gap: 5 }}>
+          <Text style={{ fontSize: 24, fontWeight: 600 }}>Create account</Text>
+          <Text style={{ color: "#868889", fontSize: 15, fontWeight: 400 }}>
+            Quickly create account
+          </Text>
         </View>
-        <View style={styles.SignUpSection}>
-          <KeyboardAvoidingView behavior="padding">
-            <View style={styles.InputContainer}>
-              <Image source={require("../assets/mailVector.png")} />
-              <TextInput
-                placeholder="Email address"
-                placeholderTextColor="#868889"
-                style={styles.Input}
-                autoCapitalize="none"
-                onChangeText={(text) => setEmail(text)}
-                value={email}
-              />
-            </View>
-            <View style={styles.InputContainer}>
-              <Image source={require("../assets/phoneVector.png")} />
-              <TextInput
-                placeholder="Phone number (optional)"
-                placeholderTextColor="#868889"
-                style={styles.Input}
-              />
-            </View>
-            <View style={styles.InputContainer}>
-              <Image source={require("../assets/lockVector.png")} />
-              <TextInput
-                placeholder="Create password"
-                placeholderTextColor="#868889"
-                style={styles.Input}
-                secureTextEntry={true}
-                autoCapitalize="none"
-                onChangeText={(text) => setPassword(text)}
-                value={password}
-              />
-            </View>
-          </KeyboardAvoidingView>
-        </View>
-        <View style={styles.ButtonContainer}>
-          {loading ? (
-            <LinearGradient
-              colors={["#AEDC81", "#6CC51D"]}
-              start={{ x: 0, y: 1 }}
-              end={{ x: 1, y: 0 }}
-              style={{ opacity: 0.5 }}
-            >
-              <ActivityIndicator
-                size="small"
-                style={{ paddingVertical: 20 }}
-                color="#fff"
-              />
-            </LinearGradient>
-          ) : (
-            <LinearGradient
-              colors={["#AEDC81", "#6CC51D"]}
-              start={{ x: 0, y: 1 }}
-              end={{ x: 1, y: 0 }}
-            >
-              <TouchableOpacity onPress={signUp} style={styles.Button}>
-                <Text style={styles.ButtonText}>Sign up</Text>
-              </TouchableOpacity>
-            </LinearGradient>
-          )}
-        </View>
+        <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
+          <AccessInput
+            image={mailVector}
+            placeholder="Email address"
+            onChangeTextFunction={(text) => setEmail(text)}
+            value={email}
+          />
+          <AccessInput
+            image={phoneVector}
+            placeholder="Phone number (optional)"
+          />
+          <AccessInput
+            image={lockVector}
+            placeholder="Create password"
+            onChangeTextFunction={(text) => setPassword(text)}
+            value={password}
+          />
+        </KeyboardAvoidingView>
+        {loading ? (
+          <Loader size="small" style={{ paddingVertical: 20 }} color="#fff" />
+        ) : (
+          <AccessButton accessFunction={signUp} text="Sign up" />
+        )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Log in")}>
-            <Text style={{ color: "#000000", fontWeight: 600 }}>Login</Text>
-          </TouchableOpacity>
+          <OptionalButton screen="Log in" text="Login" />
         </View>
       </View>
     </SafeAreaView>
@@ -150,6 +108,8 @@ const styles = StyleSheet.create({
     color: "#FFF",
     textAlign: "center",
     marginTop: 60,
+    position: "relative",
+    right: 156,
   },
   Section: {
     zIndex: 2,
@@ -161,63 +121,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     gap: 20,
     paddingTop: 30,
-  },
-  Text: {
-    alignItems: "center",
-    gap: 5,
-  },
-  TextTitle: {
-    fontSize: 24,
-    fontWeight: 600,
-  },
-  TextInfo: {
-    color: "#868889",
-    fontSize: 15,
-    fontWeight: 400,
-  },
-  SignUpSection: {
-    gap: 15,
-  },
-  InputContainer: {
-    height: 60,
-    backgroundColor: "#FFF",
-    paddingHorizontal: 28,
-    display: "flex",
-    flexDirection: "row",
-    marginHorizontal: 17,
-    borderRadius: 5,
-    alignItems: "center",
-    gap: 21,
-  },
-  Input: {
-    fontSize: 16,
-    width: "80%",
-  },
-  ButtonContainer: {
-    width: "100%",
-    height: 60,
-    borderRadius: 5,
-    shadowColor: "#AEDC81",
-    shadowOffset: { height: 10, width: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    justifyContent: "center",
-    paddingHorizontal: 17,
-    marginTop: 10,
-  },
-  Button: {
-    height: "100%",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
-    flexDirection: "row",
-  },
-  ButtonText: {
-    color: "#FFF",
-    textAlign: "center",
-    fontSize: 16,
-    fontWeight: 500,
   },
   OptionalSection: {
     display: "flex",

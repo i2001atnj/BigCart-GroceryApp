@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import UserStack from "../navigators/UserStack";
 
 export default function SearchBar() {
   const navigation = useNavigation();

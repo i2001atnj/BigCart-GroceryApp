@@ -80,6 +80,7 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 8, width: 1 },
     shadowOpacity: 0.5,
     shadowRadius: 2,
+    backgroundColor: "transparent",
   },
   Button: {
     height: "100%",

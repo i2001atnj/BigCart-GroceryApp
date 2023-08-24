@@ -10,3 +10,8 @@ export { default as Notifications } from "./Notifications";
 export { default as ProductItem } from "./ProductItem";
 export { default as SearchBar } from "./SearchBar";
 export { default as Transactions } from "./Transactions";
+export { default as Loader } from "../components/Loader";
+export { default as AccessButton } from "../components/AccessButton";
+export { default as AccessInput } from "../components/AccessInput";
+export { default as OptionalButton } from "../components/OptionalButton";
+export { default as BackArrowWhite } from "../components/BackArrowWhite";

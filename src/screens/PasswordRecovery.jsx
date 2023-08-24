@@ -109,6 +109,7 @@ const styles = StyleSheet.create({
     shadowOffset: { height: 10, width: 1 },
     shadowOpacity: 0.3,
     shadowRadius: 2,
+    backgroundColor: "transparent",
     justifyContent: "center",
   },
   Button: {

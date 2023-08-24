@@ -3,20 +3,23 @@ import {
   Text,
   ImageBackground,
   SafeAreaView,
-  TouchableOpacity,
-  Image,
   StyleSheet,
-  TextInput,
   Switch,
-  ActivityIndicator,
   KeyboardAvoidingView,
 } from "react-native";
 import React, { useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import { FIREBASE_AUTH } from "../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+  AccessButton,
+  AccessInput,
+  BackArrowWhite,
+  OptionalButton,
+  Loader,
+} from "../components/components";
+import { loginbg, mailVector, lockVector } from "../assets/assets.js";
 
-export default function Login({ navigation }) {
+export default function Login() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const [email, setEmail] = useState("");
@@ -37,59 +40,48 @@ export default function Login({ navigation }) {
 
   return (
     <SafeAreaView style={styles.LoginPage}>
-      <>
-        <ImageBackground
-          source={require("../assets/loginbg.png")}
-          resizeMode="cover"
-          style={styles.BackgroundImage}
-        >
-          <View style={styles.Title}>
-            <TouchableOpacity
-              onPress={() => navigation.goBack()}
-              style={{ position: "relative", top: 30 }}
-            >
-              <Image source={require("../assets/backVector.png")} />
-            </TouchableOpacity>
-            <View style={{ position: "relative", right: 156 }}>
-              <Text style={styles.TitleText}>Welcome</Text>
-            </View>
+      <ImageBackground
+        source={loginbg}
+        resizeMode="cover"
+        style={styles.BackgroundImage}
+      >
+        <View style={styles.Title}>
+          <BackArrowWhite />
+          <View style={{ position: "relative", right: 156 }}>
+            <Text style={styles.TitleText}>Welcome</Text>
           </View>
-        </ImageBackground>
-      </>
+        </View>
+      </ImageBackground>
       <View style={styles.Section}>
-        <View style={styles.Text}>
-          <Text style={styles.TextTitle}>Welcome back !</Text>
-          <Text style={styles.TextInfo}>Sign in to your account</Text>
+        <View style={{ alignItems: "center", gap: 5 }}>
+          <Text style={{ fontSize: 24, fontWeight: 600 }}>Welcome back !</Text>
+          <Text style={{ color: "#868889", fontSize: 15, fontWeight: 400 }}>
+            Sign in to your account
+          </Text>
         </View>
-        <View style={styles.LoginSection}>
-          <KeyboardAvoidingView behavior="padding">
-            <View style={styles.InputContainer}>
-              <Image source={require("../assets/mailVector.png")} />
-              <TextInput
-                style={styles.Input}
-                placeholder="Email address"
-                placeholderTextColor="#868889"
-                autoCapitalize="none"
-                onChangeText={(text) => setEmail(text)}
-                value={email}
-              />
-            </View>
-            <View style={styles.InputContainer}>
-              <Image source={require("../assets/lockVector.png")} />
-              <TextInput
-                style={styles.Input}
-                placeholder="Enter password"
-                placeholderTextColor="#868889"
-                secureTextEntry={true}
-                autoCapitalize="none"
-                onChangeText={(text) => setPassword(text)}
-                value={password}
-              />
-            </View>
-          </KeyboardAvoidingView>
-        </View>
+        <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
+          <AccessInput
+            image={mailVector}
+            placeholder="Email address"
+            onChangeTextFunction={(text) => setEmail(text)}
+            value={email}
+          />
+          <AccessInput
+            image={lockVector}
+            placeholder="Enter password"
+            onChangeTextFunction={(text) => setPassword(text)}
+            value={password}
+            secureTextEntry={true}
+          />
+        </KeyboardAvoidingView>
         <View style={styles.PasswordOptions}>
-          <View style={styles.RememberMe}>
+          <View
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
             <Switch
               trackColor={{ false: "#FFF", true: "#6CC51D" }}
               thumbColor={isEnabled ? "#FFF" : "#FFF"}
@@ -102,43 +94,20 @@ export default function Login({ navigation }) {
               Remember me
             </Text>
           </View>
-          <TouchableOpacity onPress={() => navigation.navigate("Recovery")}>
-            <Text style={{ fontSize: 15, fontWeight: 500, color: "#407EC7" }}>
-              Forgot password ?
-            </Text>
-          </TouchableOpacity>
+          <OptionalButton
+            screen="Recovery"
+            text="Forgot password?"
+            textColor="#407EC7"
+          />
         </View>
-        <View style={styles.ButtonContainer}>
-          {loading ? (
-            <LinearGradient
-              colors={["#AEDC81", "#6CC51D"]}
-              start={{ x: 0, y: 1 }}
-              end={{ x: 1, y: 0 }}
-              style={{ opacity: 0.5 }}
-            >
-              <ActivityIndicator
-                size="small"
-                style={{ paddingVertical: 20 }}
-                color="#fff"
-              />
-            </LinearGradient>
-          ) : (
-            <LinearGradient
-              colors={["#AEDC81", "#6CC51D"]}
-              start={{ x: 0, y: 1 }}
-              end={{ x: 1, y: 0 }}
-            >
-              <TouchableOpacity onPress={logIn} style={styles.Button}>
-                <Text style={styles.ButtonText}>Login</Text>
-              </TouchableOpacity>
-            </LinearGradient>
-          )}
-        </View>
+        {loading ? (
+          <Loader size={"small"} style={{ paddingVertical: 20 }} color="#FFF" />
+        ) : (
+          <AccessButton accessFunction={logIn} text="Login" />
+        )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Don't have an account ?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Sign up")}>
-            <Text style={{ color: "#000000", fontWeight: 600 }}>Sign up</Text>
-          </TouchableOpacity>
+          <OptionalButton screen="Sign up" text="Sign up" textColor="#000" />
         </View>
       </View>
     </SafeAreaView>
@@ -182,72 +151,13 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     gap: 20,
     paddingTop: 30,
-    paddingHorizontal: 17,
-  },
-  Text: {
-    alignItems: "center",
-    gap: 5,
-  },
-  TextTitle: {
-    fontSize: 24,
-    fontWeight: 600,
-  },
-  TextInfo: {
-    color: "#868889",
-    fontSize: 15,
-    fontWeight: 400,
-  },
-  LoginSection: {
-    gap: 15,
-  },
-  InputContainer: {
-    height: 60,
-    backgroundColor: "#FFF",
-    paddingHorizontal: 28,
-    display: "flex",
-    flexDirection: "row",
-    borderRadius: 5,
-    alignItems: "center",
-    gap: 21,
-  },
-  Input: {
-    fontSize: 16,
-    width: "80%",
   },
   PasswordOptions: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-  },
-  RememberMe: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  ButtonContainer: {
-    width: "100%",
-    height: 60,
-    borderRadius: 5,
-    shadowColor: "#AEDC81",
-    shadowOffset: { height: 10, width: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    justifyContent: "center",
-  },
-  Button: {
-    height: "100%",
-    width: "100%",
-    justifyContent: "center",
-    alignItems: "center",
-    display: "flex",
-    flexDirection: "row",
-  },
-  ButtonText: {
-    color: "#FFF",
-    textAlign: "center",
-    fontSize: 16,
-    fontWeight: 500,
+    paddingHorizontal: 17,
   },
   OptionalSection: {
     display: "flex",

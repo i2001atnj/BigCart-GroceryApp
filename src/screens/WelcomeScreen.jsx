@@ -8,8 +8,10 @@ import {
   StyleSheet,
   Image,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
+import RedirectButton from "../components/RedirectButton";
+import { welcomebg, googleLogo, signUpVector } from "../assets/assets";
+import OptionalButton from "../components/OptionalButton";
 
 export default function WelcomeScreen({ navigation }) {
   return (
@@ -17,7 +19,7 @@ export default function WelcomeScreen({ navigation }) {
       <StatusBar style="light" />
       <>
         <ImageBackground
-          source={require("../assets/welcomebg.png")}
+          source={welcomebg}
           resizeMode="cover"
           style={styles.BackgroundImage}
         >
@@ -48,36 +50,21 @@ export default function WelcomeScreen({ navigation }) {
           <View style={{ borderRadius: 5 }}>
             <TouchableOpacity style={styles.Button}>
               <Image
-                source={require("../assets/googleLogo.png")}
+                source={googleLogo}
                 style={{ position: "relative", right: 70 }}
               />
               <Text style={styles.ButtonText1}>Continue with Google</Text>
             </TouchableOpacity>
           </View>
         </View>
-        <View style={styles.ButtonContainer2}>
-          <LinearGradient
-            colors={["#AEDC81", "#6CC51D"]}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 1, y: 0 }}
-          >
-            <TouchableOpacity
-              style={styles.Button}
-              onPress={() => navigation.navigate("Sign up")}
-            >
-              <Image
-                source={require("../assets/signUpVector.png")}
-                style={{ position: "relative", right: 80 }}
-              />
-              <Text style={styles.ButtonText2}>Create an account</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-        </View>
+        <RedirectButton
+          image={signUpVector}
+          text={"Create an account"}
+          screen={"Sign up"}
+        />
         <View style={styles.Login}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Log in")}>
-            <Text style={{ fontWeight: 600 }}>Login</Text>
-          </TouchableOpacity>
+          <OptionalButton screen="Log in" text="Login" />
         </View>
       </View>
     </SafeAreaView>
@@ -127,18 +114,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 15,
   },
-  ButtonContainer2: {
-    width: "100%",
-    height: 60,
-    borderRadius: 5,
-    marginBottom: 50,
-    shadowColor: "#AEDC81",
-    shadowOffset: { height: 10, width: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    justifyContent: "center",
-    marginTop: -30,
-  },
   Button: {
     height: "100%",
     width: "100%",
@@ -149,12 +124,6 @@ const styles = StyleSheet.create({
   },
   ButtonText1: {
     color: "#000",
-    textAlign: "center",
-    fontSize: 16,
-    fontWeight: 500,
-  },
-  ButtonText2: {
-    color: "#FFF",
     textAlign: "center",
     fontSize: 16,
     fontWeight: 500,
