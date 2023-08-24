@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import UserOption from "../components/UserOption";
+import { useRoute } from "@react-navigation/native";
 import {
   profilePhoto,
   changeProfilePhotoVector,

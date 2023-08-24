@@ -53,3 +53,4 @@ export { default as user } from "./user.png";
 export { default as user2 } from "./user2.png";
 export { default as vegetablesIcon } from "./vegetablesIcon.png";
 export { default as welcomebg } from "./welcomebg.png";
+export { default as bag } from "./bag.png";

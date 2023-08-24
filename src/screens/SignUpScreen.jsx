@@ -24,15 +24,9 @@ export default function SignUp({ navigation }) {
   const signUp = async () => {
     setLoading(true);
     try {
-      const response = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      console.log(response);
+      await createUserWithEmailAndPassword(auth, email, password);
       alert("Account saved successfully");
     } catch (error) {
-      console.log(error);
       alert("Login failed, error: " + error.message);
     } finally {
       setLoading(false);

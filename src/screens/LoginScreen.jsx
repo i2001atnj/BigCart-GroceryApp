@@ -27,10 +27,8 @@ export default function Login({ navigation }) {
   const logIn = async () => {
     setLoading(true);
     try {
-      const response = await signInWithEmailAndPassword(auth, email, password);
-      console.log(response);
+      await signInWithEmailAndPassword(auth, email, password);
     } catch (error) {
-      console.log(error);
       alert("Login failed, error: " + error.message);
     } finally {
       setLoading(false);
