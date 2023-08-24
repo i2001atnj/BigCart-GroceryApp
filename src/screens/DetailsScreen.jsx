@@ -9,8 +9,8 @@ import {
 } from "react-native";
 import React from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
-import { bag, blackArrow } from "../assets/assets";
-import { LinearGradient } from "expo-linear-gradient";
+import { blackArrow, bag } from "../assets/assets";
+import ButtonComponent from "../components/ButtonComponent";
 
 const DetailsScreen = () => {
   const route = useRoute();
@@ -115,34 +115,7 @@ const DetailsScreen = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <LinearGradient
-            colors={["#AEDC81", "#6CC51D"]}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 1, y: 0 }}
-            style={{ borderRadius: 5 }}
-          >
-            <TouchableOpacity
-              style={{
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "row",
-                padding: 20,
-                borderRadius: 5,
-                gap: 10,
-              }}
-            >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontSize: 16,
-                  fontWeight: 500,
-                }}
-              >
-                Add to cart
-              </Text>
-              <Image source={bag} />
-            </TouchableOpacity>
-          </LinearGradient>
+          <ButtonComponent text="Add to cart" image={bag} content="center" />
         </View>
       </SafeAreaView>
     </View>

@@ -1,37 +1,17 @@
 import {
   Text,
   SafeAreaView,
-  Image,
   StyleSheet,
-  TextInput,
   TouchableOpacity,
   View,
 } from "react-native";
 import React from "react";
+import { Header } from "../components/components";
 
-export default function SearchScreen({ navigation }) {
+export default function SearchScreen() {
   return (
     <SafeAreaView style={styles.SearchScreen}>
-      <View style={styles.Header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image source={require("../assets/blackArrow.png")} />
-        </TouchableOpacity>
-        <View style={styles.SearchBar}>
-          <TouchableOpacity>
-            <Image source={require("../assets/search.png")} />
-          </TouchableOpacity>
-          <View>
-            <TextInput
-              placeholder="Search keywords.."
-              placeholderTextColor={"#868889"}
-              style={styles.Input}
-            />
-          </View>
-          <TouchableOpacity onPress={() => navigation.navigate("Filters")}>
-            <Image source={require("../assets/filters.png")} />
-          </TouchableOpacity>
-        </View>
-      </View>
+      <Header arrow input />
       <View style={styles.Section}>
         <View style={styles.History}>
           <View style={styles.HistoryTitle}>

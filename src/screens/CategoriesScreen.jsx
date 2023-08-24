@@ -10,19 +10,12 @@ import {
 } from "react-native";
 import React from "react";
 import { CATEGORIES } from "../data/categories";
+import { Header } from "../components/components";
 
-export default function CategoriesScreen({ navigation }) {
+export default function CategoriesScreen() {
   return (
     <SafeAreaView style={styles.CategoriesScreen}>
-      <View style={styles.Header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image source={require("../assets/blackArrow.png")} />
-        </TouchableOpacity>
-        <Text style={styles.HeaderText}>Categories</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-          <Image source={require("../assets/filters.png")} />
-        </TouchableOpacity>
-      </View>
+      <Header arrow title="Categories" filters />
       <ScrollView contentContainerStyle={styles.ItemsContainer} horizontal>
         {CATEGORIES.map((item) => (
           <TouchableOpacity style={styles.Item} key={item.id}>
@@ -48,9 +41,9 @@ export default function CategoriesScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   CategoriesScreen: {
-    backgroundColor: "#FFF",
     height: "100%",
     width: "100%",
+    backgroundColor: "#fff",
   },
   Header: {
     width: "100%",

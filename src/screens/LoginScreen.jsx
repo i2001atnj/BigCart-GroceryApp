@@ -11,9 +11,9 @@ import React, { useState } from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {
-  AccessButton,
+  ButtonComponent,
   AccessInput,
-  BackArrowWhite,
+  BackArrow,
   OptionalButton,
   Loader,
 } from "../components/components";
@@ -46,7 +46,7 @@ export default function Login() {
         style={styles.BackgroundImage}
       >
         <View style={styles.Title}>
-          <BackArrowWhite />
+          <BackArrow color="#fff" style={{ position: "relative", top: 30 }} />
           <View style={{ position: "relative", right: 156 }}>
             <Text style={styles.TitleText}>Welcome</Text>
           </View>
@@ -103,7 +103,7 @@ export default function Login() {
         {loading ? (
           <Loader size={"small"} style={{ paddingVertical: 20 }} color="#FFF" />
         ) : (
-          <AccessButton accessFunction={logIn} text="Login" />
+          <ButtonComponent buttonFunction={logIn} text="Login" />
         )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Don't have an account ?</Text>

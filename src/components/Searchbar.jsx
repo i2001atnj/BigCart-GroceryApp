@@ -7,27 +7,23 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import { filters, search } from "../assets/assets";
+import { Filters } from "./components";
 
 export default function SearchBar() {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Search")}>
-      <View style={styles.SearchBar}>
-        <TouchableOpacity>
-          <Image source={require("../assets/search.png")} />
-        </TouchableOpacity>
-        <View>
-          <TextInput
-            placeholder="Search keywords.."
-            placeholderTextColor={"#868889"}
-            style={styles.Input}
-          />
-        </View>
-        <TouchableOpacity onPress={() => navigation.navigate("Filters")}>
-          <Image source={require("../assets/filters.png")} />
-        </TouchableOpacity>
-      </View>
-    </TouchableOpacity>
+    <View style={styles.SearchBar}>
+      <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+        <Image source={search} />
+      </TouchableOpacity>
+      <TextInput
+        placeholder="Search keywords.."
+        placeholderTextColor={"#868889"}
+        style={styles.Input}
+      />
+      <Filters />
+    </View>
   );
 }
 
@@ -35,7 +31,7 @@ const styles = StyleSheet.create({
   SearchBar: {
     display: "flex",
     flexDirection: "row",
-    width: "100%",
+    width: "90%",
     justifyContent: "space-around",
     backgroundColor: "#F4F5F9",
     height: 50,
@@ -43,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   Input: {
-    width: 210,
+    width: 200,
     fontWeight: "600",
     fontSize: 16,
   },

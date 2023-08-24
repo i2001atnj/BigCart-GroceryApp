@@ -9,11 +9,13 @@ import {
   Image,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import RedirectButton from "../components/RedirectButton";
+import { ButtonComponent } from "../components/components";
 import { welcomebg, googleLogo, signUpVector } from "../assets/assets";
 import OptionalButton from "../components/OptionalButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function WelcomeScreen() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.WelcomePage}>
       <StatusBar style="light" />
@@ -45,20 +47,20 @@ export default function WelcomeScreen() {
           </Text>
         </View>
         <View style={styles.ButtonContainer1}>
-          <View style={{ borderRadius: 5 }}>
-            <TouchableOpacity style={styles.Button}>
-              <Image
-                source={googleLogo}
-                style={{ position: "relative", right: 70 }}
-              />
-              <Text style={styles.ButtonText1}>Continue with Google</Text>
-            </TouchableOpacity>
-          </View>
+          <TouchableOpacity style={styles.Button}>
+            <Image
+              source={googleLogo}
+              style={{ position: "relative", right: 70 }}
+            />
+            <Text style={styles.ButtonText1}>Continue with Google</Text>
+          </TouchableOpacity>
         </View>
-        <RedirectButton
+        <ButtonComponent
           image={signUpVector}
           text={"Create an account"}
           screen={"Sign up"}
+          buttonFunction={() => navigation.navigate("Sign up")}
+          left
         />
         <View style={styles.Login}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
@@ -101,14 +103,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 20,
-    paddingHorizontal: 17,
   },
   ButtonContainer1: {
     backgroundColor: "#FFFFFF",
-    width: "100%",
+    width: "91%",
     height: 60,
     borderRadius: 5,
-    marginBottom: 40,
+    marginBottom: 15,
     justifyContent: "center",
     marginTop: 15,
   },
@@ -130,5 +131,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     gap: 10,
+    marginTop: 20,
   },
 });

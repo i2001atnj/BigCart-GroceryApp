@@ -1,39 +1,36 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-} from "react-native";
+import { View, Text, SafeAreaView, Image, StyleSheet } from "react-native";
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
+import { RedirectButton } from "../components/components";
+import { shoppingCartPageVector } from "../assets/assets";
 
-export default function ShoppingCart({ navigation }) {
+export default function ShoppingCart() {
   return (
     <SafeAreaView style={styles.ShoppingCart}>
       <View style={styles.CartInfoContainer}>
-        <View style={styles.ImageContainer}>
-          <Image source={require("../assets/shoppingCartPageVector.png")} />
-        </View>
-        <Text style={styles.Text1}>Your cart is empty !</Text>
-        <Text style={styles.Text2}>
+        <Image source={shoppingCartPageVector} />
+        <Text
+          style={{
+            fontSize: 22,
+            fontWeight: 600,
+            textAlign: "center",
+          }}
+        >
+          Your cart is empty !
+        </Text>
+        <Text
+          style={{
+            fontSize: 17,
+            fontWeight: 500,
+            color: "#868889",
+            width: 235,
+            textAlign: "center",
+          }}
+        >
           You will get a response within a few minutes.
         </Text>
       </View>
-      <View style={styles.ButtonContainer}>
-        <LinearGradient
-          colors={["#AEDC81", "#6CC51D"]}
-          start={{ x: 0, y: 1 }}
-          end={{ x: 1, y: 0 }}
-        >
-          <TouchableOpacity
-            style={styles.Button}
-            onPress={() => navigation.goBack()}
-          >
-            <Text style={styles.ButtonText}>Start shopping</Text>
-          </TouchableOpacity>
-        </LinearGradient>
+      <View style={{ width: "100%", paddingHorizontal: 17 }}>
+        <RedirectButton text="Start shopping" screen="Home" />
       </View>
     </SafeAreaView>
   );
@@ -55,42 +52,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: "80%",
-  },
-  ImageContainer: {
-    alignItems: "center",
-  },
-  Text1: {
-    fontSize: 22,
-    fontWeight: 600,
-    textAlign: "center",
-  },
-  Text2: {
-    fontSize: 17,
-    fontWeight: 500,
-    color: "#868889",
-    width: 235,
-    textAlign: "center",
-  },
-  ButtonContainer: {
-    width: "80%",
-    height: 60,
-    borderRadius: 5,
-    marginBottom: 40,
-    shadowColor: "#AEDC81",
-    shadowOffset: { height: 8, width: 1 },
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    backgroundColor: "transparent",
-  },
-  Button: {
-    height: "100%",
-    width: "100%",
-    justifyContent: "center",
-  },
-  ButtonText: {
-    color: "#FFF",
-    textAlign: "center",
-    fontSize: 16,
-    fontWeight: 600,
   },
 });

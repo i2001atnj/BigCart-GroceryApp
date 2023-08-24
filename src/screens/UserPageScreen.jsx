@@ -9,7 +9,6 @@ import {
 import React from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import UserOption from "../components/UserOption";
-import { useRoute } from "@react-navigation/native";
 import {
   profilePhoto,
   changeProfilePhotoVector,
@@ -21,8 +20,10 @@ import {
   notificationsVector,
   signOutVector,
 } from "../assets/assets";
+import { useNavigation } from "@react-navigation/native";
 
 export default function UserPage() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.UserPage}>
       <View
@@ -52,43 +53,39 @@ export default function UserPage() {
         <UserOption
           image={myOrdersVector}
           title="My orders"
-          screen="My orders"
+          optionFunction={() => navigation.navigate("My orders")}
         />
         <UserOption
           image={myFavoritesVector}
           title="My favorites"
-          screen="My favorites"
+          optionFunction={() => navigation.navigate("My favorites")}
         />
         <UserOption
           image={addressVector}
           title="My address"
-          screen="My address"
+          optionFunction={() => navigation.navigate("My address")}
         />
         <UserOption
           image={creditCardsVector}
           title="Credit cards"
-          screen="Credit cards"
+          optionFunction={() => navigation.navigate("Credit cards")}
         />
         <UserOption
           image={transactionsVector}
           title="Transactions"
-          screen="Transactions"
+          optionFunction={() => navigation.navigate("Transactions")}
         />
         <UserOption
           image={notificationsVector}
           title="Notifications"
-          screen="Notifications"
+          optionFunction={() => navigation.navigate("Notifications")}
         />
-
-        <TouchableOpacity
-          onPress={() => FIREBASE_AUTH.signOut()}
-          style={styles.UserSignOut}
-        >
-          <Image source={signOutVector} />
-          <View style={styles.SettingNameSectionSignOut}>
-            <Text style={styles.SettingName}>Sign out</Text>
-          </View>
-        </TouchableOpacity>
+        <UserOption
+          title="Sign out"
+          image={signOutVector}
+          optionFunction={() => FIREBASE_AUTH.signOut()}
+          signOutButton
+        />
       </View>
     </SafeAreaView>
   );

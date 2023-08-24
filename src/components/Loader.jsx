@@ -31,6 +31,5 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
     justifyContent: "center",
     paddingHorizontal: 17,
-    marginTop: 10,
   },
 });

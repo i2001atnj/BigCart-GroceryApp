@@ -31,6 +31,14 @@ export default function Categories() {
         {CATEGORIES.map((item) => (
           <View key={item.id} style={styles.Category}>
             <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Category", {
+                  id: item.id,
+                  name: item.name,
+                  image: item.image,
+                  color: item.color,
+                })
+              }
               style={{
                 backgroundColor: `${item.color}`,
                 width: 52,
@@ -73,7 +81,7 @@ const styles = StyleSheet.create({
   },
   CategoryTitle: {
     fontWeight: 500,
-    fontSize: 12,
+    fontSize: 13,
     color: "#868889",
   },
 });

@@ -1,17 +1,15 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
+import { filters } from "../assets/assets";
 import { useNavigation } from "@react-navigation/native";
 
-const BackArrowWhite = () => {
+const Filters = () => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity
-      onPress={() => navigation.goBack()}
-      style={{ position: "relative", top: 30 }}
-    >
-      <Image source={require("../assets/backVector.png")} />
+    <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+      <Image source={filters} />
     </TouchableOpacity>
   );
 };
 
-export default BackArrowWhite;
+export default Filters;

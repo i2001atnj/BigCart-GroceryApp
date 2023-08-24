@@ -17,11 +17,11 @@ import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import {
   Loader,
-  AccessButton,
+  ButtonComponent,
   AccessInput,
   OptionalButton,
 } from "../components/components";
-import { BackArrowWhite } from "../components/components";
+import { BackArrow } from "../components/components";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");
@@ -45,7 +45,7 @@ export default function SignUp() {
     <SafeAreaView>
       <ImageBackground source={createbg} style={styles.BackgroundImage}>
         <View style={styles.Title}>
-          <BackArrowWhite />
+          <BackArrow style={{ position: "relative", top: 30 }} color="#fff" />
           <Text style={styles.TitleText}>Welcome</Text>
         </View>
       </ImageBackground>
@@ -77,7 +77,7 @@ export default function SignUp() {
         {loading ? (
           <Loader size="small" style={{ paddingVertical: 20 }} color="#fff" />
         ) : (
-          <AccessButton accessFunction={signUp} text="Sign up" />
+          <ButtonComponent buttonFunction={signUp} text="Sign up" />
         )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
