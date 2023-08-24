@@ -13,21 +13,19 @@ import RedirectButton from "../components/RedirectButton";
 import { welcomebg, googleLogo, signUpVector } from "../assets/assets";
 import OptionalButton from "../components/OptionalButton";
 
-export default function WelcomeScreen({ navigation }) {
+export default function WelcomeScreen() {
   return (
     <SafeAreaView style={styles.WelcomePage}>
       <StatusBar style="light" />
-      <>
-        <ImageBackground
-          source={welcomebg}
-          resizeMode="cover"
-          style={styles.BackgroundImage}
-        >
-          <View style={styles.Title}>
-            <Text style={styles.TitleText}>Welcome</Text>
-          </View>
-        </ImageBackground>
-      </>
+      <ImageBackground
+        source={welcomebg}
+        resizeMode="cover"
+        style={styles.BackgroundImage}
+      >
+        <View style={styles.Title}>
+          <Text style={styles.TitleText}>Welcome</Text>
+        </View>
+      </ImageBackground>
       <View style={styles.Section}>
         <View style={{ width: 320, gap: 10, marginTop: 15 }}>
           <Text style={{ fontWeight: 600, fontSize: 24, textAlign: "center" }}>
