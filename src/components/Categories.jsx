@@ -9,10 +9,12 @@ import {
 import React from "react";
 import { CATEGORIES } from "../data/categories";
 import SectionRedirect from "./SectionRedirect";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Categories() {
+  const navigation = useNavigation();
   return (
-    <>
+    <View style={styles.Container}>
       <SectionRedirect title="Categories" screen="Categories" />
       <ScrollView
         horizontal
@@ -45,11 +47,15 @@ export default function Categories() {
           </View>
         ))}
       </ScrollView>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  Container: {
+    paddingHorizontal: 17,
+    gap: 17,
+  },
   CategoriesMenu: {
     display: "flex",
     flexDirection: "row",

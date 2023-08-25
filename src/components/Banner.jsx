@@ -23,7 +23,7 @@ export default function Banner() {
   };
 
   return (
-    <>
+    <View style={styles.Container}>
       <ScrollView
         horizontal
         pagingEnabled
@@ -47,11 +47,19 @@ export default function Banner() {
           <Dot key={item.id} active={index === activeIndicator} />
         ))}
       </View>
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  Container: {
+    alignItems: "center",
+    width: "100%",
+    height: 300,
+    zIndex: 1,
+    paddingHorizontal: 17,
+    paddingTop: 10,
+  },
   TextContainer: {
     width: 137,
     textAlign: "center",
@@ -59,7 +67,7 @@ const styles = StyleSheet.create({
   Text: {
     position: "relative",
     zIndex: 2,
-    bottom: 100,
+    bottom: 85,
     right: 90,
     fontWeight: 600,
     fontSize: 18,
@@ -70,7 +78,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     margin: 14,
     position: "absolute",
-    top: 200,
+    top: 210,
     left: 40,
   },
   DotActive: {

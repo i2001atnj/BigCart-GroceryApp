@@ -4,19 +4,21 @@ import { addToCartIcon, heartVector1 } from "../assets/assets";
 import { useNavigation } from "@react-navigation/native";
 
 export default ProductItem = ({
-  color,
+  id,
+  name,
   image,
   price,
   quantity,
-  name,
+  color,
+  state,
+  discountValue,
   type,
-  id,
 }) => {
   const navigation = useNavigation();
   return (
     <View style={styles.ProductContainer}>
       <View style={styles.ProductHeader}>
-        {type === "new" ? (
+        {state === "new" ? (
           <View
             style={{
               backgroundColor: "#FDEFD5",
@@ -26,7 +28,7 @@ export default ProductItem = ({
               alignItems: "center",
             }}
           >
-            <Text style={{ color: "#E8AD41" }}>NEW</Text>
+            <Text style={{ color: "#E8AD41", fontSize: 11 }}>NEW</Text>
           </View>
         ) : (
           <Text></Text>
@@ -51,6 +53,9 @@ export default ProductItem = ({
             price: price,
             quantity: quantity,
             color: color,
+            state: state,
+            discountValue: discountValue,
+            type: type,
           })
         }
         style={styles.ProductMain}

@@ -6,7 +6,7 @@ import SectionRedirect from "./SectionRedirect";
 
 export default function FeaturedProducts() {
   return (
-    <View style={{ gap: 10 }}>
+    <View style={styles.Container}>
       <SectionRedirect title="Featured products" />
       <View style={styles.ListContainer}>
         {DATA.map((product) => (
@@ -17,8 +17,9 @@ export default function FeaturedProducts() {
             quantity={product.quantity}
             name={product.name}
             key={product.id}
+            date={product.date}
+            state={product.state}
             type={product.type}
-            discount={product.discount}
           />
         ))}
       </View>
@@ -27,6 +28,10 @@ export default function FeaturedProducts() {
 }
 
 const styles = StyleSheet.create({
+  Container: {
+    marginVertical: 20,
+    paddingHorizontal: 17,
+  },
   ListContainer: {
     display: "flex",
     flexDirection: "row",
@@ -34,5 +39,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 20,
+    marginTop: 15,
   },
 });

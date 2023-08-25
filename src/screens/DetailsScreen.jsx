@@ -15,18 +15,28 @@ import ButtonComponent from "../components/ButtonComponent";
 const DetailsScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
+  const getProductState = () => {
+    if (route.params.state === "new") {
+      return (
+        <View style={styles.Banner}>
+          <Text
+            style={{
+              color: "#E8AD41",
+            }}
+          >
+            NEW
+          </Text>
+        </View>
+      );
+    } else if (route.params.state === "discount") {
+      return <Text style={{ color: "black" }}>DISCOUNT</Text>;
+    }
+    return <></>;
+  };
   return (
     <View style={{ backgroundColor: "#fff", height: "100%" }}>
       <View
-        style={{
-          backgroundColor: route.params.color,
-          height: 650,
-          width: 650,
-          position: "absolute",
-          top: -250,
-          left: -110,
-          borderRadius: "1000%",
-        }}
+        style={[styles.Background, { backgroundColor: route.params.color }]}
       ></View>
       <SafeAreaView style={{ flex: 1 }}>
         <TouchableOpacity
@@ -35,83 +45,41 @@ const DetailsScreen = () => {
         >
           <Image source={blackArrow} />
         </TouchableOpacity>
-        <View
-          style={{
-            justifyContent: "center",
-            alignItems: "center",
-            height: "50%",
-            marginTop: 30,
-          }}
-        >
-          <Image
-            style={{
-              height: 300,
-              width: 300,
-              resizeMode: "contain",
-            }}
-            source={route.params.image}
-          />
+        <View style={styles.ImageContainer}>
+          <Image style={styles.ProductImage} source={route.params.image} />
         </View>
-        <View
-          style={{
-            backgroundColor: "#F0F0F0",
-            height: "100%",
-            borderTopLeftRadius: 10,
-            borderTopRightRadius: 10,
-            padding: 30,
-            gap: 10,
-          }}
-        >
-          <Text style={{ fontSize: 18, fontWeight: 600, color: "#28B446" }}>
-            {route.params.price}
-          </Text>
-          <Text style={{ fontSize: 28, fontWeight: 600, color: "#000" }}>
-            {route.params.name}
-          </Text>
-          <Text style={{ fontSize: 16, fontWeight: 500, color: "#868889" }}>
-            {route.params.quantity}
-          </Text>
-          <Text style={{ fontSize: 16, fontWeight: 300, color: "#868889" }}>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates
-            totam id facilis laudantium magnam iste quasi
-          </Text>
+        <View style={styles.Section}>
+          <View style={styles.TextSection}>
+            <Text style={[styles.TextBold, { fontSize: 18, color: "#28B446" }]}>
+              {route.params.price}
+            </Text>
+            {getProductState()}
+            <Text style={{ fontSize: 28, fontWeight: 600 }}>
+              {route.params.name}
+            </Text>
+            <Text style={[styles.InfoTextGeneral, { fontWeight: 500 }]}>
+              {route.params.quantity}
+            </Text>
+            <Text style={[styles.InfoTextGeneral, { marginBottom: 10 }]}>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates totam id facilis laudantium magnam iste quasi
+            </Text>
+          </View>
           <View style={styles.AddInput}>
-            <View>
-              <Text style={{ fontSize: 16, color: "#868889" }}>Quantity</Text>
-            </View>
+            <Text style={styles.InfoTextGeneral}>Quantity</Text>
             <View
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                gap: 25,
-              }}
+              style={{ flexDirection: "row", gap: 25, paddingHorizontal: 15 }}
             >
-              <TouchableOpacity
-                style={{
-                  borderRightWidth: 0.2,
-                  paddingHorizontal: 15,
-                  borderColor: "#868889",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text style={{ fontSize: 30, color: "#6CC51D" }}>-</Text>
+              <TouchableOpacity>
+                <Text style={styles.AddButtonText}>-</Text>
               </TouchableOpacity>
               <TextInput
                 placeholder="0"
                 placeholderTextColor={"#00000062"}
                 style={{ fontSize: 18, color: "#6CC51D" }}
               />
-              <TouchableOpacity
-                style={{
-                  borderLeftWidth: 0.2,
-                  paddingHorizontal: 15,
-                  borderColor: "#868889",
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Text style={{ fontSize: 30, color: "#6CC51D" }}>+</Text>
+              <TouchableOpacity>
+                <Text style={styles.AddButtonText}>+</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -125,15 +93,72 @@ const DetailsScreen = () => {
 export default DetailsScreen;
 
 const styles = StyleSheet.create({
+  Background: {
+    height: 650,
+    width: 650,
+    position: "absolute",
+    top: -250,
+    left: -110,
+    borderRadius: "1000%",
+  },
   AddInput: {
     backgroundColor: "#FFFFFF",
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     paddingVertical: 10,
-    paddingLeft: 25,
+    paddingHorizontal: 20,
+    marginHorizontal: 17,
     alignItems: "center",
     borderRadius: 5,
-    marginVertical: 10,
+  },
+  AddButtonText: {
+    fontSize: 30,
+    color: "#6CC51D",
+  },
+  ImageContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: "50%",
+  },
+  ProductImage: {
+    height: 300,
+    width: 300,
+    resizeMode: "contain",
+  },
+  Section: {
+    backgroundColor: "#F0F0F0",
+    height: "100%",
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    paddingTop: 30,
+    gap: 10,
+  },
+  Banner: {
+    backgroundColor: "#FDEFD5",
+    position: "absolute",
+    left: "90%",
+    height: 70,
+    width: 50,
+    top: -30,
+    justifyContent: "center",
+    alignItems: "center",
+    borderColor: "#e8ae4161",
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderBottomWidth: 1,
+    borderBottomLeftRadius: 10,
+    borderBottomRightRadius: 10,
+  },
+  TextSection: {
+    paddingHorizontal: 20,
+    gap: 10,
+  },
+  TextBold: {
+    fontWeight: 600,
+  },
+  InfoTextGeneral: {
+    color: "#868889",
+    fontSize: 16,
   },
 });

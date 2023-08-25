@@ -2,7 +2,7 @@ export { default as aboutMeVector } from "./aboutMeVector.png";
 export { default as addressVector } from "./addressVector.png";
 export { default as addToCartIcon } from "./addToCartIcon.png";
 export { default as applebg } from "./applebg.png";
-export { default as avocado } from "./avocado.png";
+export { default as avocado } from "./avocado.svg";
 export { default as babycareIcon } from "./babycareIcon.png";
 export { default as backVector } from "./backVector.png";
 export { default as beveragesIcon } from "./beveragesIcon.png";
