@@ -1,19 +1,13 @@
 import React from "react";
-import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, StyleSheet } from "react-native";
 import ProductItem from "./ProductItem";
 import { DATA } from "../mocks/data";
+import SectionRedirect from "./SectionRedirect";
 
 export default function FeaturedProducts() {
   return (
-    <View style={styles.FeaturedProducts}>
-      <TouchableOpacity style={styles.Header}>
-        <View>
-          <Text style={styles.Title}>Featured products</Text>
-        </View>
-        <TouchableOpacity>
-          <Image source={require("../assets/rightVector.png")} />
-        </TouchableOpacity>
-      </TouchableOpacity>
+    <View style={{ gap: 10 }}>
+      <SectionRedirect title="Featured products" />
       <View style={styles.ListContainer}>
         {DATA.map((product) => (
           <ProductItem
@@ -33,19 +27,6 @@ export default function FeaturedProducts() {
 }
 
 const styles = StyleSheet.create({
-  FeaturedProducts: {
-    gap: 10,
-  },
-  Header: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    borderRadius: 50,
-  },
-  Title: {
-    fontWeight: "600",
-    fontSize: 18,
-  },
   ListContainer: {
     display: "flex",
     flexDirection: "row",
@@ -53,9 +34,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     gap: 20,
-  },
-  ProductsList: {
-    display: "flex",
-    flexDirection: "column",
   },
 });

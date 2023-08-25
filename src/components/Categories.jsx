@@ -7,22 +7,13 @@ import {
   ScrollView,
 } from "react-native";
 import React from "react";
-import { useNavigation } from "@react-navigation/native";
 import { CATEGORIES } from "../data/categories";
+import SectionRedirect from "./SectionRedirect";
 
 export default function Categories() {
-  const navigation = useNavigation();
   return (
     <>
-      <TouchableOpacity
-        style={styles.Title}
-        onPress={() => navigation.navigate("Categories")}
-      >
-        <Text style={styles.CategoriesTitle}>Categories</Text>
-        <View>
-          <Image source={require("../assets/rightVector.png")} />
-        </View>
-      </TouchableOpacity>
+      <SectionRedirect title="Categories" screen="Categories" />
       <ScrollView
         horizontal
         style={styles.CategoriesMenu}
@@ -59,15 +50,6 @@ export default function Categories() {
 }
 
 const styles = StyleSheet.create({
-  Title: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  CategoriesTitle: {
-    fontWeight: "600",
-    fontSize: 18,
-  },
   CategoriesMenu: {
     display: "flex",
     flexDirection: "row",
