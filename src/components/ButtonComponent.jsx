@@ -1,11 +1,10 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import { useNavigation } from "@react-navigation/native";
 
-const ButtonComponent = ({ image, text, buttonFunction, left }) => {
+const ButtonComponent = ({ image, text, buttonFunction, left, style }) => {
   return (
-    <View style={styles.Container}>
+    <View style={[styles.Container, style]}>
       <LinearGradient
         colors={["#AEDC81", "#6CC51D"]}
         start={{ x: 0, y: 1 }}

@@ -15,10 +15,16 @@ import ButtonComponent from "../components/ButtonComponent";
 const DetailsScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
+
   const getProductState = () => {
     if (route.params.state === "new") {
       return (
-        <View style={styles.Banner}>
+        <View
+          style={[
+            styles.Banner,
+            { borderColor: "#e8ae4161", backgroundColor: "#FDEFD5" },
+          ]}
+        >
           <Text
             style={{
               color: "#E8AD41",
@@ -28,11 +34,27 @@ const DetailsScreen = () => {
           </Text>
         </View>
       );
-    } else if (route.params.state === "discount") {
-      return <Text style={{ color: "black" }}>DISCOUNT</Text>;
+    } else if (route.params.state) {
+      return (
+        <View
+          style={[
+            styles.Banner,
+            { backgroundColor: "#FEE4E4", borderColor: "#F56262" },
+          ]}
+        >
+          <Text
+            style={{
+              color: "#F56262",
+            }}
+          >
+            {route.params.state}
+          </Text>
+        </View>
+      );
     }
-    return <></>;
+    return <Text>{route.params.state}</Text>;
   };
+
   return (
     <View style={{ backgroundColor: "#fff", height: "100%" }}>
       <View
@@ -135,7 +157,7 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   Banner: {
-    backgroundColor: "#FDEFD5",
+    // backgroundColor: "#FDEFD5",
     position: "absolute",
     left: "90%",
     height: 70,
@@ -143,7 +165,7 @@ const styles = StyleSheet.create({
     top: -30,
     justifyContent: "center",
     alignItems: "center",
-    borderColor: "#e8ae4161",
+    // borderColor: "#e8ae4161",
     borderLeftWidth: 1,
     borderRightWidth: 1,
     borderBottomWidth: 1,

@@ -2,12 +2,14 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { Filters, SearchBar, BackArrow } from "./components";
 
-const Header = ({ arrow, title, filters, input }) => {
+const Header = ({ arrow, title, filters, input, style, titleStyle }) => {
   return (
-    <View style={styles.Header}>
+    <View style={[styles.Header, style]}>
       {arrow ? <BackArrow /> : <></>}
       {title ? (
-        <Text style={{ fontSize: 18, fontWeight: 500 }}>{title}</Text>
+        <Text style={[{ fontSize: 18, fontWeight: 500 }, titleStyle]}>
+          {title}
+        </Text>
       ) : (
         <></>
       )}

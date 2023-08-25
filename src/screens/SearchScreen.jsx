@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
-import { Header } from "../components/components";
+import { Header, SearchBar } from "../components/components";
 
 export default function SearchScreen() {
   return (
@@ -52,21 +52,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#FFF",
     padding: 16,
-  },
-  SearchBar: {
-    display: "flex",
-    flexDirection: "row",
-    width: "91%",
-    justifyContent: "space-around",
-    backgroundColor: "#F4F5F9",
-    height: 50,
-    borderRadius: 5,
-    alignItems: "center",
-  },
-  Input: {
-    width: 210,
-    fontWeight: "600",
-    fontSize: 16,
   },
   Section: {
     paddingHorizontal: 17,

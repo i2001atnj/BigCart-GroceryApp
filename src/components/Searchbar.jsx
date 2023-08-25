@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import { filters, search } from "../assets/assets";
+import { search } from "../assets/assets";
 import { Filters } from "./components";
 
-export default function SearchBar() {
+export default function SearchBar({ style }) {
   const navigation = useNavigation();
   return (
-    <View style={styles.SearchBar}>
+    <View style={[styles.SearchBar, style]}>
       <TouchableOpacity onPress={() => navigation.navigate("Search")}>
         <Image source={search} />
       </TouchableOpacity>

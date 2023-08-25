@@ -52,6 +52,11 @@ export default function UserPage() {
       <View style={styles.SettingsSection}>
         <UserOption
           image={myOrdersVector}
+          title="About me"
+          optionFunction={() => navigation.navigate("About")}
+        />
+        <UserOption
+          image={myOrdersVector}
           title="My orders"
           optionFunction={() => navigation.navigate("My orders")}
         />

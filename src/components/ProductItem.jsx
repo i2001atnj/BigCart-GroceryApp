@@ -11,28 +11,45 @@ export default ProductItem = ({
   quantity,
   color,
   state,
-  discountValue,
   type,
 }) => {
   const navigation = useNavigation();
+  const getProductState = () => {
+    if (state === "new") {
+      return (
+        <View
+          style={{
+            backgroundColor: "#FDEFD5",
+            height: 18,
+            width: 38,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ color: "#E8AD41", fontSize: 12 }}>NEW</Text>
+        </View>
+      );
+    } else if (state) {
+      return (
+        <View
+          style={{
+            backgroundColor: "#FEE4E4",
+            height: 18,
+            width: 38,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ color: "#F56262", fontSize: 12 }}>{state}</Text>
+        </View>
+      );
+    }
+    return <View></View>;
+  };
   return (
     <View style={styles.ProductContainer}>
       <View style={styles.ProductHeader}>
-        {state === "new" ? (
-          <View
-            style={{
-              backgroundColor: "#FDEFD5",
-              height: 18,
-              width: 38,
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Text style={{ color: "#E8AD41", fontSize: 11 }}>NEW</Text>
-          </View>
-        ) : (
-          <Text></Text>
-        )}
+        {getProductState()}
         <TouchableOpacity
           style={{
             height: 32,
@@ -54,7 +71,6 @@ export default ProductItem = ({
             quantity: quantity,
             color: color,
             state: state,
-            discountValue: discountValue,
             type: type,
           })
         }

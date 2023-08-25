@@ -5,7 +5,7 @@ import {
   HomeScreen,
   UserPageScreen,
   FavoritesScreen,
-  ShoppingCartScreen,
+  CartScreen,
 } from "../screens/screens.js";
 import {
   homeVector,
@@ -35,7 +35,7 @@ export default function HomeStack() {
           if (route.name === "Favorites") {
             tabIcon = focused ? favorites2 : favorites;
           }
-          if (route.name === "Shopping Cart") {
+          if (route.name === "Cart") {
             tabIcon = focused ? shoppingCartVector : shoppingCartVector;
           }
           return <Image source={tabIcon} />;
@@ -60,8 +60,8 @@ export default function HomeStack() {
         options={{ tabBarShowLabel: false }}
       />
       <Tab.Screen
-        name="Shopping Cart"
-        component={ShoppingCartScreen}
+        name="Cart"
+        component={CartScreen}
         options={{ tabBarShowLabel: false }}
       />
     </Tab.Navigator>

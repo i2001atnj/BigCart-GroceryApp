@@ -12,9 +12,7 @@ export default function HomeScreen() {
   return (
     <LinearGradient colors={["#FFFFFF", "#F4F5F9"]}>
       <SafeAreaView style={styles.Homepage}>
-        <View>
-          <Header input />
-        </View>
+        <Header style={{ justifyContent: "center", width: "110%" }} input />
         <ScrollView>
           <Banner />
           <Categories />
@@ -28,7 +26,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   Homepage: {
     backgroundColor: "transparent",
-    alignItems: "center",
     justifyContent: "center",
+    alignItems: "center",
   },
 });
