@@ -6,7 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useContext } from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import UserOption from "../components/UserOption";
 import {
@@ -21,9 +21,11 @@ import {
   signOutVector,
 } from "../assets/assets";
 import { useNavigation } from "@react-navigation/native";
+import { userContext } from "../../App.js";
 
 export default function UserPage() {
   const navigation = useNavigation();
+  const user = useContext(userContext);
   return (
     <SafeAreaView style={styles.UserPage}>
       <View
@@ -45,8 +47,7 @@ export default function UserPage() {
           <Image source={changeProfilePhotoVector} />
         </TouchableOpacity>
         <View style={styles.UserInfo}>
-          <Text style={styles.UserName}>Admin</Text>
-          <Text style={styles.UserMail}>admin@bigcart.com</Text>
+          <Text style={styles.UserName}>{user.email}</Text>
         </View>
       </View>
       <View style={styles.SettingsSection}>

@@ -1,17 +1,11 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  TextInput,
-} from "react-native";
-import React from "react";
+import React, { useContext } from "react";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import { AccessInput, ButtonComponent, Header } from "../components/components";
 import { lockVector, mailIcon, nameIcon, phoneIcon } from "../assets/assets";
+import { userContext } from "../../App";
 
 export default function AboutMeScreen() {
+  const user = useContext(userContext);
   return (
     <SafeAreaView style={styles.AboutMe}>
       <Header
@@ -32,8 +26,8 @@ export default function AboutMeScreen() {
           >
             Personal Details
           </Text>
-          <AccessInput image={nameIcon} placeholder="Admin" />
-          <AccessInput image={mailIcon} placeholder="admin@bigcart.com" />
+          <AccessInput image={nameIcon} placeholder={user.name} />
+          <AccessInput image={mailIcon} placeholder={user.email} />
           <AccessInput image={phoneIcon} placeholder="Phone Number" />
         </View>
         <View style={{ gap: 5 }}>
