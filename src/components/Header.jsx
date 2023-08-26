@@ -30,6 +30,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 17,
     backgroundColor: "#FFF",
-    paddingVertical: 15,
+    height: 55,
   },
 });

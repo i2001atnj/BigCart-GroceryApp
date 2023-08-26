@@ -26,7 +26,7 @@ export default function AboutMeScreen() {
           >
             Personal Details
           </Text>
-          <AccessInput image={nameIcon} placeholder={user.name} />
+          <AccessInput image={nameIcon} placeholder="Admin" />
           <AccessInput image={mailIcon} placeholder={user.email} />
           <AccessInput image={phoneIcon} placeholder="Phone Number" />
         </View>

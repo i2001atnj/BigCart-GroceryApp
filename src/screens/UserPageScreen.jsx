@@ -37,7 +37,7 @@ export default function UserPage() {
         }}
       ></View>
       <View style={styles.ProfileSection}>
-        <View>
+        {/* <View>
           <Image
             style={{ borderRadius: 100, position: "relative", left: 15 }}
             source={profilePhoto}
@@ -45,9 +45,10 @@ export default function UserPage() {
         </View>
         <TouchableOpacity style={styles.ProfilePhotoButton}>
           <Image source={changeProfilePhotoVector} />
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <View style={styles.UserInfo}>
-          <Text style={styles.UserName}>{user.email}</Text>
+          <Text style={styles.UserName}>Admin</Text>
+          <Text style={styles.UserMail}>{user.email}</Text>
         </View>
       </View>
       <View style={styles.SettingsSection}>
@@ -64,7 +65,7 @@ export default function UserPage() {
         <UserOption
           image={myFavoritesVector}
           title="My favorites"
-          optionFunction={() => navigation.navigate("My favorites")}
+          optionFunction={() => navigation.navigate("Favorites")}
         />
         <UserOption
           image={addressVector}
@@ -123,6 +124,7 @@ const styles = StyleSheet.create({
   UserInfo: {
     alignItems: "center",
     marginTop: 15,
+    justifyContent: "center",
   },
   UserName: {
     fontSize: 16,
