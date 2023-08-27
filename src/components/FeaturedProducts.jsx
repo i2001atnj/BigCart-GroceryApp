@@ -9,17 +9,17 @@ export default function FeaturedProducts() {
     <View style={styles.Container}>
       <SectionRedirect title="Featured products" />
       <View style={styles.ListContainer}>
-        {DATA.map((product) => (
+        {DATA.map((item) => (
           <ProductItem
-            color={product.color}
-            image={product.image}
-            price={product.price}
-            quantity={product.quantity}
-            name={product.name}
-            key={product.id}
-            date={product.date}
-            state={product.state}
-            type={product.type}
+            color={item.color}
+            image={item.image}
+            price={item.price}
+            quantity={item.quantity}
+            name={item.name}
+            key={item.id}
+            date={item.date}
+            state={item.state}
+            type={item.type}
           />
         ))}
       </View>
