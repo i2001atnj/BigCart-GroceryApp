@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Filters, SearchBar, BackArrow } from "./components";
+import { Filters, SearchBar, BackArrow, ResetFilters } from "./components";
 
-const Header = ({ arrow, title, filters, input, style, titleStyle }) => {
+const Header = ({ arrow, title, filters, input, style, titleStyle, reset }) => {
   return (
     <View style={[styles.Header, style]}>
       {arrow ? <BackArrow /> : <></>}
@@ -15,6 +15,7 @@ const Header = ({ arrow, title, filters, input, style, titleStyle }) => {
       )}
       {filters ? <Filters /> : <></>}
       {input ? <SearchBar /> : <></>}
+      {reset ? <ResetFilters /> : <></>}
     </View>
   );
 };

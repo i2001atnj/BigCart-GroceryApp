@@ -1,5 +1,4 @@
 import { TouchableOpacity, Image } from "react-native";
-import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { backVector, blackArrow } from "../assets/assets";
 

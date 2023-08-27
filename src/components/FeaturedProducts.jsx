@@ -1,8 +1,7 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import ProductItem from "./ProductItem";
+import { ProductItem, SectionRedirect } from "./components";
 import { DATA } from "../mocks/data";
-import SectionRedirect from "./SectionRedirect";
 
 export default function FeaturedProducts() {
   return (

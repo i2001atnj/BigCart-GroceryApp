@@ -1,17 +1,8 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import React, { useContext } from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import UserOption from "../components/UserOption";
 import {
-  profilePhoto,
-  changeProfilePhotoVector,
   myOrdersVector,
   myFavoritesVector,
   addressVector,
@@ -37,15 +28,6 @@ export default function UserPage() {
         }}
       ></View>
       <View style={styles.ProfileSection}>
-        {/* <View>
-          <Image
-            style={{ borderRadius: 100, position: "relative", left: 15 }}
-            source={profilePhoto}
-          />
-        </View>
-        <TouchableOpacity style={styles.ProfilePhotoButton}>
-          <Image source={changeProfilePhotoVector} />
-        </TouchableOpacity> */}
         <View style={styles.UserInfo}>
           <Text style={styles.UserName}>Admin</Text>
           <Text style={styles.UserMail}>{user.email}</Text>

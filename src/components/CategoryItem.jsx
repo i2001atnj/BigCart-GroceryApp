@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-import React from "react";
 
 const CategoryItem = ({ key, image, name, color, btnFunction }) => {
   return (

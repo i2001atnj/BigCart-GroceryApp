@@ -8,7 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { CATEGORIES } from "../data/categories";
-import SectionRedirect from "./SectionRedirect";
+import { SectionRedirect } from "./components";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Categories() {

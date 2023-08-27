@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { StyleSheet, View, Image, TextInput } from "react-native";
 import React from "react";
 
 const AccessInput = ({

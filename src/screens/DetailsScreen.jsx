@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { blackArrow, bag } from "../assets/assets";
-import ButtonComponent from "../components/ButtonComponent";
+import { ButtonComponent, ProductBanner } from "../components/components";
 
 const DetailsScreen = () => {
   const route = useRoute();
@@ -19,40 +19,25 @@ const DetailsScreen = () => {
   const getProductState = () => {
     if (route.params.state === "new") {
       return (
-        <View
-          style={[
-            styles.Banner,
-            { borderColor: "#e8ae4161", backgroundColor: "#FDEFD5" },
-          ]}
-        >
-          <Text
-            style={{
-              color: "#E8AD41",
-            }}
-          >
-            NEW
-          </Text>
-        </View>
+        <ProductBanner
+          backgroundColor="#FDEFD5"
+          textColor="#E8AD41"
+          borderColor="#e8ae4161"
+          text={route.params.state}
+        />
       );
     } else if (route.params.state) {
       return (
-        <View
-          style={[
-            styles.Banner,
-            { backgroundColor: "#FEE4E4", borderColor: "#F56262" },
-          ]}
-        >
-          <Text
-            style={{
-              color: "#F56262",
-            }}
-          >
-            {route.params.state}
-          </Text>
-        </View>
+        <ProductBanner
+          backgroundColor="#FEE4E4"
+          textColor="#F56262"
+          borderColor="#F56262"
+          text={route.params.state}
+        />
       );
+    } else {
+      return <View></View>;
     }
-    return <Text>{route.params.state}</Text>;
   };
 
   return (
@@ -144,8 +129,8 @@ const styles = StyleSheet.create({
     height: "50%",
   },
   ProductImage: {
-    height: 300,
-    width: 300,
+    height: 350,
+    width: 350,
     resizeMode: "contain",
   },
   Section: {
@@ -155,22 +140,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     paddingTop: 30,
     gap: 10,
-  },
-  Banner: {
-    // backgroundColor: "#FDEFD5",
-    position: "absolute",
-    left: "90%",
-    height: 70,
-    width: 50,
-    top: -30,
-    justifyContent: "center",
-    alignItems: "center",
-    // borderColor: "#e8ae4161",
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    borderBottomWidth: 1,
-    borderBottomLeftRadius: 10,
-    borderBottomRightRadius: 10,
   },
   TextSection: {
     paddingHorizontal: 20,
