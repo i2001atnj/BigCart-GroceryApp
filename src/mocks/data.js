@@ -35,7 +35,7 @@ export const DATA = [
     image: require("../assets/grapes.png"),
     price: "$7.05",
     quantity: "5.0 lbs",
-    color: "#FEE1ED",
+    color: "#cca4ff76",
     state: "-16%",
     type: "fruit",
   },

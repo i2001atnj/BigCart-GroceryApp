@@ -86,11 +86,14 @@ export default ProductItem = ({
             alignItems: "center",
           }}
         >
-          <Image source={image} />
+          <Image
+            style={{ width: 100, height: 100, resizeMode: "contain" }}
+            source={image}
+          />
         </View>
         <View style={styles.ProductInfo}>
           <Text style={{ color: "#6CC51D" }}>{price}</Text>
-          <Text style={{ color: "#000", fontWeight: "600", fontSize: 16 }}>
+          <Text style={{ color: "#000000", fontWeight: "600", fontSize: 16 }}>
             {name}
           </Text>
           <Text style={{ fontSize: 13, fontWeight: "500", color: "#868889" }}>
