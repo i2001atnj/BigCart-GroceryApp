@@ -10,13 +10,11 @@ import {
 import React, { useState } from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import {
-  ButtonComponent,
-  AccessInput,
-  BackArrow,
-  OptionalButton,
-  Loader,
-} from "../components/components";
+import ButtonComponent from "../components/ButtonComponent.jsx";
+import AccessInput from "../components/AccessInput.jsx";
+import BackArrow from "../components/BackArrow.jsx";
+import OptionalButton from "../components/OptionalButton.jsx";
+import Loader from "../components/Loader.jsx";
 import { loginbg, mailVector, lockVector } from "../assets/assets.js";
 
 export default function Login() {

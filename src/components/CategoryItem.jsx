@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 
-const CategoryItem = ({ key, image, name, color, btnFunction }) => {
+const CategoryItem = ({ image, name, color, btnFunction }) => {
   return (
-    <TouchableOpacity onPress={btnFunction} style={styles.Item} key={key}>
+    <TouchableOpacity onPress={btnFunction} style={styles.Item}>
       <View
         style={{
           height: 66,
@@ -41,6 +41,6 @@ const styles = StyleSheet.create({
     color: "#868889",
     fontSize: 14,
     textAlign: "center",
-    marginTop: 9,
+    marginTop: 10,
   },
 });

@@ -2,10 +2,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import {
   WelcomeScreen,
-  SignUpScreen,
-  PasswordRecovery,
   LoginScreen,
-} from "../screens/screens.js";
+  PasswordRecovery,
+  SignUpScreen,
+} from "../screens/screens";
 
 const Stack = createStackNavigator();
 

@@ -6,7 +6,7 @@ import {
   View,
 } from "react-native";
 import React from "react";
-import { Header, SearchBar } from "../components/components";
+import Header from "../components/Header";
 
 export default function SearchScreen() {
   return (

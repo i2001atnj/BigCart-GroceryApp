@@ -1,7 +1,6 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import React, { useContext } from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
-import UserOption from "../components/UserOption";
 import {
   myOrdersVector,
   myFavoritesVector,
@@ -11,6 +10,7 @@ import {
   notificationsVector,
   signOutVector,
 } from "../assets/assets";
+import UserOption from "../components/UserOption";
 import { useNavigation } from "@react-navigation/native";
 import { userContext } from "../../App.js";
 

@@ -1,12 +1,13 @@
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import { ProductItem, SectionRedirect } from "./components";
+import ProductItem from "./ProductItem";
+import SectionRedirect from "./SectionRedirect";
 import { DATA } from "../mocks/data";
 
 export default function FeaturedProducts() {
   return (
     <View style={styles.Container}>
-      <SectionRedirect title="Featured products" />
+      <SectionRedirect title="Featured products" screen="" />
       <View style={styles.ListContainer}>
         {DATA.map((item) => (
           <ProductItem

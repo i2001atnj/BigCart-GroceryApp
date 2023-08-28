@@ -29,6 +29,7 @@ export default function Banner() {
         pagingEnabled
         showsHorizontalScrollIndicator={false}
         onScroll={onScroll}
+        scrollEventThrottle={16}
       >
         {BannerList.map((item) => (
           <Image

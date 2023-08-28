@@ -9,9 +9,9 @@ import {
   Image,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { ButtonComponent } from "../components/components";
 import { welcomebg, googleLogo, signUpVector } from "../assets/assets";
 import OptionalButton from "../components/OptionalButton";
+import ButtonComponent from "../components/ButtonComponent";
 import { useNavigation } from "@react-navigation/native";
 
 export default function WelcomeScreen() {

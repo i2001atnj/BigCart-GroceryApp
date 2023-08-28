@@ -6,9 +6,8 @@ import {
   StyleSheet,
   ScrollView,
 } from "react-native";
-import React from "react";
 import { CATEGORIES } from "../data/categories";
-import { SectionRedirect } from "./components";
+import SectionRedirect from "./SectionRedirect";
 import { useNavigation } from "@react-navigation/native";
 
 export default function Categories() {

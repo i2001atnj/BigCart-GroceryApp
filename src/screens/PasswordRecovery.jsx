@@ -9,121 +9,49 @@ import {
 } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import Header from "../components/Header";
+import AccessInput from "../components/AccessInput";
+import { mailIcon } from "../assets/assets";
+import ButtonComponent from "../components/ButtonComponent";
 
-export default function PasswordRecovery({ navigation }) {
+export default function PasswordRecovery() {
   return (
-    <SafeAreaView>
-      <View style={styles.Header}>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <Image source={require("../assets/blackArrow.png")} />
-        </TouchableOpacity>
-        <Text style={styles.Title}>Password Recovery</Text>
-      </View>
+    <SafeAreaView style={{ backgroundColor: "#fff" }}>
+      <Header arrow title="Password Recovery" style={{ paddingRight: "30%" }} />
       <View style={styles.Section}>
-        <Text style={styles.ForgotPasswordTitle}>Forgot Password</Text>
-        <Text style={styles.ForgotPasswordInfo}>
+        <Text style={{ marginTop: 90, fontSize: 25, fontWeight: 600 }}>
+          Forgot Password
+        </Text>
+        <Text
+          style={{
+            fontSize: 15,
+            fontWeight: 500,
+            color: "#868889",
+            marginTop: 15,
+            marginBottom: 40,
+            textAlign: "center",
+            paddingHorizontal: 60,
+          }}
+        >
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy
         </Text>
-      </View>
-      <View style={styles.InputsSection}>
-        <View style={styles.InputContainer}>
-          <Image source={require("../assets/mailVector.png")} />
-          <TextInput
-            placeholder="Email address"
-            placeholderTextColor="#868889"
-            style={styles.Input}
-          />
-        </View>
-        <View style={styles.ButtonContainer}>
-          <LinearGradient
-            colors={["#AEDC81", "#6CC51D"]}
-            start={{ x: 0, y: 1 }}
-            end={{ x: 1, y: 0 }}
-          >
-            <TouchableOpacity style={styles.Button}>
-              <Text style={styles.ButtonText}>Send link</Text>
-            </TouchableOpacity>
-          </LinearGradient>
-        </View>
+        <AccessInput
+          image={mailIcon}
+          placeholder="Email address"
+          style={{ width: "92%" }}
+        />
+        <ButtonComponent text="Send link" style={{ marginTop: 13 }} />
       </View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  Header: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    marginHorizontal: 17,
-    width: "100%",
-    alignItems: "center",
-    marginTop: 7,
-  },
-  Title: {
-    fontSize: 20,
-    fontWeight: 500,
-    marginLeft: "20%",
-  },
   Section: {
-    marginTop: "30%",
-    alignItems: "center",
-    gap: 15,
-  },
-  ForgotPasswordTitle: {
-    fontSize: 25,
-    fontWeight: 600,
-  },
-  ForgotPasswordInfo: {
-    textAlign: "center",
-    color: "#868889",
-    width: 320,
-    fontSize: 15,
-    fontWeight: 500,
-  },
-  InputsSection: {
-    gap: 13,
-    marginTop: 44,
-    paddingHorizontal: 17,
-  },
-  InputContainer: {
-    height: 60,
-    backgroundColor: "#FFF",
-    paddingHorizontal: 28,
-    display: "flex",
-    flexDirection: "row",
-    borderRadius: 5,
-    alignItems: "center",
-    gap: 20,
-  },
-  Input: {
-    fontSize: 16,
-    width: "80%",
-  },
-  ButtonContainer: {
-    width: "100%",
-    height: 60,
-    borderRadius: 5,
-    shadowColor: "#AEDC81",
-    shadowOffset: { height: 10, width: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    backgroundColor: "transparent",
-    justifyContent: "center",
-  },
-  Button: {
     height: "100%",
     width: "100%",
-    justifyContent: "center",
     alignItems: "center",
-    display: "flex",
-    flexDirection: "row",
-  },
-  ButtonText: {
-    color: "#FFF",
-    textAlign: "center",
-    fontSize: 16,
-    fontWeight: 500,
+    backgroundColor: "#F4F5F9",
   },
 });

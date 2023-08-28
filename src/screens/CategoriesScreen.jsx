@@ -1,6 +1,7 @@
 import { View, SafeAreaView, StyleSheet } from "react-native";
 import { CATEGORIES } from "../data/categories";
-import { Header, CategoryItem } from "../components/components";
+import Header from "../components/Header";
+import CategoryItem from "../components/CategoryItem";
 import { useNavigation } from "@react-navigation/native";
 
 export default function CategoriesScreen() {
@@ -26,7 +27,7 @@ export default function CategoriesScreen() {
             color={item.color}
             btnFunction={() =>
               navigation.navigate("Category", {
-                key: item.id,
+                id: item.id,
                 image: item.image,
                 name: item.name,
                 color: item.color,

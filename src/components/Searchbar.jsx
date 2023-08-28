@@ -8,7 +8,7 @@ import {
   StyleSheet,
 } from "react-native";
 import { search } from "../assets/assets";
-import { Filters } from "./components";
+import Filters from "./Filters";
 
 export default function SearchBar({ style }) {
   const navigation = useNavigation();

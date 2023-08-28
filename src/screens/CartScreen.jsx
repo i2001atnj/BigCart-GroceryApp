@@ -1,6 +1,7 @@
 import { SafeAreaView, StyleSheet, View, Text, Image } from "react-native";
 import React from "react";
-import { Header, ButtonComponent } from "../components/components";
+import Header from "../components/Header";
+import ButtonComponent from "../components/ButtonComponent";
 import { shoppingCartPageVector } from "../assets/assets";
 import { useNavigation } from "@react-navigation/native";
 

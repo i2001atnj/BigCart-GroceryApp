@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import { AccessInput, ButtonComponent, Header } from "../components/components";
+import AccessInput from "../components/AccessInput";
+import ButtonComponent from "../components/ButtonComponent";
+import Header from "../components/Header";
 import { lockVector, mailIcon, nameIcon, phoneIcon } from "../assets/assets";
 import { userContext } from "../../App";
 

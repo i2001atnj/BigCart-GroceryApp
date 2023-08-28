@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { Filters, SearchBar, BackArrow, ResetFilters } from "./components";
+import Filters from "./Filters";
+import SearchBar from "./SearchBar";
+import BackArrow from "./BackArrow";
+import ResetFilters from "./ResetFilters";
 
 const Header = ({ arrow, title, filters, input, style, titleStyle, reset }) => {
   return (

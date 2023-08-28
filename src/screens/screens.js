@@ -12,3 +12,4 @@ export { default as UserPageScreen } from "./UserPageScreen";
 export { default as WelcomeScreen } from "./WelcomeScreen";
 export { default as DetailsScreen } from "./DetailsScreen";
 export { default as CategoryScreen } from "./CategoryScreen";
+export { default as ProductsScreen } from "./ProductsScreen";

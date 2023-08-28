@@ -1,19 +1,17 @@
 import React from "react";
-import { View, SafeAreaView, StyleSheet, ScrollView } from "react-native";
-import {
-  Banner,
-  Categories,
-  FeaturedProducts,
-  Header,
-} from "../components/components";
+import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import Banner from "../components/Banner";
+import Categories from "../components/Categories";
+import FeaturedProducts from "../components/FeaturedProducts";
+import Header from "../components/Header";
 
 export default function HomeScreen() {
   return (
     <LinearGradient colors={["#FFFFFF", "#F4F5F9"]}>
       <SafeAreaView style={styles.Homepage}>
         <Header style={{ justifyContent: "center", width: "110%" }} input />
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <Banner />
           <Categories />
           <FeaturedProducts />

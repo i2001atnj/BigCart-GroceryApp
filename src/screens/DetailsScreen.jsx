@@ -10,7 +10,8 @@ import {
 import React from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
 import { blackArrow, bag } from "../assets/assets";
-import { ButtonComponent, ProductBanner } from "../components/components";
+import ButtonComponent from "../components/ButtonComponent";
+import ProductBanner from "../components/ProductBanner";
 
 const DetailsScreen = () => {
   const route = useRoute();

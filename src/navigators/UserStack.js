@@ -7,7 +7,8 @@ import {
   AboutMeScreen,
   DetailsScreen,
   CategoryScreen,
-} from "../screens/screens.js";
+  ProductsScreen,
+} from "../screens/screens";
 import HomeStack from "./HomeStack.js";
 
 const Stack = createStackNavigator();
@@ -48,6 +49,11 @@ export default function UserStack() {
       <Stack.Screen
         name="Category"
         component={CategoryScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Products"
+        component={ProductsScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

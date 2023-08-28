@@ -15,13 +15,11 @@ import {
 import React, { useState } from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import {
-  Loader,
-  ButtonComponent,
-  AccessInput,
-  OptionalButton,
-} from "../components/components";
-import { BackArrow } from "../components/components";
+import Loader from "../components/Loader";
+import ButtonComponent from "../components/ButtonComponent";
+import AccessInput from "../components/AccessInput";
+import OptionalButton from "../components/OptionalButton";
+import BackArrow from "../components/BackArrow";
 
 export default function SignUp() {
   const [email, setEmail] = useState("");

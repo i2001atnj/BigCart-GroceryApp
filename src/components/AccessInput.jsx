@@ -7,9 +7,10 @@ const AccessInput = ({
   onChangeTextFunction,
   value,
   secureTextEntry,
+  style,
 }) => {
   return (
-    <View style={styles.InputContainer}>
+    <View style={[styles.InputContainer, style]}>
       <Image source={image} />
       <TextInput
         placeholder={placeholder}

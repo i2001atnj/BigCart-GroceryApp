@@ -1,14 +1,7 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Image,
-  TextInput,
-  StyleSheet,
-} from "react-native";
+import { View, SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
-import { FilterItem, Header } from "../components/components";
+import FilterItem from "../components/FilterItem";
+import Header from "../components/Header";
 
 export default function FiltersScreen() {
   return (
