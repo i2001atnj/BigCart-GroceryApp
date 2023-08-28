@@ -8,7 +8,7 @@ export default function CategoriesScreen() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.CategoriesScreen}>
-      <Header arrow title="Categories" filters />
+      <Header returnArrow title="Categories" filters />
       <View
         style={{
           backgroundColor: "#F4F5F9",

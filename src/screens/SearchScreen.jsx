@@ -11,7 +11,7 @@ import Header from "../components/Header";
 export default function SearchScreen() {
   return (
     <SafeAreaView style={styles.SearchScreen}>
-      <Header arrow input />
+      <Header returnArrow input />
       <View style={styles.Section}>
         <View style={styles.History}>
           <View style={styles.HistoryTitle}>

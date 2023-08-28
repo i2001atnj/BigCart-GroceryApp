@@ -6,7 +6,7 @@ import Header from "../components/Header";
 export default function FiltersScreen() {
   return (
     <SafeAreaView style={styles.FiltersScreen}>
-      <Header arrow title="Apply Filters" reset />
+      <Header returnArrow title="Apply Filters" reset />
       <View style={{ backgroundColor: "#F4F5F9", height: "100%" }}>
         <View style={styles.Section}>
           <FilterItem title="Price Range" priceInput placeholder="Min." />

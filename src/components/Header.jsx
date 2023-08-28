@@ -5,10 +5,18 @@ import SearchBar from "./SearchBar";
 import BackArrow from "./BackArrow";
 import ResetFilters from "./ResetFilters";
 
-const Header = ({ arrow, title, filters, input, style, titleStyle, reset }) => {
+const Header = ({
+  returnArrow,
+  title,
+  filters,
+  input,
+  style,
+  titleStyle,
+  reset,
+}) => {
   return (
     <View style={[styles.Header, style]}>
-      {arrow ? <BackArrow /> : <></>}
+      {returnArrow ? <BackArrow /> : <></>}
       {title ? (
         <Text style={[{ fontSize: 18, fontWeight: 500 }, titleStyle]}>
           {title}

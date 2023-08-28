@@ -7,7 +7,7 @@ const CategoryScreen = () => {
   const route = useRoute();
   return (
     <SafeAreaView style={styles.CategoryScreen}>
-      <Header arrow title={route.params.name} filters />
+      <Header returnArrow title={route.params.name} filters />
     </SafeAreaView>
   );
 };

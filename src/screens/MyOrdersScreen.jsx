@@ -9,7 +9,7 @@ const MyOrdersScreen = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.Screen}>
-      <Header arrow title="My Orders" style={{ paddingRight: "40%" }} />
+      <Header returnArrow title="My Orders" style={{ paddingRight: "40%" }} />
       <EmptyCartInfo text="You don't have orders!" />
       <ButtonComponent
         text="Start shopping"

@@ -8,7 +8,11 @@ import ButtonComponent from "../components/ButtonComponent";
 export default function PasswordRecovery() {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff" }}>
-      <Header arrow title="Password Recovery" style={{ paddingRight: "30%" }} />
+      <Header
+        returnArrow
+        title="Password Recovery"
+        style={{ paddingRight: "30%" }}
+      />
       <View style={styles.Section}>
         <Text style={{ marginTop: 90, fontSize: 25, fontWeight: 600 }}>
           Forgot Password

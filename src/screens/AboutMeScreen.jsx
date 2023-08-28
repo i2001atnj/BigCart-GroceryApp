@@ -11,7 +11,7 @@ export default function AboutMeScreen() {
   return (
     <SafeAreaView style={styles.AboutMe}>
       <Header
-        arrow
+        returnArrow
         title="About Me"
         style={{ justifyContent: "space-between" }}
         titleStyle={{ marginRight: "40%" }}

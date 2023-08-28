@@ -1,11 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import Header from "../components/Header";
 
 const MyAddressScreen = () => {
   return (
-    <View>
-      <Text>MyAddressScreen</Text>
-    </View>
+    <SafeAreaView style={{ backgroundColor: "#fff" }}>
+      <Header returnArrow />
+    </SafeAreaView>
   );
 };
 
