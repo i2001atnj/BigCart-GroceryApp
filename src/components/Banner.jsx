@@ -7,7 +7,7 @@ import {
   StyleSheet,
 } from "react-native";
 import React, { useState } from "react";
-import { BannerList } from "../data/bannerList.js";
+import { BANNERS } from "../data/banners.js";
 
 const Dot = ({ active }) => (
   <View style={active ? styles.DotActive : styles.Dot} />
@@ -31,10 +31,10 @@ export default function Banner() {
         onScroll={onScroll}
         scrollEventThrottle={16}
       >
-        {BannerList.map((item) => (
+        {BANNERS.map((banner) => (
           <Image
-            key={item.id}
-            source={item.image}
+            key={banner.id}
+            source={banner.image}
             style={{ width: ITEM_SIZE }}
             resizeMode="cover"
           />
@@ -44,7 +44,7 @@ export default function Banner() {
         <Text style={styles.Text}>20% off on your first purchase</Text>
       </View>
       <View style={styles.DotContainer}>
-        {BannerList.map((item, index) => (
+        {BANNERS.map((item, index) => (
           <Dot key={item.id} active={index === activeIndicator} />
         ))}
       </View>

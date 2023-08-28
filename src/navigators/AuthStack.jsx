@@ -1,10 +1,10 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import {
-  WelcomeScreen,
-  LoginScreen,
+  OnboardingScreen,
+  LogScreen,
   PasswordRecovery,
-  SignUpScreen,
+  SignScreen,
 } from "../screens/screens";
 
 const Stack = createStackNavigator();
@@ -13,22 +13,22 @@ export default function AuthStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Welcome"
-        component={WelcomeScreen}
+        name="Onboarding Screen"
+        component={OnboardingScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Log in"
-        component={LoginScreen}
+        name="Log Screen"
+        component={LogScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Sign up"
-        component={SignUpScreen}
+        name="Sign Screen"
+        component={SignScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Recovery"
+        name="Recovery Password Screen"
         component={PasswordRecovery}
         options={{ headerShown: false }}
       />

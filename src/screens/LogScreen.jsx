@@ -17,7 +17,7 @@ import OptionalButton from "../components/OptionalButton.jsx";
 import Loader from "../components/Loader.jsx";
 import { loginbg, mailVector, lockVector } from "../assets/assets.js";
 
-export default function Login() {
+export default function LogScreen() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const [email, setEmail] = useState("");
@@ -93,7 +93,7 @@ export default function Login() {
             </Text>
           </View>
           <OptionalButton
-            screen="Recovery"
+            screen="Recovery Password Screen"
             text="Forgot password?"
             textColor="#407EC7"
           />
@@ -105,7 +105,11 @@ export default function Login() {
         )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Don't have an account ?</Text>
-          <OptionalButton screen="Sign up" text="Sign up" textColor="#000" />
+          <OptionalButton
+            screen="Sign Screen"
+            text="Sign up"
+            textColor="#000"
+          />
         </View>
       </View>
     </SafeAreaView>

@@ -22,20 +22,20 @@ const Tab = createBottomTabNavigator();
 export default function HomeStack() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Home Screen"
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused }) => {
           let tabIcon;
-          if (route.name === "Home") {
+          if (route.name === "Home Screen") {
             tabIcon = focused ? homeVector : homeVector2;
           }
-          if (route.name === "User") {
+          if (route.name === "User Page Screen") {
             tabIcon = focused ? user : user2;
           }
-          if (route.name === "Favorites") {
+          if (route.name === "Favorites Screen") {
             tabIcon = focused ? favorites2 : favorites;
           }
-          if (route.name === "Cart") {
+          if (route.name === "Cart Screen") {
             tabIcon = focused ? shoppingCartVector : shoppingCartVector;
           }
           return <Image source={tabIcon} />;
@@ -45,22 +45,22 @@ export default function HomeStack() {
       })}
     >
       <Tab.Screen
-        name="Home"
+        name="Home Screen"
         component={HomeScreen}
         options={{ tabBarShowLabel: false }}
       />
       <Tab.Screen
-        name="User"
+        name="User Page Screen"
         component={UserPageScreen}
         options={{ tabBarShowLabel: false }}
       />
       <Tab.Screen
-        name="Favorites"
+        name="Favorites Screen"
         component={FavoritesScreen}
         options={{ tabBarShowLabel: false }}
       />
       <Tab.Screen
-        name="Cart"
+        name="Cart Screen"
         component={CartScreen}
         options={{ tabBarShowLabel: false }}
       />

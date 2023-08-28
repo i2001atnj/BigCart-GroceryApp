@@ -2,24 +2,24 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import ProductItem from "./ProductItem";
 import SectionRedirect from "./SectionRedirect";
-import { DATA } from "../mocks/data";
+import { PRODUCTS } from "../data/products";
 
 export default function FeaturedProducts() {
   return (
     <View style={styles.Container}>
-      <SectionRedirect title="Featured products" screen="" />
+      <SectionRedirect title="Featured products" screen="Products Screen" />
       <View style={styles.ListContainer}>
-        {DATA.map((item) => (
+        {PRODUCTS.map((product) => (
           <ProductItem
-            color={item.color}
-            image={item.image}
-            price={item.price}
-            quantity={item.quantity}
-            name={item.name}
-            key={item.id}
-            date={item.date}
-            state={item.state}
-            type={item.type}
+            color={product.color}
+            image={product.image}
+            price={product.price}
+            quantity={product.quantity}
+            name={product.name}
+            key={product.id}
+            date={product.date}
+            state={product.state}
+            type={product.type}
           />
         ))}
       </View>

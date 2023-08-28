@@ -1,14 +1,5 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  TouchableOpacity,
-  Image,
-  StyleSheet,
-  TextInput,
-} from "react-native";
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import Header from "../components/Header";
 import AccessInput from "../components/AccessInput";
 import { mailIcon } from "../assets/assets";

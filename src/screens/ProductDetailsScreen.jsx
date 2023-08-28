@@ -13,7 +13,7 @@ import { blackArrow, bag } from "../assets/assets";
 import ButtonComponent from "../components/ButtonComponent";
 import ProductBanner from "../components/ProductBanner";
 
-const DetailsScreen = () => {
+const ProductDetailsScreen = () => {
   const route = useRoute();
   const navigation = useNavigation();
 
@@ -98,7 +98,7 @@ const DetailsScreen = () => {
   );
 };
 
-export default DetailsScreen;
+export default ProductDetailsScreen;
 
 const styles = StyleSheet.create({
   Background: {

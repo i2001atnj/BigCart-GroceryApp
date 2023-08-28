@@ -14,7 +14,7 @@ export default function SearchBar({ style }) {
   const navigation = useNavigation();
   return (
     <View style={[styles.SearchBar, style]}>
-      <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Search Screen")}>
         <Image source={search} />
       </TouchableOpacity>
       <TextInput

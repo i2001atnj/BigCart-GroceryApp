@@ -14,7 +14,7 @@ import OptionalButton from "../components/OptionalButton";
 import ButtonComponent from "../components/ButtonComponent";
 import { useNavigation } from "@react-navigation/native";
 
-export default function WelcomeScreen() {
+export default function OnboardingScreen() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.WelcomePage}>
@@ -58,13 +58,12 @@ export default function WelcomeScreen() {
         <ButtonComponent
           image={signUpVector}
           text={"Create an account"}
-          screen={"Sign up"}
-          buttonFunction={() => navigation.navigate("Sign up")}
+          buttonFunction={() => navigation.navigate("Sign Screen")}
           left
         />
         <View style={styles.Login}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
-          <OptionalButton screen="Log in" text="Login" />
+          <OptionalButton screen="Log Screen" text="Login" />
         </View>
       </View>
     </SafeAreaView>

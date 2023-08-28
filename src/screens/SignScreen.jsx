@@ -21,7 +21,7 @@ import AccessInput from "../components/AccessInput";
 import OptionalButton from "../components/OptionalButton";
 import BackArrow from "../components/BackArrow";
 
-export default function SignUp() {
+export default function SignScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -79,7 +79,7 @@ export default function SignUp() {
         )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
-          <OptionalButton screen="Log in" text="Login" />
+          <OptionalButton screen="Log Screen" text="Login" />
         </View>
       </View>
     </SafeAreaView>

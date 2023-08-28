@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 const Filters = () => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Filters")}>
+    <TouchableOpacity onPress={() => navigation.navigate("Filters Screen")}>
       <Image source={filters} />
     </TouchableOpacity>
   );

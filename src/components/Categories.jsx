@@ -14,25 +14,25 @@ export default function Categories() {
   const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <SectionRedirect title="Categories" screen="Categories" />
+      <SectionRedirect title="Categories" screen="Categories Screen" />
       <ScrollView
         horizontal
         style={styles.CategoriesMenu}
         showsHorizontalScrollIndicator={false}
       >
-        {CATEGORIES.map((item) => (
-          <View key={item.id} style={styles.Category}>
+        {CATEGORIES.map((category) => (
+          <View key={category.id} style={styles.Category}>
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("Category", {
-                  id: item.id,
-                  name: item.name,
-                  image: item.image,
-                  color: item.color,
+                navigation.navigate("Category Screen", {
+                  id: category.id,
+                  name: category.name,
+                  image: category.image,
+                  color: category.color,
                 })
               }
               style={{
-                backgroundColor: `${item.color}`,
+                backgroundColor: `${category.color}`,
                 width: 52,
                 height: 52,
                 borderRadius: 50,
@@ -40,9 +40,9 @@ export default function Categories() {
                 alignItems: "center",
               }}
             >
-              <Image source={item.image} />
+              <Image source={category.image} />
             </TouchableOpacity>
-            <Text style={styles.CategoryTitle}>{item.name}</Text>
+            <Text style={styles.CategoryTitle}>{category.name}</Text>
           </View>
         ))}
       </ScrollView>
