@@ -87,7 +87,7 @@ export default ProductItem = ({
           }}
         >
           <Image
-            style={{ width: 100, height: 100, resizeMode: "contain" }}
+            style={{ width: 90, height: 80, resizeMode: "contain" }}
             source={image}
           />
         </View>
