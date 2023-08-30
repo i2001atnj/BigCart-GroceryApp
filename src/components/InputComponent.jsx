@@ -8,6 +8,7 @@ const InputComponent = ({
   value,
   secureTextEntry,
   style,
+  inputStyle,
 }) => {
   return (
     <View style={[styles.InputContainer, style]}>
@@ -15,7 +16,7 @@ const InputComponent = ({
       <TextInput
         placeholder={placeholder}
         placeholderTextColor="#868889"
-        style={styles.Input}
+        style={[styles.Input, inputStyle]}
         autoCapitalize="none"
         onChangeText={onChangeTextFunction}
         value={value}

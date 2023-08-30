@@ -4,8 +4,10 @@ import Header from "../components/Header";
 import InputComponent from "../components/InputComponent";
 import { mailIcon } from "../assets/assets";
 import ButtonComponent from "../components/ButtonComponent";
+import { useNavigation } from "@react-navigation/native";
 
-export default function PasswordRecovery() {
+export default function PasswordRecoveryScreen() {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ backgroundColor: "#fff" }}>
       <Header
@@ -36,7 +38,11 @@ export default function PasswordRecovery() {
           placeholder="Email address"
           style={{ width: "92%" }}
         />
-        <ButtonComponent text="Send link" style={{ marginTop: 13 }} />
+        <ButtonComponent
+          text="Send link"
+          style={{ marginTop: 13 }}
+          buttonFunction={() => navigation.navigate("Verify Number")}
+        />
       </View>
     </SafeAreaView>
   );

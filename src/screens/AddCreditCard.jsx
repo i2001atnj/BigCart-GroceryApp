@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
 import React, { useContext } from "react";
 import CreditCardItem from "../components/CreditCardItem";
 import Header from "../components/Header";
 import { userContext } from "../context/userContext";
 import InputComponent from "../components/InputComponent";
-import { card, user2 } from "../assets/assets";
+import { card, user2, calendar, lockVector } from "../assets/assets";
 
 const AddCreditCardScreen = () => {
   const user = useContext(userContext);
@@ -32,9 +32,28 @@ const AddCreditCardScreen = () => {
           cardExpireDate="01/28"
           style={{ marginTop: 33 }}
         />
-        <View style={{ width: "95%", gap: 5, marginTop: 18 }}>
+        <View style={{ width: "100%", gap: 5, marginTop: 18 }}>
           <InputComponent image={user2} placeholder="Name on the card" />
           <InputComponent image={card} placeholder="XXXX XXXX XXXX XXXX" />
+          <View
+            style={{
+              flexDirection: "row",
+              width: "100%",
+              justifyContent: "space-between",
+              paddingHorizontal: 17,
+            }}
+          >
+            <InputComponent
+              image={calendar}
+              style={{ width: "49%", marginHorizontal: 0 }}
+              placeholder="Month / Year"
+            />
+            <InputComponent
+              image={lockVector}
+              style={{ width: "49%", marginHorizontal: 0 }}
+              placeholder="CVV"
+            />
+          </View>
         </View>
       </View>
     </SafeAreaView>
