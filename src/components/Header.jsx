@@ -1,9 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Filters from "./Filters";
+import Filters from "./FilterButton";
 import SearchBar from "./SearchBar";
 import BackArrow from "./BackArrow";
 import ResetFilters from "./ResetFilters";
+import AddButton from "./AddButton";
 
 const Header = ({
   returnArrow,
@@ -13,6 +14,8 @@ const Header = ({
   style,
   titleStyle,
   reset,
+  addButton,
+  addFunction,
 }) => {
   return (
     <View style={[styles.Header, style]}>
@@ -27,6 +30,7 @@ const Header = ({
       {filters ? <Filters /> : <></>}
       {input ? <SearchBar /> : <></>}
       {reset ? <ResetFilters /> : <></>}
+      {addButton ? <AddButton addFunction={addFunction} /> : <></>}
     </View>
   );
 };

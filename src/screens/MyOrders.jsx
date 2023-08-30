@@ -13,7 +13,7 @@ const MyOrdersScreen = () => {
       <EmptyCartInfo text="You don't have orders!" />
       <ButtonComponent
         text="Start shopping"
-        buttonFunction={() => navigation.navigate("Home Screen")}
+        buttonFunction={() => navigation.navigate("Home")}
       />
     </SafeAreaView>
   );

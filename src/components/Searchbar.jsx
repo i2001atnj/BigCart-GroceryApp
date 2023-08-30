@@ -8,13 +8,13 @@ import {
   StyleSheet,
 } from "react-native";
 import { search } from "../assets/assets";
-import Filters from "./Filters";
+import Filters from "./FilterButton";
 
 export default function SearchBar({ style }) {
   const navigation = useNavigation();
   return (
     <View style={[styles.SearchBar, style]}>
-      <TouchableOpacity onPress={() => navigation.navigate("Search Screen")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Search")}>
         <Image source={search} />
       </TouchableOpacity>
       <TextInput

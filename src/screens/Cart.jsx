@@ -13,7 +13,7 @@ export default function CartScreen() {
       <EmptyCartInfo text="Your cart is empty !" />
       <ButtonComponent
         text="Start shopping"
-        buttonFunction={() => navigation.navigate("Home Screen")}
+        buttonFunction={() => navigation.navigate("Home")}
         style={{ position: "relative", top: "34%" }}
       />
     </SafeAreaView>

@@ -14,7 +14,7 @@ export default function Categories() {
   const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <SectionRedirect title="Categories" screen="Categories Screen" />
+      <SectionRedirect title="Categories" screen="Categories" />
       <ScrollView
         horizontal
         style={styles.CategoriesMenu}
@@ -24,7 +24,7 @@ export default function Categories() {
           <View key={category.id} style={styles.Category}>
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("Category Screen", {
+                navigation.navigate("Category", {
                   id: category.id,
                   name: category.name,
                   image: category.image,

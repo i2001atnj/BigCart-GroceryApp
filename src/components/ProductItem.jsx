@@ -63,7 +63,7 @@ export default ProductItem = ({
       </View>
       <TouchableOpacity
         onPress={() =>
-          navigation.navigate("Product Details Screen", {
+          navigation.navigate("Product Details", {
             id: id,
             name: name,
             image: image,

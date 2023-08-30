@@ -7,7 +7,7 @@ import { PRODUCTS } from "../data/products";
 export default function FeaturedProducts() {
   return (
     <View style={styles.Container}>
-      <SectionRedirect title="Featured products" screen="Products Screen" />
+      <SectionRedirect title="Featured products" screen="Products" />
       <View style={styles.ListContainer}>
         {PRODUCTS.map((product) => (
           <ProductItem

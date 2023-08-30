@@ -3,13 +3,13 @@ import React from "react";
 import { filters } from "../assets/assets";
 import { useNavigation } from "@react-navigation/native";
 
-const Filters = () => {
+const FilterButton = () => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Filters Screen")}>
+    <TouchableOpacity onPress={() => navigation.navigate("Filters")}>
       <Image source={filters} />
     </TouchableOpacity>
   );
 };
 
-export default Filters;
+export default FilterButton;

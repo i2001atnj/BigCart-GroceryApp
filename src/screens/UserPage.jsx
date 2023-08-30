@@ -12,7 +12,7 @@ import {
 } from "../assets/assets";
 import UserOption from "../components/UserOption";
 import { useNavigation } from "@react-navigation/native";
-import { userContext } from "../../App.js";
+import { userContext } from "../context/userContext";
 
 export default function UserPageScreen() {
   const navigation = useNavigation();
@@ -37,37 +37,37 @@ export default function UserPageScreen() {
         <UserOption
           image={myOrdersVector}
           title="About Me"
-          optionFunction={() => navigation.navigate("About Me Screen")}
+          optionFunction={() => navigation.navigate("About Me")}
         />
         <UserOption
           image={myOrdersVector}
           title="My Orders"
-          optionFunction={() => navigation.navigate("My Orders Screen")}
+          optionFunction={() => navigation.navigate("My Orders")}
         />
         <UserOption
           image={myFavoritesVector}
           title="My Favorites"
-          optionFunction={() => navigation.navigate("My Favorites Screen")}
+          optionFunction={() => navigation.navigate("My Favorites")}
         />
         <UserOption
           image={addressVector}
           title="My Address"
-          optionFunction={() => navigation.navigate("My Address Screen")}
+          optionFunction={() => navigation.navigate("My Address")}
         />
         <UserOption
           image={creditCardsVector}
           title="Credit Cards"
-          optionFunction={() => navigation.navigate("Credit Cards Screen")}
+          optionFunction={() => navigation.navigate("Credit Cards")}
         />
         <UserOption
           image={transactionsVector}
           title="Transactions"
-          optionFunction={() => navigation.navigate("Transactions Screen")}
+          optionFunction={() => navigation.navigate("Transactions")}
         />
         <UserOption
           image={notificationsVector}
           title="Notifications"
-          optionFunction={() => navigation.navigate("Notifications Screen")}
+          optionFunction={() => navigation.navigate("Notifications")}
         />
         <UserOption
           title="Sign out"

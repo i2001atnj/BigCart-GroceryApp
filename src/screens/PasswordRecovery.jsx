@@ -1,7 +1,7 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
 import Header from "../components/Header";
-import AccessInput from "../components/AccessInput";
+import InputComponent from "../components/InputComponent";
 import { mailIcon } from "../assets/assets";
 import ButtonComponent from "../components/ButtonComponent";
 
@@ -31,7 +31,7 @@ export default function PasswordRecovery() {
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy
         </Text>
-        <AccessInput
+        <InputComponent
           image={mailIcon}
           placeholder="Email address"
           style={{ width: "92%" }}

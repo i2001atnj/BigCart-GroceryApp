@@ -17,7 +17,7 @@ import { FIREBASE_AUTH } from "../../FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import Loader from "../components/Loader";
 import ButtonComponent from "../components/ButtonComponent";
-import AccessInput from "../components/AccessInput";
+import InputComponent from "../components/InputComponent";
 import OptionalButton from "../components/OptionalButton";
 import BackArrow from "../components/BackArrow";
 
@@ -55,17 +55,17 @@ export default function SignScreen() {
           </Text>
         </View>
         <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
-          <AccessInput
+          <InputComponent
             image={mailVector}
             placeholder="Email address"
             onChangeTextFunction={(text) => setEmail(text)}
             value={email}
           />
-          <AccessInput
+          <InputComponent
             image={phoneVector}
             placeholder="Phone number (optional)"
           />
-          <AccessInput
+          <InputComponent
             image={lockVector}
             placeholder="Create password"
             onChangeTextFunction={(text) => setPassword(text)}
@@ -79,7 +79,7 @@ export default function SignScreen() {
         )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
-          <OptionalButton screen="Log Screen" text="Login" />
+          <OptionalButton screen="Login" text="Login" />
         </View>
       </View>
     </SafeAreaView>

@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import AccessInput from "../components/AccessInput";
+import InputComponent from "../components/InputComponent";
 import ButtonComponent from "../components/ButtonComponent";
 import Header from "../components/Header";
 import { lockVector, mailIcon, nameIcon, phoneIcon } from "../assets/assets";
-import { userContext } from "../../App";
+import { userContext } from "../context/userContext";
 
 export default function AboutMeScreen() {
   const user = useContext(userContext);
@@ -28,9 +28,9 @@ export default function AboutMeScreen() {
           >
             Personal Details
           </Text>
-          <AccessInput image={nameIcon} placeholder="Admin" />
-          <AccessInput image={mailIcon} placeholder={user.email} />
-          <AccessInput image={phoneIcon} placeholder="Phone Number" />
+          <InputComponent image={nameIcon} placeholder="Admin" />
+          <InputComponent image={mailIcon} placeholder={user.email} />
+          <InputComponent image={phoneIcon} placeholder="Phone Number" />
         </View>
         <View style={{ gap: 5 }}>
           <Text
@@ -43,17 +43,17 @@ export default function AboutMeScreen() {
           >
             Change Password
           </Text>
-          <AccessInput
+          <InputComponent
             image={lockVector}
             placeholder="Current Password"
             secureTextEntry
           />
-          <AccessInput
+          <InputComponent
             image={lockVector}
             placeholder="New Password"
             secureTextEntry
           />
-          <AccessInput
+          <InputComponent
             image={lockVector}
             placeholder="Confirm Password"
             secureTextEntry

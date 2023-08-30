@@ -58,12 +58,12 @@ export default function OnboardingScreen() {
         <ButtonComponent
           image={signUpVector}
           text={"Create an account"}
-          buttonFunction={() => navigation.navigate("Sign Screen")}
+          buttonFunction={() => navigation.navigate("Signup")}
           left
         />
         <View style={styles.Login}>
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
-          <OptionalButton screen="Log Screen" text="Login" />
+          <OptionalButton screen="Login" text="Login" />
         </View>
       </View>
     </SafeAreaView>

@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import { FIREBASE_AUTH } from "../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import ButtonComponent from "../components/ButtonComponent.jsx";
-import AccessInput from "../components/AccessInput.jsx";
+import InputComponent from "../components/InputComponent.jsx";
 import BackArrow from "../components/BackArrow.jsx";
 import OptionalButton from "../components/OptionalButton.jsx";
 import Loader from "../components/Loader.jsx";
@@ -58,13 +58,13 @@ export default function LogScreen() {
           </Text>
         </View>
         <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
-          <AccessInput
+          <InputComponent
             image={mailVector}
             placeholder="Email address"
             onChangeTextFunction={(text) => setEmail(text)}
             value={email}
           />
-          <AccessInput
+          <InputComponent
             image={lockVector}
             placeholder="Enter password"
             onChangeTextFunction={(text) => setPassword(text)}
@@ -93,7 +93,7 @@ export default function LogScreen() {
             </Text>
           </View>
           <OptionalButton
-            screen="Recovery Password Screen"
+            screen="Password Recovery"
             text="Forgot password?"
             textColor="#407EC7"
           />
@@ -105,11 +105,7 @@ export default function LogScreen() {
         )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Don't have an account ?</Text>
-          <OptionalButton
-            screen="Sign Screen"
-            text="Sign up"
-            textColor="#000"
-          />
+          <OptionalButton screen="Signup" text="Sign up" textColor="#000" />
         </View>
       </View>
     </SafeAreaView>

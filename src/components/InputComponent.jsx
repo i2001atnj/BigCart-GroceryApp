@@ -1,7 +1,7 @@
 import { StyleSheet, View, Image, TextInput } from "react-native";
 import React from "react";
 
-const AccessInput = ({
+const InputComponent = ({
   image,
   placeholder,
   onChangeTextFunction,
@@ -25,7 +25,7 @@ const AccessInput = ({
   );
 };
 
-export default AccessInput;
+export default InputComponent;
 
 const styles = StyleSheet.create({
   InputContainer: {
