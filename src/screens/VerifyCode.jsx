@@ -5,8 +5,9 @@ import InputComponent from "../components/InputComponent";
 import ButtonComponent from "../components/ButtonComponent";
 import { flag } from "../assets/assets";
 import { useNavigation } from "@react-navigation/native";
+import CodeInput from "../components/CodeInput";
 
-const VerifyNumberScreen = () => {
+const VerifyCodeScreen = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", height: "100%" }}>
@@ -42,14 +43,21 @@ const VerifyNumberScreen = () => {
             paddingHorizontal: 60,
           }}
         >
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-          nonumy
+          Enter your OTP code below
         </Text>
-        <InputComponent
-          image={flag}
-          placeholder="Email address"
-          style={{ width: "92%" }}
-        />
+        <View
+          style={{
+            flexDirection: "row",
+            gap: 10,
+            justifyContent: "center",
+          }}
+        >
+          <CodeInput />
+          <CodeInput />
+          <CodeInput />
+          <CodeInput />
+          <CodeInput />
+        </View>
         <ButtonComponent
           text="Next"
           style={{ marginTop: 13 }}
@@ -60,6 +68,6 @@ const VerifyNumberScreen = () => {
   );
 };
 
-export default VerifyNumberScreen;
+export default VerifyCodeScreen;
 
 const styles = StyleSheet.create({});

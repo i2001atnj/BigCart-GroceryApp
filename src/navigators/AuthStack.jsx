@@ -5,6 +5,7 @@ import LogScreen from "../screens/Login";
 import PasswordRecoveryScreen from "../screens/PasswordRecovery";
 import SignScreen from "../screens/Signup";
 import VerifyNumberScreen from "../screens/VerifyNumber";
+import VerifyCodeScreen from "../screens/VerifyCode";
 
 const Stack = createStackNavigator();
 
@@ -34,6 +35,11 @@ export default function AuthStack() {
       <Stack.Screen
         name="Verify Number"
         component={VerifyNumberScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Verify Code"
+        component={VerifyCodeScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

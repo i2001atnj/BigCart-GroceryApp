@@ -11,6 +11,7 @@ const UserOption = ({ image, title, optionFunction, signOutButton }) => {
         flexDirection: "row",
         justifyContent: "space-between",
         marginHorizontal: 38,
+        alignItems: "center",
       }}
     >
       <Image source={image} />
