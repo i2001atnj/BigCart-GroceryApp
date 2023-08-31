@@ -117,6 +117,6 @@ export const PRODUCTS = [
     quantity: "1 lb",
     color: "#fceac7",
     state: "new",
-    type: 1,
+    type: 2,
   },
 ];
