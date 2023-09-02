@@ -14,5 +14,6 @@ const styles = StyleSheet.create({
   Page: {
     paddingHorizontal: 17,
     backgroundColor: "#fff",
+    height: "100%",
   },
 });

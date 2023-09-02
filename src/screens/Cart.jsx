@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet, View, Text, Image } from "react-native";
+import { SafeAreaView, View } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import ButtonComponent from "../components/ButtonComponent";
@@ -10,12 +10,13 @@ export default function CartScreen() {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", height: "100%" }}>
       <Header style={{ justifyContent: "center" }} title="Shopping Cart" />
-      <EmptyCartInfo text="Your cart is empty !" />
-      <ButtonComponent
-        text="Start shopping"
-        buttonFunction={() => navigation.navigate("Home")}
-        style={{ position: "relative", top: "34%" }}
-      />
+      <View style={{ height: "80%" }}>
+        <EmptyCartInfo text="Your cart is empty !" />
+        <ButtonComponent
+          text="Start shopping"
+          buttonFunction={() => navigation.navigate("Home Screen")}
+        />
+      </View>
     </SafeAreaView>
   );
 }

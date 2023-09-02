@@ -57,7 +57,7 @@ export default function LogScreen() {
             Sign in to your account
           </Text>
         </View>
-        <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
+        <KeyboardAvoidingView style={{ gap: 5 }} enabled behavior="padding">
           <InputComponent
             image={mailVector}
             placeholder="Email address"
