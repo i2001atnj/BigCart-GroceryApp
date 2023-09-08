@@ -119,4 +119,14 @@ export const PRODUCTS = [
     state: "new",
     type: 2,
   },
+  {
+    id: 13,
+    name: "Brown Onions",
+    image: require("../assets/onions.png"),
+    price: "$1.54",
+    quantity: "1 kg",
+    color: "#FFF6E3",
+    state: "-5%",
+    type: 1,
+  },
 ];

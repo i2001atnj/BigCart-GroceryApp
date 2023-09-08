@@ -69,3 +69,4 @@ export { default as dots } from "./dots.png";
 export { default as card } from "./card.png";
 export { default as calendar } from "./calendar.png";
 export { default as flag } from "./flag.png";
+export { default as onions } from "./onions.png";
