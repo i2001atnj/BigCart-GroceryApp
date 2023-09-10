@@ -2,16 +2,27 @@ import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 
-const ButtonComponent = ({ image, text, buttonFunction, left, style }) => {
+const ButtonComponent = ({
+  image,
+  text,
+  buttonFunction,
+  left,
+  style,
+  disabled,
+}) => {
   return (
-    <View style={[styles.Container, style]}>
+    <View style={disabled ? styles.disabledStyle : [styles.Container, style]}>
       <LinearGradient
         colors={["#AEDC81", "#6CC51D"]}
         start={{ x: 0, y: 1 }}
         end={{ x: 1, y: 0 }}
         style={{ borderRadius: 5 }}
       >
-        <TouchableOpacity style={styles.Button} onPress={buttonFunction}>
+        <TouchableOpacity
+          style={styles.Button}
+          onPress={buttonFunction}
+          disabled={disabled}
+        >
           <Image
             source={image}
             style={
@@ -53,5 +64,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     display: "flex",
     flexDirection: "row",
+  },
+  disabledStyle: {
+    opacity: 0.7,
+    width: "100%",
+    height: 60,
+    borderRadius: 5,
+    backgroundColor: "transparent",
+    paddingHorizontal: 17,
   },
 });

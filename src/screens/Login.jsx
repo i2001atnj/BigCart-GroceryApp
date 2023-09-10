@@ -101,7 +101,11 @@ export default function LogScreen() {
         {loading ? (
           <Loader size={"small"} style={{ paddingVertical: 20 }} color="#FFF" />
         ) : (
-          <ButtonComponent buttonFunction={logIn} text="Login" />
+          <ButtonComponent
+            buttonFunction={logIn}
+            text="Login"
+            disabled={!email}
+          />
         )}
         <View style={styles.OptionalSection}>
           <Text style={{ color: "#868889" }}>Don't have an account ?</Text>
