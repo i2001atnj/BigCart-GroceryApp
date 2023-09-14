@@ -9,7 +9,7 @@ export default function OnboardingScreen() {
   return (
     <SafeAreaView style={styles.WelcomePage}>
       <StatusBar style="light" />
-      <ImageBg title="Welcome" image={welcomebg} />
+      <ImageBg title="Welcome" image={welcomebg} style={{ height: "90%" }} />
       <RegistrationForm
         titleHeader="Welcome"
         titleBody="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam

@@ -12,7 +12,7 @@ import { FIREBASE_AUTH } from "../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import ButtonComponent from "../components/ButtonComponent.jsx";
 import InputComponent from "../components/InputComponent.jsx";
-import BackArrow from "../components/BackArrow.jsx";
+import ImageBg from "../components/ImageBg.jsx";
 import OptionalButton from "../components/OptionalButton.jsx";
 import Loader from "../components/Loader.jsx";
 import { loginbg, mailVector, lockVector } from "../assets/assets.js";
@@ -38,18 +38,12 @@ export default function LogScreen() {
 
   return (
     <SafeAreaView style={styles.LoginPage}>
-      <ImageBackground
-        source={loginbg}
-        resizeMode="cover"
-        style={styles.BackgroundImage}
-      >
-        <View style={styles.Title}>
-          <BackArrow color="#fff" style={{ position: "relative", top: 30 }} />
-          <View style={{ position: "relative", right: 156 }}>
-            <Text style={styles.TitleText}>Welcome</Text>
-          </View>
-        </View>
-      </ImageBackground>
+      <ImageBg
+        image={loginbg}
+        returnArrow
+        title="Welcome"
+        style={{ height: "80%" }}
+      />
       <View style={styles.Section}>
         <View style={{ alignItems: "center", gap: 5 }}>
           <Text style={{ fontSize: 24, fontWeight: 600 }}>Welcome back !</Text>
