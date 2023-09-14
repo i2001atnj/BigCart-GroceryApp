@@ -9,19 +9,14 @@ const ImageBg = ({ title, image, returnArrow, style }) => {
       resizeMode="cover"
       style={[styles.BackgroundImage, style]}
     >
-      {returnArrow ? (
-        <View style={styles.Title}>
-          <BackArrow
-            color="#fff"
-            style={{ position: "relative", top: 70, left: 17 }}
-          />
-          <Text style={styles.TitleText}>{title}</Text>
-        </View>
-      ) : (
-        <View style={styles.Title}>
-          <Text style={styles.TitleText}>{title}</Text>
-        </View>
-      )}
+      <View style={styles.Title}>
+        {returnArrow ? (
+          <BackArrow color="#fff" style={{ position: "relative", top: 60 }} />
+        ) : (
+          <></>
+        )}
+        <Text style={[styles.TitleText, { fontWeight: 500 }]}>{title}</Text>
+      </View>
     </ImageBackground>
   );
 };
@@ -37,11 +32,12 @@ const styles = StyleSheet.create({
   Title: {
     height: "15%",
     justifyContent: "center",
+    paddingHorizontal: 17,
   },
   TitleText: {
     fontSize: 20,
     color: "#FFF",
     textAlign: "center",
-    marginTop: 50,
+    marginTop: 40,
   },
 });

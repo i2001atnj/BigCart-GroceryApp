@@ -35,13 +35,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 28,
     display: "flex",
     flexDirection: "row",
-    marginHorizontal: 17,
     borderRadius: 5,
     alignItems: "center",
     gap: 21,
+    width: "100%",
   },
   Input: {
     fontSize: 16,
-    width: "80%",
+    width: "90%",
   },
 });
