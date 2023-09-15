@@ -32,6 +32,8 @@ const RegistrationForm = ({
   optionalText,
   optionalButtonText,
   optionalScreen,
+  loading,
+  register,
 }) => {
   return (
     <View style={sectionStyle}>
@@ -51,7 +53,11 @@ const RegistrationForm = ({
       {continueWithGoogle ? <ContinueWithGoogleButton /> : <></>}
       {login ? (
         <>
-          <KeyboardAvoidingView style={{ gap: 5 }} enabled behavior="padding">
+          <KeyboardAvoidingView
+            style={{ gap: 5, marginTop: 10 }}
+            enabled
+            behavior="padding"
+          >
             <InputComponent
               image={mailVector}
               placeholder="Email address"
@@ -69,7 +75,6 @@ const RegistrationForm = ({
           <View style={styles.PasswordOptions}>
             <View
               style={{
-                display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
               }}
@@ -97,14 +102,18 @@ const RegistrationForm = ({
         <></>
       )}
 
-      <ButtonComponent
-        image={buttonIcon}
-        text={buttonTitle}
-        buttonFunction={buttonFunction}
-        left
-        disabled={disabled}
-      />
-      <View style={styles.Login}>
+      {loading ? (
+        <Loader size={"small"} style={{ paddingVertical: 20 }} color="#FFF" />
+      ) : (
+        <ButtonComponent
+          image={buttonIcon}
+          text={buttonTitle}
+          buttonFunction={buttonFunction}
+          left
+          disabled={disabled}
+        />
+      )}
+      <View style={styles.OptionalSection}>
         <Text style={{ color: "#868889" }}>{optionalText}</Text>
         <OptionalButton screen={optionalScreen} text={optionalButtonText} />
       </View>
@@ -115,16 +124,17 @@ const RegistrationForm = ({
 export default RegistrationForm;
 
 const styles = StyleSheet.create({
-  Login: {
-    display: "flex",
+  OptionalSection: {
     flexDirection: "row",
     gap: 10,
     marginTop: 20,
   },
   PasswordOptions: {
-    display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    width: "100%",
+    paddingRight: 10,
+    marginVertical: 15,
   },
 });

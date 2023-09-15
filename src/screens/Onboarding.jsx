@@ -17,7 +17,7 @@ export default function OnboardingScreen() {
         titleBody="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy"
         continueWithGoogle
-        buttonFunction={() => navigation.navigate("Sign up")}
+        buttonFunction={() => navigation.navigate("Signup")}
         buttonTitle="Create an account"
         buttonIcon={signUpVector}
         sectionStyle={styles.Section}

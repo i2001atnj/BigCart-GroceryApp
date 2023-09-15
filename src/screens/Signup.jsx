@@ -20,6 +20,8 @@ import ButtonComponent from "../components/ButtonComponent";
 import InputComponent from "../components/InputComponent";
 import OptionalButton from "../components/OptionalButton";
 import BackArrow from "../components/BackArrow";
+import ImageBg from "../components/ImageBg";
+import RegistrationForm from "../components/RegistrationForm";
 
 export default function SignScreen() {
   const [email, setEmail] = useState("");
@@ -41,13 +43,13 @@ export default function SignScreen() {
 
   return (
     <SafeAreaView>
-      <ImageBackground source={createbg} style={styles.BackgroundImage}>
-        <View style={styles.Title}>
-          <BackArrow style={{ position: "relative", top: 30 }} color="#fff" />
-          <Text style={styles.TitleText}>Welcome</Text>
-        </View>
-      </ImageBackground>
-      <View style={styles.Section}>
+      <ImageBg
+        image={createbg}
+        returnArrow
+        title="Welcome"
+        style={{ height: "100%" }}
+      />
+      {/* <View style={styles.Section}>
         <View style={{ alignItems: "center", gap: 5 }}>
           <Text style={{ fontSize: 24, fontWeight: 600 }}>Create account</Text>
           <Text style={{ color: "#868889", fontSize: 15, fontWeight: 400 }}>
@@ -81,7 +83,24 @@ export default function SignScreen() {
           <Text style={{ color: "#868889" }}>Already have an account ?</Text>
           <OptionalButton screen="Login" text="Login" />
         </View>
-      </View>
+      </View> */}
+      <RegistrationForm
+        login
+        titleHeader="Create account"
+        titleBody="Sign in to your account"
+        buttonFunction={signUp}
+        buttonTitle="Login"
+        disabled={!email}
+        emailInputValue={email}
+        // onChangeEmailTextFunction={(text) => setEmail(text)}
+        passwordInputValue={password}
+        // onChangePasswordTextFunction={(text) => setPassword(text)}
+        sectionStyle={styles.Section}
+        optionalText="Don't have an account?"
+        optionalButtonText="Sign up"
+        optionalScreen="Signup"
+        loading={loading}
+      />
     </SafeAreaView>
   );
 }

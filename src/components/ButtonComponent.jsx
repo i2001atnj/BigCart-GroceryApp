@@ -70,6 +70,5 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 5,
     backgroundColor: "transparent",
-    paddingHorizontal: 17,
   },
 });

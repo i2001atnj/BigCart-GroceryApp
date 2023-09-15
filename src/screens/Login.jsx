@@ -33,19 +33,9 @@ export default function LogScreen() {
         title="Welcome"
         style={{ height: "80%" }}
       />
-      {/*
-        {loading ? (
-          <Loader size={"small"} style={{ paddingVertical: 20 }} color="#FFF" />
-        ) : (
-          <ButtonComponent
-            buttonFunction={logIn}
-            text="Login"
-            disabled={!email}
-          />
-        )}*/}
       <RegistrationForm
         login
-        titleHeader="Welcome"
+        titleHeader="Welcome back !"
         titleBody="Sign in to your account"
         buttonFunction={logIn}
         buttonTitle="Login"
@@ -61,6 +51,7 @@ export default function LogScreen() {
         optionalText="Don't have an account?"
         optionalButtonText="Sign up"
         optionalScreen="Signup"
+        loading={loading}
       />
     </SafeAreaView>
   );
@@ -74,17 +65,17 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   Section: {
-    zIndex: 2,
-    position: "relative",
-    top: "47%",
     backgroundColor: "#F4F5F9",
-    height: 453,
+    width: "100%",
+    zIndex: 2,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-    gap: 25,
+    position: "relative",
+    bottom: 0,
+    top: "52%",
     justifyContent: "center",
     alignItems: "center",
-    width: "100%",
+    paddingVertical: 10,
     paddingHorizontal: 17,
   },
 });

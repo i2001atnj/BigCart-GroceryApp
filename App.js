@@ -9,7 +9,6 @@ import { userContext } from "./src/context/userContext";
 
 export default function App() {
   const [user, setUser] = useState(null);
-
   useEffect(() => {
     onAuthStateChanged(FIREBASE_AUTH, (user) => {
       setUser(user);
