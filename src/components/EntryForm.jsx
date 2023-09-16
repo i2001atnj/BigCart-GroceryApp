@@ -8,8 +8,8 @@ import {
 import { mailVector, lockVector, phoneVector } from "../assets/icons/index";
 import OptionalButton from "./OptionalButton";
 import ButtonComponent from "./Button";
-import InputComponent from "./Input";
-import ContinueWithGoogleButton from "./GoogleButton";
+import Input from "./Input";
+import GoogleButton from "./GoogleButton";
 import Loader from "./Loader";
 
 const RegistrationForm = ({
@@ -50,7 +50,7 @@ const RegistrationForm = ({
           {titleBody}
         </Text>
       </View>
-      {continueWithGoogle ? <ContinueWithGoogleButton /> : <></>}
+      {continueWithGoogle ? <GoogleButton /> : <></>}
       {login ? (
         <>
           <KeyboardAvoidingView
@@ -58,13 +58,13 @@ const RegistrationForm = ({
             enabled
             behavior="padding"
           >
-            <InputComponent
+            <Input
               image={mailVector}
               placeholder="Email address"
               onChangeTextFunction={onChangeEmailTextFunction}
               value={emailInputValue}
             />
-            <InputComponent
+            <Input
               image={lockVector}
               placeholder="Enter password"
               onChangeTextFunction={onChangePasswordTextFunction}
@@ -92,7 +92,7 @@ const RegistrationForm = ({
               </Text>
             </View>
             <OptionalButton
-              screen="Password Recovery"
+              screen="Auth Password Recovery Screen"
               text="Forgot password?"
               textColor="#407EC7"
             />
@@ -103,17 +103,14 @@ const RegistrationForm = ({
       )}
       {register ? (
         <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
-          <InputComponent
+          <Input
             image={mailVector}
             placeholder="Email address"
             onChangeTextFunction={onChangeEmailTextFunction}
             value={emailInputValue}
           />
-          <InputComponent
-            image={phoneVector}
-            placeholder="Phone number (optional)"
-          />
-          <InputComponent
+          <Input image={phoneVector} placeholder="Phone number (optional)" />
+          <Input
             image={lockVector}
             placeholder="Enter password"
             onChangeTextFunction={onChangePasswordTextFunction}

@@ -1,14 +1,16 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import Header from "../../components/Header";
-import InputComponent from "../../components/Input";
+import Input from "../../components/Input";
 import { mailIcon } from "../../assets/icons/index";
-import ButtonComponent from "../../components/Button";
+import Button from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
+import { StatusBar } from "expo-status-bar";
 
 export default function PasswordRecoveryScreen() {
   const navigation = useNavigation();
   return (
     <SafeAreaView style={{ backgroundColor: "#fff" }}>
+      <StatusBar style="dark" />
       <Header
         returnArrow
         title="Password Recovery"
@@ -32,12 +34,8 @@ export default function PasswordRecoveryScreen() {
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy
         </Text>
-        <InputComponent
-          image={mailIcon}
-          placeholder="Email address"
-          style={{ width: "92%" }}
-        />
-        <ButtonComponent
+        <Input image={mailIcon} placeholder="Email address" />
+        <Button
           text="Send link"
           style={{ marginTop: 13 }}
           buttonFunction={() =>
@@ -55,5 +53,6 @@ const styles = StyleSheet.create({
     width: "100%",
     alignItems: "center",
     backgroundColor: "#F4F5F9",
+    paddingHorizontal: 17,
   },
 });
