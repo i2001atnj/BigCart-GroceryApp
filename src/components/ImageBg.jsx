@@ -10,11 +10,7 @@ const ImageBg = ({ title, image, returnArrow, style }) => {
       style={[styles.BackgroundImage, style]}
     >
       <View style={styles.Title}>
-        {returnArrow ? (
-          <BackArrow color="#fff" style={{ position: "relative", top: 60 }} />
-        ) : (
-          <></>
-        )}
+        {returnArrow ? <BackArrow color="white" /> : <></>}
         <Text style={[styles.TitleText, { fontWeight: 500 }]}>{title}</Text>
       </View>
     </ImageBackground>
@@ -31,8 +27,10 @@ const styles = StyleSheet.create({
   },
   Title: {
     height: "15%",
-    justifyContent: "center",
     paddingHorizontal: 17,
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "center",
   },
   TitleText: {
     fontSize: 20,

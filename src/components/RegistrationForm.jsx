@@ -11,6 +11,7 @@ import OptionalButton from "./OptionalButton";
 import ButtonComponent from "./ButtonComponent";
 import InputComponent from "./InputComponent";
 import ContinueWithGoogleButton from "./ContinueWithGoogleButton";
+import Loader from "./Loader";
 
 const RegistrationForm = ({
   titleHeader,

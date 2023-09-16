@@ -11,7 +11,7 @@ const Stack = createStackNavigator();
 
 export default function AuthStack() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Onboarding">
       <Stack.Screen
         name="Onboarding"
         component={OnboardingScreen}
