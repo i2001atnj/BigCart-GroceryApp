@@ -1,4 +1,3 @@
-import React from "react";
 import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
@@ -15,7 +14,7 @@ import {
   favorites,
   favorites2,
   shoppingCartVector,
-} from "../assets/index.js";
+} from "../assets/icons/index";
 
 const Tab = createBottomTabNavigator();
 

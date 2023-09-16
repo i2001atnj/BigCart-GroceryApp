@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, View, SafeAreaView } from "react-native";
 import React from "react";
 import Header from "../../components/Header";
-import InputComponent from "../../components/Input";
+import Input from "../../components/Input";
 import {
   address,
   globe,
@@ -10,8 +10,8 @@ import {
   phoneIcon,
   user2,
   zipCode,
-} from "../../assets";
-import ButtonComponent from "../../components/Button";
+} from "../../assets/icons/index";
+import Button from "../../components/Button";
 
 const AddAddressScreen = () => {
   return (
@@ -29,15 +29,15 @@ const AddAddressScreen = () => {
         }}
       >
         <View style={{ marginTop: 36, gap: 5 }}>
-          <InputComponent image={user2} placeholder="Name" />
-          <InputComponent image={mailIcon} placeholder="Email Address" />
-          <InputComponent image={phoneIcon} placeholder="Phone Number" />
-          <InputComponent image={address} placeholder="Address" />
-          <InputComponent image={zipCode} placeholder="Zip Code" />
-          <InputComponent image={map} placeholder="City" />
-          <InputComponent image={globe} placeholder="Country" />
+          <Input image={user2} placeholder="Name" />
+          <Input image={mailIcon} placeholder="Email Address" />
+          <Input image={phoneIcon} placeholder="Phone Number" />
+          <Input image={address} placeholder="Address" />
+          <Input image={zipCode} placeholder="Zip Code" />
+          <Input image={map} placeholder="City" />
+          <Input image={globe} placeholder="Country" />
         </View>
-        <ButtonComponent text="Add Address" />
+        <Button text="Add Address" />
       </View>
     </SafeAreaView>
   );

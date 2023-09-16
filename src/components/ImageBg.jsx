@@ -1,18 +1,37 @@
-import { StyleSheet, Text, View, ImageBackground } from "react-native";
-import React from "react";
-import BackArrow from "./BackArrow";
+import { StyleSheet, ImageBackground } from "react-native";
+import Header from "./Header";
 
-const ImageBg = ({ title, image, returnArrow, style }) => {
+const ImageBg = ({
+  title,
+  image,
+  bgStyle,
+  returnArrow,
+  headerStyle,
+  titleStyle,
+  arrowColor,
+}) => {
   return (
     <ImageBackground
       source={image}
       resizeMode="cover"
-      style={[styles.BackgroundImage, style]}
+      style={[styles.BackgroundImage, bgStyle]}
     >
-      <View style={styles.Title}>
-        {returnArrow ? <BackArrow color="white" /> : <></>}
-        <Text style={[styles.TitleText, { fontWeight: 500 }]}>{title}</Text>
-      </View>
+      <Header
+        title={title}
+        style={[
+          headerStyle,
+          {
+            backgroundColor: "transparent",
+            marginTop: "10%",
+          },
+        ]}
+        titleStyle={[
+          { color: "#fff", fontWeight: 500, fontSize: 18 },
+          titleStyle,
+        ]}
+        returnArrow={returnArrow}
+        color={arrowColor}
+      />
     </ImageBackground>
   );
 };

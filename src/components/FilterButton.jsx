@@ -1,12 +1,11 @@
 import { TouchableOpacity, Image } from "react-native";
-import React from "react";
-import { filters } from "../assets";
+import { filters } from "../assets/icons/index";
 import { useNavigation } from "@react-navigation/native";
 
 const FilterButton = () => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity onPress={() => navigation.navigate("Filters")}>
+    <TouchableOpacity onPress={() => navigation.navigate("Filters Screen")}>
       <Image source={filters} />
     </TouchableOpacity>
   );

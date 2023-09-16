@@ -1,5 +1,4 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import React from "react";
 import {
   SearchScreen,
   FiltersScreen,
@@ -16,16 +15,16 @@ import {
   NotificationsScreen,
   AddAddressScreen,
   AddCreditCardScreen,
-  HomeStack,
 } from "../screens/user/index";
 
+import HomeStack from "./HomeStack";
 const Stack = createStackNavigator();
 
 export default function UserStack() {
   return (
-    <Stack.Navigator initialRouteName="Home Screen">
+    <Stack.Navigator initialRouteName="Home">
       <Stack.Screen
-        name="Home Screen"
+        name="Home"
         component={HomeStack}
         options={{ headerShown: false }}
       />

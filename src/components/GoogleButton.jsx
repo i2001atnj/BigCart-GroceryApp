@@ -1,6 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import React from "react";
-import { googleLogo } from "../assets";
+import { googleLogo } from "../assets/icons/index";
 
 const ContinueWithGoogleButton = () => {
   return (

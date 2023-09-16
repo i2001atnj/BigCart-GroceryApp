@@ -26,7 +26,7 @@ export default function CategoriesScreen() {
             name={item.name}
             color={item.color}
             btnFunction={() =>
-              navigation.navigate("Category", {
+              navigation.navigate("Category Screen", {
                 id: item.id,
                 image: item.image,
                 name: item.name,

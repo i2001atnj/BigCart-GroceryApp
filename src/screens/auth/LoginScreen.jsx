@@ -31,7 +31,10 @@ export default function LoginScreen() {
         image={loginbg}
         returnArrow
         title="Welcome"
-        style={{ height: "80%" }}
+        bgStyle={{ height: "80%" }}
+        headerStyle={{ justifyContent: "space-between" }}
+        titleStyle={{ marginRight: "40%" }}
+        arrowColor={"white"}
       />
       <RegistrationForm
         login
@@ -50,7 +53,7 @@ export default function LoginScreen() {
         sectionStyle={styles.Section}
         optionalText="Don't have an account?"
         optionalButtonText="Sign up"
-        optionalScreen="Signup"
+        optionalScreen="Auth Signup Screen"
         loading={loading}
       />
     </SafeAreaView>

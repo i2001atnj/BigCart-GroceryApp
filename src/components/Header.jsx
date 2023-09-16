@@ -1,5 +1,4 @@
 import { StyleSheet, Text, View } from "react-native";
-import React from "react";
 import Filters from "./FilterButton";
 import SearchBar from "./SearchBar";
 import BackArrow from "./BackArrow";
@@ -16,10 +15,11 @@ const Header = ({
   reset,
   addButton,
   addFunction,
+  color,
 }) => {
   return (
     <View style={[styles.Header, style]}>
-      {returnArrow ? <BackArrow /> : <></>}
+      {returnArrow ? <BackArrow color={color} /> : <></>}
       {title ? (
         <Text style={[{ fontSize: 18, fontWeight: 500 }, titleStyle]}>
           {title}

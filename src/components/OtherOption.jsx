@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-import React from "react";
-import { check } from "../assets";
+import { check } from "../assets/icons/index";
 
 const OtherOption = ({ image, title }) => {
   return (

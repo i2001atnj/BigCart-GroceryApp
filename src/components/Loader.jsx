@@ -1,5 +1,4 @@
 import { StyleSheet, ActivityIndicator, View } from "react-native";
-import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
 
 const Loader = ({ size, style, color }) => {
@@ -26,6 +25,5 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "transparent",
     justifyContent: "center",
-    paddingHorizontal: 17,
   },
 });

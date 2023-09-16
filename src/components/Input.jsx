@@ -1,5 +1,4 @@
 import { StyleSheet, View, Image, TextInput } from "react-native";
-import React from "react";
 
 const InputComponent = ({
   image,
@@ -38,10 +37,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     alignItems: "center",
     gap: 21,
-    width: "100%",
   },
   Input: {
     fontSize: 16,
-    width: "90%",
+    width: "86%",
   },
 });

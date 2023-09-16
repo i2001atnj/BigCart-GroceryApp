@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
-import React from "react";
+import { StyleSheet, View, TextInput } from "react-native";
 
 const StarRatingInput = () => {
   return (

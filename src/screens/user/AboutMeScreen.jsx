@@ -3,7 +3,12 @@ import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import InputComponent from "../../components/Input";
 import ButtonComponent from "../../components/Button";
 import Header from "../../components/Header";
-import { lockVector, mailIcon, nameIcon, phoneIcon } from "../../assets";
+import {
+  lockVector,
+  mailIcon,
+  nameIcon,
+  phoneIcon,
+} from "../../assets/icons/index";
 import { userContext } from "../../context/userContext";
 
 export default function AboutMeScreen() {

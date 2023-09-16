@@ -1,4 +1,3 @@
-import React from "react";
 import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import Banner from "../../components/Banner";

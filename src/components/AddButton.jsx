@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import React from "react";
-import { add } from "../assets";
+import { Image, TouchableOpacity } from "react-native";
+import { add } from "../assets/icons/index";
 
 const AddButton = ({ addFunction }) => {
   return (
@@ -11,5 +10,3 @@ const AddButton = ({ addFunction }) => {
 };
 
 export default AddButton;
-
-const styles = StyleSheet.create({});

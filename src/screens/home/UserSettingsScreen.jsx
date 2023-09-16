@@ -9,7 +9,7 @@ import {
   transactionsVector,
   notificationsVector,
   signOutVector,
-} from "../../assets";
+} from "../../assets/icons/index";
 import Option from "../../components/Option";
 import { useNavigation } from "@react-navigation/native";
 import { userContext } from "../../context/userContext";
@@ -28,46 +28,44 @@ export default function UserSettingsScreen() {
         }}
       ></View>
       <View style={styles.ProfileSection}>
-        <View style={styles.UserInfo}>
-          <Text style={styles.UserName}>Admin</Text>
-          <Text style={styles.UserMail}>{user.email}</Text>
-        </View>
+        <Text style={styles.UserName}>Admin</Text>
+        <Text style={styles.UserMail}>{user.email}</Text>
       </View>
-      <View style={styles.SettingsSection}>
+      <View style={styles.OptionsSection}>
         <Option
           image={myOrdersVector}
           title="About Me"
-          optionFunction={() => navigation.navigate("About Me")}
+          optionFunction={() => navigation.navigate("About Me Screen")}
         />
         <Option
           image={myOrdersVector}
           title="My Orders"
-          optionFunction={() => navigation.navigate("My Orders")}
+          optionFunction={() => navigation.navigate("My Orders Screen")}
         />
         <Option
           image={myFavoritesVector}
           title="My Favorites"
-          optionFunction={() => navigation.navigate("My Favorites")}
+          optionFunction={() => navigation.navigate("My Favorites Screen")}
         />
         <Option
           image={addressVector}
           title="My Address"
-          optionFunction={() => navigation.navigate("My Address")}
+          optionFunction={() => navigation.navigate("My Address Screen")}
         />
         <Option
           image={creditCardsVector}
           title="Credit Cards"
-          optionFunction={() => navigation.navigate("Credit Cards")}
+          optionFunction={() => navigation.navigate("Credit Cards Screen")}
         />
         <Option
           image={transactionsVector}
           title="Transactions"
-          optionFunction={() => navigation.navigate("Transactions")}
+          optionFunction={() => navigation.navigate("Transactions Screen")}
         />
         <Option
           image={notificationsVector}
           title="Notifications"
-          optionFunction={() => navigation.navigate("Notifications")}
+          optionFunction={() => navigation.navigate("Notifications Screen")}
         />
         <Option
           title="Sign out"
@@ -82,8 +80,6 @@ export default function UserSettingsScreen() {
 
 const styles = StyleSheet.create({
   UserPage: {
-    display: "flex",
-    flexDirection: "column",
     alignItems: "center",
     height: "100%",
     width: "100%",
@@ -91,17 +87,7 @@ const styles = StyleSheet.create({
   },
   ProfileSection: {
     marginTop: 20,
-  },
-  ProfilePhotoButton: {
-    backgroundColor: "#28B446",
-    width: 26,
-    height: 26,
-    borderRadius: 100,
-    justifyContent: "center",
     alignItems: "center",
-    position: "absolute",
-    top: 93,
-    left: 97,
   },
   UserInfo: {
     alignItems: "center",
@@ -117,8 +103,8 @@ const styles = StyleSheet.create({
     fontWeight: 400,
     color: "#868889",
   },
-  SettingsSection: {
-    marginTop: 50,
+  OptionsSection: {
+    marginTop: 80,
     gap: 30,
     width: "100%",
   },

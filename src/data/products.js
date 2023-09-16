@@ -2,7 +2,7 @@ export const PRODUCTS = [
   {
     id: 1,
     name: "Fresh Peach",
-    image: require("../assets/peach.png"),
+    image: require("../assets/icons/peach.png"),
     price: "$8.00",
     quantity: "dozen",
     color: "#FFCEC1",
@@ -12,7 +12,7 @@ export const PRODUCTS = [
   {
     id: 2,
     name: "Avocado",
-    image: require("../assets/avocado.png"),
+    image: require("../assets/icons/avocado.png"),
     price: "$7.00",
     quantity: "2.0 lbs",
     color: "#FCFFD9",
@@ -22,7 +22,7 @@ export const PRODUCTS = [
   {
     id: 3,
     name: "Pineapple",
-    image: require("../assets/pineapple.png"),
+    image: require("../assets/icons/pineapple.png"),
     price: "$9.90",
     quantity: "1.50 lbs",
     color: "#FFE6C2",
@@ -32,7 +32,7 @@ export const PRODUCTS = [
   {
     id: 4,
     name: "Black Grapes",
-    image: require("../assets/grapes.png"),
+    image: require("../assets/icons/grapes.png"),
     price: "$7.05",
     quantity: "5.0 lbs",
     color: "#cca4ff76",
@@ -42,7 +42,7 @@ export const PRODUCTS = [
   {
     id: 5,
     name: "Pomegranate",
-    image: require("../assets/pomegranate.png"),
+    image: require("../assets/icons/pomegranate.png"),
     price: "$2.09",
     quantity: "1.50 lbs",
     color: "#FFE3E2",
@@ -52,7 +52,7 @@ export const PRODUCTS = [
   {
     id: 6,
     name: "Fresh Broccoli",
-    image: require("../assets/broccoli.png"),
+    image: require("../assets/icons/broccoli.png"),
     price: "$3.00",
     quantity: "1 kg",
     color: "#D2FFD0",
@@ -62,7 +62,7 @@ export const PRODUCTS = [
   {
     id: 7,
     name: "Organic Lemons",
-    image: require("../assets/lemons.png"),
+    image: require("../assets/icons/lemons.png"),
     price: "$2.22",
     quantity: "1.50 lbs",
     color: "#F2FFE6",
@@ -72,7 +72,7 @@ export const PRODUCTS = [
   {
     id: 8,
     name: "Potatoes",
-    image: require("../assets/potatoes.png"),
+    image: require("../assets/icons/potatoes.png"),
     price: "$1.01",
     quantity: "1 lb",
     color: "#FFF6E3",
@@ -82,7 +82,7 @@ export const PRODUCTS = [
   {
     id: 9,
     name: "Carrots",
-    image: require("../assets/carrots.png"),
+    image: require("../assets/icons/carrots.png"),
     price: "$1.29",
     quantity: "1 kg",
     color: "#fce0bd",
@@ -92,7 +92,7 @@ export const PRODUCTS = [
   {
     id: 10,
     name: "Water Bottle",
-    image: require("../assets/water.png"),
+    image: require("../assets/icons/water.png"),
     price: "$5.98",
     quantity: "16.9 oz",
     color: "#D2EFFF",
@@ -102,7 +102,7 @@ export const PRODUCTS = [
   {
     id: 11,
     name: "Red Tomatoes",
-    image: require("../assets/tomatoes.png"),
+    image: require("../assets/icons/tomatoes.png"),
     price: "$4.61",
     quantity: "1 kg",
     color: "#FFE9E5",
@@ -112,7 +112,7 @@ export const PRODUCTS = [
   {
     id: 12,
     name: "Fresh Oranges",
-    image: require("../assets/oranges.png"),
+    image: require("../assets/icons/oranges.png"),
     price: "$1.59",
     quantity: "1 lb",
     color: "#fceac7",
@@ -122,7 +122,7 @@ export const PRODUCTS = [
   {
     id: 13,
     name: "Brown Onions",
-    image: require("../assets/onions.png"),
+    image: require("../assets/icons/onions.png"),
     price: "$1.54",
     quantity: "1 kg",
     color: "#FFF6E3",

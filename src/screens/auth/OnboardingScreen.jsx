@@ -1,4 +1,3 @@
-import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import EntryForm from "../../components/EntryForm";
@@ -11,19 +10,24 @@ export default function OnboardingScreen() {
   return (
     <SafeAreaView style={styles.WelcomePage}>
       <StatusBar style="light" />
-      <ImageBg title="Welcome" image={welcomebg} style={{ height: "90%" }} />
+      <ImageBg
+        title="Welcome"
+        image={welcomebg}
+        bgStyle={{ height: "90%" }}
+        headerStyle={{ justifyContent: "center" }}
+      />
       <EntryForm
         titleHeader="Welcome"
         titleBody="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy"
         continueWithGoogle
-        buttonFunction={() => navigation.navigate("Signup")}
+        buttonFunction={() => navigation.navigate("Auth Signup Screen")}
         buttonTitle="Create an account"
         buttonIcon={signUpVector}
         sectionStyle={styles.Section}
         optionalText="Already have an account?"
         optionalButtonText="Login"
-        optionalScreen="Login"
+        optionalScreen="Auth Login Screen"
       />
     </SafeAreaView>
   );

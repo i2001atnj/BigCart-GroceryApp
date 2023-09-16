@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import React from "react";
+import { dots, masterCard } from "../assets/icons/index";
 import { LinearGradient } from "expo-linear-gradient";
-import { dots, masterCard } from "../assets";
 
 const CreditCardItem = ({
   style,

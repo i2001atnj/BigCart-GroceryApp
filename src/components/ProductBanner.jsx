@@ -1,5 +1,4 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
 
 const ProductBanner = ({ backgroundColor, textColor, borderColor, text }) => {
   return (

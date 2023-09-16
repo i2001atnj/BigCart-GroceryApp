@@ -3,8 +3,8 @@ import React, { useContext } from "react";
 import CreditCardItem from "../../components/CreditCardItem";
 import Header from "../../components/Header";
 import { userContext } from "../../context/userContext";
-import InputComponent from "../../components/Input";
-import { card, user2, calendar, lockVector } from "../../assets";
+import Input from "../../components/Input";
+import { card, user2, calendar, lockVector } from "../../assets/icons/index";
 
 const AddCreditCardScreen = () => {
   const user = useContext(userContext);
@@ -33,8 +33,8 @@ const AddCreditCardScreen = () => {
           style={{ marginTop: 33 }}
         />
         <View style={{ width: "100%", gap: 5, marginTop: 18 }}>
-          <InputComponent image={user2} placeholder="Name on the card" />
-          <InputComponent image={card} placeholder="XXXX XXXX XXXX XXXX" />
+          <Input image={user2} placeholder="Name on the card" />
+          <Input image={card} placeholder="XXXX XXXX XXXX XXXX" />
           <View
             style={{
               flexDirection: "row",
@@ -43,7 +43,7 @@ const AddCreditCardScreen = () => {
               paddingHorizontal: 17,
             }}
           >
-            <InputComponent
+            <Input
               image={calendar}
               style={{ width: "49%", marginHorizontal: 0 }}
               placeholder="Month / Year"

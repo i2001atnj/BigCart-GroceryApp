@@ -1,6 +1,5 @@
 import { Text, View, TouchableOpacity, Image } from "react-native";
-import React from "react";
-import { rightVector } from "../assets";
+import { rightVector } from "../assets/icons/index";
 
 const Option = ({ image, title, optionFunction, signOutButton }) => {
   return (

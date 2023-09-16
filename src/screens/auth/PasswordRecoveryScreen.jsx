@@ -1,8 +1,7 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import React from "react";
 import Header from "../../components/Header";
 import InputComponent from "../../components/Input";
-import { mailIcon } from "../../assets";
+import { mailIcon } from "../../assets/icons/index";
 import ButtonComponent from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
 
@@ -41,7 +40,9 @@ export default function PasswordRecoveryScreen() {
         <ButtonComponent
           text="Send link"
           style={{ marginTop: 13 }}
-          buttonFunction={() => navigation.navigate("Verify Number")}
+          buttonFunction={() =>
+            navigation.navigate("Auth Verify Number Screen")
+          }
         />
       </View>
     </SafeAreaView>

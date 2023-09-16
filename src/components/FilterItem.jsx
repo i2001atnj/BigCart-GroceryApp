@@ -1,5 +1,4 @@
-import { StyleSheet, Text, View, TextInput } from "react-native";
-import React from "react";
+import { StyleSheet, Text, View } from "react-native";
 import PriceInput from "./PriceInput";
 import StarRatingInput from "./StarRatingInput";
 import Others from "./Others";

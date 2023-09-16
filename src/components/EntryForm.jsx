@@ -5,8 +5,7 @@ import {
   KeyboardAvoidingView,
   Switch,
 } from "react-native";
-import { mailVector, lockVector } from "../assets";
-import React from "react";
+import { mailVector, lockVector, phoneVector } from "../assets/icons/index";
 import OptionalButton from "./OptionalButton";
 import ButtonComponent from "./Button";
 import InputComponent from "./Input";
@@ -102,7 +101,29 @@ const RegistrationForm = ({
       ) : (
         <></>
       )}
-
+      {register ? (
+        <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
+          <InputComponent
+            image={mailVector}
+            placeholder="Email address"
+            onChangeTextFunction={onChangeEmailTextFunction}
+            value={emailInputValue}
+          />
+          <InputComponent
+            image={phoneVector}
+            placeholder="Phone number (optional)"
+          />
+          <InputComponent
+            image={lockVector}
+            placeholder="Enter password"
+            onChangeTextFunction={onChangePasswordTextFunction}
+            value={passwordInputValue}
+            secureTextEntry={true}
+          />
+        </KeyboardAvoidingView>
+      ) : (
+        <></>
+      )}
       {loading ? (
         <Loader size={"small"} style={{ paddingVertical: 20 }} color="#FFF" />
       ) : (

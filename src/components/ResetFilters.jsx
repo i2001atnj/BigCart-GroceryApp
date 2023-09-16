@@ -1,6 +1,5 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
-import React from "react";
-import { reload } from "../assets";
+import { StyleSheet, TouchableOpacity, Image } from "react-native";
+import { reload } from "../assets/icons/index";
 
 const ResetFilters = () => {
   return (

@@ -7,10 +7,9 @@ import {
   TextInput,
   StyleSheet,
 } from "react-native";
-import React from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
-import { blackArrow, bag } from "../../assets";
-import ButtonComponent from "../../components/Button";
+import { blackArrow, bag } from "../../assets/icons/index";
+import Button from "../../components/Button";
 import ProductBanner from "../../components/ProductBanner";
 
 const ProductDetailsScreen = () => {
@@ -91,7 +90,7 @@ const ProductDetailsScreen = () => {
               </TouchableOpacity>
             </View>
           </View>
-          <ButtonComponent text="Add to cart" image={bag} content="center" />
+          <Button text="Add to cart" image={bag} content="center" />
         </View>
       </SafeAreaView>
     </View>

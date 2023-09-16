@@ -1,5 +1,3 @@
-import { useNavigation } from "@react-navigation/native";
-import React from "react";
 import {
   View,
   TextInput,
@@ -7,14 +5,15 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import { search } from "../assets";
+import { search } from "../assets/icons/index";
 import Filters from "./FilterButton";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SearchBar({ style }) {
   const navigation = useNavigation();
   return (
     <View style={[styles.SearchBar, style]}>
-      <TouchableOpacity onPress={() => navigation.navigate("Search")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Search Screen")}>
         <Image source={search} />
       </TouchableOpacity>
       <TextInput

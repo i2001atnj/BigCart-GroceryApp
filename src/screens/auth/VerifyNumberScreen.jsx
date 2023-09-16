@@ -1,9 +1,8 @@
 import { SafeAreaView, StyleSheet, View, Text } from "react-native";
-import React from "react";
 import Header from "../../components/Header";
-import InputComponent from "../../components/Input";
-import ButtonComponent from "../../components/Button";
-import { flag } from "../../icons/index";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
+import { flag } from "../../assets/icons/index";
 import { useNavigation } from "@react-navigation/native";
 
 const VerifyNumberScreen = () => {
@@ -45,15 +44,15 @@ const VerifyNumberScreen = () => {
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy
         </Text>
-        <InputComponent
+        <Input
           image={flag}
           placeholder="Email address"
           style={{ width: "92%" }}
         />
-        <ButtonComponent
+        <Button
           text="Next"
           style={{ marginTop: 13 }}
-          buttonFunction={() => navigation.navigate("Verify Code")}
+          buttonFunction={() => navigation.navigate("Auth Verify Code Screen")}
         />
       </View>
     </SafeAreaView>

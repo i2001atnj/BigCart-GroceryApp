@@ -1,9 +1,7 @@
 import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 import React from "react";
 import Header from "../../components/Header";
-import InputComponent from "../../components/Input";
 import ButtonComponent from "../../components/Button";
-import { flag } from "../../assets";
 import { useNavigation } from "@react-navigation/native";
 import CodeInput from "../../components/CodeInput";
 
@@ -61,7 +59,7 @@ const VerifyCodeScreen = () => {
         <ButtonComponent
           text="Next"
           style={{ marginTop: 13 }}
-          buttonFunction={() => navigation.navigate("Verify Code")}
+          buttonFunction={() => navigation.navigate("Auth Verify Code Screen")}
         />
       </View>
     </SafeAreaView>
