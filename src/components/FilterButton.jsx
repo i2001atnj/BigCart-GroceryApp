@@ -1,6 +1,6 @@
 import { TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { filters } from "../assets/assets";
+import { filters } from "../assets";
 import { useNavigation } from "@react-navigation/native";
 
 const FilterButton = () => {

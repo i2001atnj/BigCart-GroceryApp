@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import OtherOption from "./OtherOption";
-import { box, discount, fast } from "../assets/assets";
+import { box, discount, fast } from "../assets";
 
 const Others = () => {
   return (

@@ -9,9 +9,9 @@ import {
 } from "react-native";
 import React from "react";
 import { useRoute, useNavigation } from "@react-navigation/native";
-import { blackArrow, bag } from "../assets/assets";
-import ButtonComponent from "../components/ButtonComponent";
-import ProductBanner from "../components/ProductBanner";
+import { blackArrow, bag } from "../../assets";
+import ButtonComponent from "../../components/Button";
+import ProductBanner from "../../components/ProductBanner";
 
 const ProductDetailsScreen = () => {
   const route = useRoute();

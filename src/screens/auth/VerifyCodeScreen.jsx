@@ -1,11 +1,11 @@
 import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import InputComponent from "../components/InputComponent";
-import ButtonComponent from "../components/ButtonComponent";
-import { flag } from "../assets/assets";
+import Header from "../../components/Header";
+import InputComponent from "../../components/Input";
+import ButtonComponent from "../../components/Button";
+import { flag } from "../../assets";
 import { useNavigation } from "@react-navigation/native";
-import CodeInput from "../components/CodeInput";
+import CodeInput from "../../components/CodeInput";
 
 const VerifyCodeScreen = () => {
   const navigation = useNavigation();

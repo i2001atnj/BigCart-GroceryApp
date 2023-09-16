@@ -1,12 +1,12 @@
 import { SafeAreaView, StyleSheet } from "react-native";
 import React, { useState } from "react";
-import { FIREBASE_AUTH } from "../../FirebaseConfig.js";
+import { FIREBASE_AUTH } from "../../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import ImageBg from "../components/ImageBg.jsx";
-import { loginbg } from "../assets/assets.js";
-import RegistrationForm from "../components/RegistrationForm.jsx";
+import ImageBg from "../../components/ImageBg.jsx";
+import RegistrationForm from "../../components/EntryForm.jsx";
+import { loginbg } from "../../assets/icons/index";
 
-export default function LogScreen() {
+export default function LoginScreen() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   const [email, setEmail] = useState("");

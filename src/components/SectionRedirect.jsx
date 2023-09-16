@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { rightVector } from "../assets/assets";
+import { rightVector } from "../assets";
 
 const SectionRedirect = ({ title, screen }) => {
   const navigation = useNavigation();

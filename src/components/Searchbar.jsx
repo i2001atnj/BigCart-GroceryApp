@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
-import { search } from "../assets/assets";
+import { search } from "../assets";
 import Filters from "./FilterButton";
 
 export default function SearchBar({ style }) {

@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { add } from "../assets/assets";
+import { add } from "../assets";
 
 const AddButton = ({ addFunction }) => {
   return (

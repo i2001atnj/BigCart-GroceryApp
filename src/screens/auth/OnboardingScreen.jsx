@@ -1,9 +1,9 @@
 import React from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import RegistrationForm from "../components/RegistrationForm";
-import ImageBg from "../components/ImageBg";
-import { signUpVector, welcomebg } from "../assets/assets";
+import EntryForm from "../../components/EntryForm";
+import ImageBg from "../../components/ImageBg";
+import { signUpVector, welcomebg } from "../../assets/icons/index";
 import { useNavigation } from "@react-navigation/native";
 
 export default function OnboardingScreen() {
@@ -12,7 +12,7 @@ export default function OnboardingScreen() {
     <SafeAreaView style={styles.WelcomePage}>
       <StatusBar style="light" />
       <ImageBg title="Welcome" image={welcomebg} style={{ height: "90%" }} />
-      <RegistrationForm
+      <EntryForm
         titleHeader="Welcome"
         titleBody="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy"

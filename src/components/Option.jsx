@@ -1,8 +1,8 @@
 import { Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { rightVector } from "../assets/assets";
+import { rightVector } from "../assets";
 
-const UserOption = ({ image, title, optionFunction, signOutButton }) => {
+const Option = ({ image, title, optionFunction, signOutButton }) => {
   return (
     <TouchableOpacity
       onPress={optionFunction}
@@ -34,4 +34,4 @@ const UserOption = ({ image, title, optionFunction, signOutButton }) => {
   );
 };
 
-export default UserOption;
+export default Option;

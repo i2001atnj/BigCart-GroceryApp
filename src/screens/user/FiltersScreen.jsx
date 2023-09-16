@@ -1,7 +1,7 @@
 import { View, SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
-import FilterItem from "../components/FilterItem";
-import Header from "../components/Header";
+import FilterItem from "../../components/FilterItem";
+import Header from "../../components/Header";
 
 export default function FiltersScreen() {
   return (

@@ -1,104 +1,106 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import SearchScreen from "../screens/Search";
-import FiltersScreen from "../screens/Filters";
-import CategoriesScreen from "../screens/Categories";
-import AboutMeScreen from "../screens/AboutMe";
-import ProductDetailsScreen from "../screens/ProductDetails";
-import CategoryScreen from "../screens/Category";
-import ProductsScreen from "../screens/Products";
-import MyOrdersScreen from "../screens/MyOrders";
-import MyFavoritesScreen from "../screens/MyFavorites";
-import MyAddressScreen from "../screens/MyAddress";
-import CreditCardsScreen from "../screens/CreditCards";
-import TransactionsScreen from "../screens/Transactions";
-import NotificationsScreen from "../screens/Notifications";
-import AddAddressScreen from "../screens/AddAddress";
-import AddCreditCardScreen from "../screens/AddCreditCard";
-import HomeStack from "./HomeStack";
+import {
+  SearchScreen,
+  FiltersScreen,
+  CategoriesScreen,
+  AboutMeScreen,
+  ProductDetailsScreen,
+  CategoryScreen,
+  ProductsScreen,
+  MyOrdersScreen,
+  MyFavoritesScreen,
+  MyAddressScreen,
+  CreditCardsScreen,
+  TransactionsScreen,
+  NotificationsScreen,
+  AddAddressScreen,
+  AddCreditCardScreen,
+  HomeStack,
+} from "../screens/user/index";
 
 const Stack = createStackNavigator();
 
 export default function UserStack() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Home Screen">
       <Stack.Screen
-        name="Home"
+        name="Home Screen"
         component={HomeStack}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Search"
+        name="Search Screen"
         component={SearchScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Filters"
+        name="Filters Screen"
         component={FiltersScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Categories"
+        name="Categories Screen"
         component={CategoriesScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="About Me"
+        name="About Me Screen"
         component={AboutMeScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Product Details"
+        name="Product Details Screen"
         component={ProductDetailsScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Category"
+        name="Category Screen"
         component={CategoryScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Products"
+        name="Products Screen"
         component={ProductsScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="My Orders"
+        name="My Orders Screen"
         component={MyOrdersScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="My Favorites"
+        name="My Favorites Screen"
         component={MyFavoritesScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="My Address"
+        name="My Address Screen"
         component={MyAddressScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Credit Cards"
+        name="Credit Cards Screen"
         component={CreditCardsScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Transactions"
+        name="Transactions Screen"
         component={TransactionsScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Notifications"
+        name="Notifications Screen"
         component={NotificationsScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Add Address"
+        name="Add Address Screen"
         component={AddAddressScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Add Credit Card"
+        name="Add Credit Card Screen"
         component={AddCreditCardScreen}
         options={{ headerShown: false }}
       />

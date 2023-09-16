@@ -1,6 +1,6 @@
 import { TouchableOpacity, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { backVector, blackArrow } from "../assets/assets";
+import { backVector, blackArrow } from "../assets";
 
 const BackArrow = ({ color, style }) => {
   const navigation = useNavigation();

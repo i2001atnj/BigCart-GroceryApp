@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import React, { useContext } from "react";
-import { FIREBASE_AUTH } from "../../FirebaseConfig";
+import { FIREBASE_AUTH } from "../../../FirebaseConfig";
 import {
   myOrdersVector,
   myFavoritesVector,
@@ -9,12 +9,12 @@ import {
   transactionsVector,
   notificationsVector,
   signOutVector,
-} from "../assets/assets";
-import UserOption from "../components/UserOption";
+} from "../../assets";
+import Option from "../../components/Option";
 import { useNavigation } from "@react-navigation/native";
-import { userContext } from "../context/userContext";
+import { userContext } from "../../context/userContext";
 
-export default function UserPageScreen() {
+export default function UserSettingsScreen() {
   const navigation = useNavigation();
   const user = useContext(userContext);
   return (
@@ -34,42 +34,42 @@ export default function UserPageScreen() {
         </View>
       </View>
       <View style={styles.SettingsSection}>
-        <UserOption
+        <Option
           image={myOrdersVector}
           title="About Me"
           optionFunction={() => navigation.navigate("About Me")}
         />
-        <UserOption
+        <Option
           image={myOrdersVector}
           title="My Orders"
           optionFunction={() => navigation.navigate("My Orders")}
         />
-        <UserOption
+        <Option
           image={myFavoritesVector}
           title="My Favorites"
           optionFunction={() => navigation.navigate("My Favorites")}
         />
-        <UserOption
+        <Option
           image={addressVector}
           title="My Address"
           optionFunction={() => navigation.navigate("My Address")}
         />
-        <UserOption
+        <Option
           image={creditCardsVector}
           title="Credit Cards"
           optionFunction={() => navigation.navigate("Credit Cards")}
         />
-        <UserOption
+        <Option
           image={transactionsVector}
           title="Transactions"
           optionFunction={() => navigation.navigate("Transactions")}
         />
-        <UserOption
+        <Option
           image={notificationsVector}
           title="Notifications"
           optionFunction={() => navigation.navigate("Notifications")}
         />
-        <UserOption
+        <Option
           title="Sign out"
           image={signOutVector}
           optionFunction={() => FIREBASE_AUTH.signOut()}

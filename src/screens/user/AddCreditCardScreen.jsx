@@ -1,10 +1,10 @@
 import { StyleSheet, View, SafeAreaView } from "react-native";
 import React, { useContext } from "react";
-import CreditCardItem from "../components/CreditCardItem";
-import Header from "../components/Header";
-import { userContext } from "../context/userContext";
-import InputComponent from "../components/InputComponent";
-import { card, user2, calendar, lockVector } from "../assets/assets";
+import CreditCardItem from "../../components/CreditCardItem";
+import Header from "../../components/Header";
+import { userContext } from "../../context/userContext";
+import InputComponent from "../../components/Input";
+import { card, user2, calendar, lockVector } from "../../assets";
 
 const AddCreditCardScreen = () => {
   const user = useContext(userContext);

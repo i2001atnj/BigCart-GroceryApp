@@ -1,44 +1,45 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
-import OnboardingScreen from "../screens/Onboarding";
-import LogScreen from "../screens/Login";
-import PasswordRecoveryScreen from "../screens/PasswordRecovery";
-import SignScreen from "../screens/Signup";
-import VerifyNumberScreen from "../screens/VerifyNumber";
-import VerifyCodeScreen from "../screens/VerifyCode";
+import {
+  OnboardingScreen,
+  LoginScreen,
+  PasswordRecoveryScreen,
+  SignupScreen,
+  VerifyNumberScreen,
+  VerifyCodeScreen,
+} from "../screens/auth/index";
 
 const Stack = createStackNavigator();
-
 export default function AuthStack() {
   return (
-    <Stack.Navigator initialRouteName="Onboarding">
+    <Stack.Navigator initialRouteName="Auth Onboarding Screen">
       <Stack.Screen
-        name="Onboarding"
+        name="Auth Onboarding Screen"
         component={OnboardingScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Login"
-        component={LogScreen}
+        name="Auth Login Screen"
+        component={LoginScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Signup"
-        component={SignScreen}
+        name="Auth Signup Screen"
+        component={SignupScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Password Recovery"
+        name="Auth Password Recovery Screen"
         component={PasswordRecoveryScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Verify Number"
+        name="Auth Verify Number Screen"
         component={VerifyNumberScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
-        name="Verify Code"
+        name="Auth Verify Code Screen"
         component={VerifyCodeScreen}
         options={{ headerShown: false }}
       />

@@ -1,20 +1,23 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
+import { useNavigation } from "@react-navigation/native";
 
-const TransactionsScreen = () => {
+const MyAddressScreen = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", height: "100%" }}>
       <Header
         returnArrow
-        title="Transactions"
-        titleStyle={{ marginRight: "37%" }}
+        title="My Address"
+        addButton
+        addFunction={() => navigation.navigate("Add Address")}
       />
       <View style={{ height: "100%", backgroundColor: "#F4F5F9" }}></View>
     </SafeAreaView>
   );
 };
 
-export default TransactionsScreen;
+export default MyAddressScreen;
 
 const styles = StyleSheet.create({});

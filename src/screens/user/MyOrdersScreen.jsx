@@ -1,8 +1,8 @@
 import { SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import EmptyCartInfo from "../components/EmptyCartInfo";
-import ButtonComponent from "../components/ButtonComponent";
+import Header from "../../components/Header";
+import EmptyCartInfo from "../../components/EmptyCartInfo";
+import ButtonComponent from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
 
 const MyOrdersScreen = () => {

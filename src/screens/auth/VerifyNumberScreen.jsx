@@ -1,9 +1,9 @@
 import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import InputComponent from "../components/InputComponent";
-import ButtonComponent from "../components/ButtonComponent";
-import { flag } from "../assets/assets";
+import Header from "../../components/Header";
+import InputComponent from "../../components/Input";
+import ButtonComponent from "../../components/Button";
+import { flag } from "../../icons/index";
 import { useNavigation } from "@react-navigation/native";
 
 const VerifyNumberScreen = () => {

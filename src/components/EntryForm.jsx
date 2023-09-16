@@ -5,12 +5,12 @@ import {
   KeyboardAvoidingView,
   Switch,
 } from "react-native";
-import { mailVector, lockVector } from "../assets/assets";
+import { mailVector, lockVector } from "../assets";
 import React from "react";
 import OptionalButton from "./OptionalButton";
-import ButtonComponent from "./ButtonComponent";
-import InputComponent from "./InputComponent";
-import ContinueWithGoogleButton from "./ContinueWithGoogleButton";
+import ButtonComponent from "./Button";
+import InputComponent from "./Input";
+import ContinueWithGoogleButton from "./GoogleButton";
 import Loader from "./Loader";
 
 const RegistrationForm = ({

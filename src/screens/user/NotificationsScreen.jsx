@@ -1,8 +1,8 @@
 import { StyleSheet, Text, SafeAreaView, View } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import NotificationSetting from "../components/NotificationSetting";
-import ButtonComponent from "../components/ButtonComponent";
+import Header from "../../components/Header";
+import Setting from "../../components/Setting";
+import ButtonComponent from "../../components/Button";
 
 const NotificationsScreen = () => {
   return (
@@ -21,10 +21,10 @@ const NotificationsScreen = () => {
           gap: 12,
         }}
       >
-        <NotificationSetting title="Allow notifications" />
-        <NotificationSetting title="Email notifications" />
-        <NotificationSetting title="Order notifications" />
-        <NotificationSetting title="General notifications" />
+        <Setting title="Allow notifications" />
+        <Setting title="Email notifications" />
+        <Setting title="Order notifications" />
+        <Setting title="General notifications" />
         <ButtonComponent
           text="Save settings"
           style={{ paddingHorizontal: 0, marginTop: "50%" }}

@@ -1,10 +1,12 @@
 import React from "react";
 import { Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/Home";
-import UserPageScreen from "../screens/UserPage";
-import FavoritesScreen from "../screens/Favorites";
-import CartScreen from "../screens/Cart";
+import {
+  HomeScreen,
+  UserSettingsScreen,
+  FavoritesScreen,
+  CartScreen,
+} from "../screens/home/index";
 import {
   homeVector,
   homeVector2,
@@ -13,7 +15,7 @@ import {
   favorites,
   favorites2,
   shoppingCartVector,
-} from "../assets/assets.js";
+} from "../assets/index.js";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,7 +29,7 @@ export default function HomeStack() {
           if (route.name === "Home Screen") {
             tabIcon = focused ? homeVector : homeVector2;
           }
-          if (route.name === "User Page Screen") {
+          if (route.name === "User Settings Screen") {
             tabIcon = focused ? user : user2;
           }
           if (route.name === "Favorites Screen") {
@@ -48,8 +50,8 @@ export default function HomeStack() {
         options={{ tabBarShowLabel: false }}
       />
       <Tab.Screen
-        name="User Page Screen"
-        component={UserPageScreen}
+        name="User Settings Screen"
+        component={UserSettingsScreen}
         options={{ tabBarShowLabel: false }}
       />
       <Tab.Screen

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import InputComponent from "../components/InputComponent";
+import Header from "../../components/Header";
+import InputComponent from "../../components/Input";
 import {
   address,
   globe,
@@ -10,8 +10,8 @@ import {
   phoneIcon,
   user2,
   zipCode,
-} from "../assets/assets";
-import ButtonComponent from "../components/ButtonComponent";
+} from "../../assets";
+import ButtonComponent from "../../components/Button";
 
 const AddAddressScreen = () => {
   return (

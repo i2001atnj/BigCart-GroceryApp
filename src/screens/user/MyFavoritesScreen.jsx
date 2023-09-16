@@ -1,6 +1,6 @@
 import { SafeAreaView, View, Text } from "react-native";
 import React from "react";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
 const MyFavoritesScreen = () => {
   return (

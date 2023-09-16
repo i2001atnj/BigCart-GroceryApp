@@ -1,10 +1,10 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import Banner from "../components/Banner";
-import Categories from "../components/Categories";
-import FeaturedProducts from "../components/FeaturedProducts";
-import Header from "../components/Header";
+import Banner from "../../components/Banner";
+import Categories from "../../components/Categories";
+import FeaturedProducts from "../../components/FeaturedProducts";
+import Header from "../../components/Header";
 
 export default function HomeScreen() {
   return (

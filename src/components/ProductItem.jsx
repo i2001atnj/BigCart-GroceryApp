@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
-import { addToCartIcon, heartVector1 } from "../assets/assets";
+import { addToCartIcon, heartVector1 } from "../assets";
 import { useNavigation } from "@react-navigation/native";
 
 export default ProductItem = ({

@@ -1,7 +1,7 @@
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { useRoute } from "@react-navigation/native";
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
 const CategoryScreen = () => {
   const route = useRoute();

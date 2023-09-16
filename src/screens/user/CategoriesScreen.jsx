@@ -1,7 +1,7 @@
 import { View, SafeAreaView, StyleSheet } from "react-native";
-import { CATEGORIES } from "../data/categories";
-import Header from "../components/Header";
-import CategoryItem from "../components/CategoryItem";
+import { CATEGORIES } from "../../data/categories";
+import Header from "../../components/Header";
+import CategoryItem from "../../components/CategoryItem";
 import { useNavigation } from "@react-navigation/native";
 
 export default function CategoriesScreen() {

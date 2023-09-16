@@ -1,9 +1,9 @@
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import InputComponent from "../components/InputComponent";
-import { mailIcon } from "../assets/assets";
-import ButtonComponent from "../components/ButtonComponent";
+import Header from "../../components/Header";
+import InputComponent from "../../components/Input";
+import { mailIcon } from "../../assets";
+import ButtonComponent from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
 
 export default function PasswordRecoveryScreen() {

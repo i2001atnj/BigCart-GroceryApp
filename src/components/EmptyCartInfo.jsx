@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
-import { shoppingCartPageVector } from "../assets/assets";
+import { shoppingCartPageVector } from "../assets";
 
 const EmptyCartInfo = ({ text }) => {
   return (

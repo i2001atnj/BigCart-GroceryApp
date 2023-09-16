@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import React from "react";
-import { reload } from "../assets/assets";
+import { reload } from "../assets";
 
 const ResetFilters = () => {
   return (

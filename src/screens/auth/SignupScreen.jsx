@@ -1,29 +1,12 @@
-import {
-  View,
-  Text,
-  SafeAreaView,
-  ImageBackground,
-  StyleSheet,
-  KeyboardAvoidingView,
-} from "react-native";
-import {
-  mailVector,
-  phoneVector,
-  lockVector,
-  createbg,
-} from "../assets/assets";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { createbg } from "../../assets";
 import React, { useState } from "react";
-import { FIREBASE_AUTH } from "../../FirebaseConfig";
+import { FIREBASE_AUTH } from "../../../FirebaseConfig";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import Loader from "../components/Loader";
-import ButtonComponent from "../components/ButtonComponent";
-import InputComponent from "../components/InputComponent";
-import OptionalButton from "../components/OptionalButton";
-import BackArrow from "../components/BackArrow";
-import ImageBg from "../components/ImageBg";
-import RegistrationForm from "../components/RegistrationForm";
+import ImageBg from "../../components/ImageBg";
+import RegistrationForm from "../../components/EntryForm";
 
-export default function SignScreen() {
+export default function SignupScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);

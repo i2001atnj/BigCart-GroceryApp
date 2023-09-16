@@ -1,9 +1,9 @@
 import { SafeAreaView, View } from "react-native";
 import React from "react";
-import Header from "../components/Header";
-import ButtonComponent from "../components/ButtonComponent";
+import Header from "../../components/Header";
+import ButtonComponent from "../../components/Button";
 import { useNavigation } from "@react-navigation/native";
-import EmptyCartInfo from "../components/EmptyCartInfo";
+import EmptyCartInfo from "../../components/EmptyCartInfo";
 
 export default function CartScreen() {
   const navigation = useNavigation();
