@@ -18,6 +18,7 @@ const VerifyCodeScreen = () => {
         style={{
           height: "100%",
           backgroundColor: "#F4F5F9",
+          paddingHorizontal: 17,
         }}
       >
         <Text

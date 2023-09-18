@@ -8,7 +8,12 @@ import { useNavigation } from "@react-navigation/native";
 const VerifyNumberScreen = () => {
   const navigation = useNavigation();
   return (
-    <SafeAreaView style={{ backgroundColor: "#fff", height: "100%" }}>
+    <SafeAreaView
+      style={{
+        backgroundColor: "#fff",
+        height: "100%",
+      }}
+    >
       <Header
         returnArrow
         title="Verify Number"
@@ -18,6 +23,7 @@ const VerifyNumberScreen = () => {
         style={{
           height: "100%",
           backgroundColor: "#F4F5F9",
+          paddingHorizontal: 17,
         }}
       >
         <Text
@@ -44,11 +50,7 @@ const VerifyNumberScreen = () => {
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy
         </Text>
-        <Input
-          image={flag}
-          placeholder="Email address"
-          style={{ width: "92%" }}
-        />
+        <Input image={flag} placeholder="Email address" />
         <Button
           text="Next"
           style={{ marginTop: 13 }}

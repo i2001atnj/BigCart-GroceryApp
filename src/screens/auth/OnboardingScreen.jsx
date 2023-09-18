@@ -8,7 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function OnboardingScreen() {
   const navigation = useNavigation();
   return (
-    <SafeAreaView style={styles.WelcomePage}>
+    <SafeAreaView style={styles.OnboardingPage}>
       <StatusBar style="light" />
       <ImageBg
         title="Welcome"
@@ -34,7 +34,7 @@ export default function OnboardingScreen() {
 }
 
 const styles = StyleSheet.create({
-  WelcomePage: {
+  OnboardingPage: {
     height: "100%",
     width: "100%",
     display: "flex",
