@@ -6,6 +6,7 @@ const CodeInput = () => {
       <TextInput
         placeholder="0"
         style={{ fontSize: 20, fontWeight: 500, color: "#000" }}
+        secureTextEntry
       />
     </View>
   );

@@ -1,5 +1,5 @@
-import { StyleSheet, View, SafeAreaView } from "react-native";
-import React from "react";
+import { View, SafeAreaView, Switch, Text } from "react-native";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import Input from "../../components/Input";
 import {
@@ -14,6 +14,8 @@ import {
 import Button from "../../components/Button";
 
 const AddAddressScreen = () => {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
     <SafeAreaView style={{ height: "100%", backgroundColor: "#fff" }}>
       <Header
@@ -26,6 +28,7 @@ const AddAddressScreen = () => {
           height: "90%",
           backgroundColor: "#F4F5F9",
           justifyContent: "space-between",
+          paddingHorizontal: 17,
         }}
       >
         <View style={{ marginTop: 36, gap: 5 }}>
@@ -36,6 +39,23 @@ const AddAddressScreen = () => {
           <Input icon={zipCode} placeholder="Zip Code" />
           <Input icon={map} placeholder="City" />
           <Input icon={globe} placeholder="Country" />
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginTop: 10,
+            }}
+          >
+            <Switch
+              trackColor={{ false: "#FFF", true: "#6CC51D" }}
+              thumbColor={isEnabled ? "#FFF" : "#FFF"}
+              ios_backgroundColor="#FFF"
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+              style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }] }}
+            />
+            <Text style={{ fontWeight: 500 }}>Save this address</Text>
+          </View>
         </View>
         <Button text="Add Address" />
       </View>
@@ -44,5 +64,3 @@ const AddAddressScreen = () => {
 };
 
 export default AddAddressScreen;
-
-const styles = StyleSheet.create({});

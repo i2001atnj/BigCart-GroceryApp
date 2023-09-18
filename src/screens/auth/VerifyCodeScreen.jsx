@@ -57,11 +57,7 @@ const VerifyCodeScreen = () => {
           <CodeInput />
           <CodeInput />
         </View>
-        <ButtonComponent
-          text="Next"
-          style={{ marginTop: 13 }}
-          buttonFunction={() => navigation.navigate("Auth Verify Code Screen")}
-        />
+        <ButtonComponent text="Next" style={{ marginTop: 13 }} />
       </View>
     </SafeAreaView>
   );
