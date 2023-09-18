@@ -14,6 +14,7 @@ const MyOrdersScreen = () => {
       <ButtonComponent
         text="Start shopping"
         buttonFunction={() => navigation.navigate("Home")}
+        style={{ paddingHorizontal: 17 }}
       />
     </SafeAreaView>
   );

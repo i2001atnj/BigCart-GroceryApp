@@ -1,7 +1,7 @@
 import { StyleSheet, View, Image, TextInput } from "react-native";
 
 const InputComponent = ({
-  image,
+  icon,
   placeholder,
   onChangeTextFunction,
   value,
@@ -11,7 +11,7 @@ const InputComponent = ({
 }) => {
   return (
     <View style={[styles.InputContainer, style]}>
-      <Image source={image} />
+      <Image source={icon} />
       <TextInput
         placeholder={placeholder}
         placeholderTextColor="#868889"

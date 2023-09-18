@@ -29,13 +29,13 @@ const AddAddressScreen = () => {
         }}
       >
         <View style={{ marginTop: 36, gap: 5 }}>
-          <Input image={user2} placeholder="Name" />
-          <Input image={mailIcon} placeholder="Email Address" />
-          <Input image={phoneIcon} placeholder="Phone Number" />
-          <Input image={address} placeholder="Address" />
-          <Input image={zipCode} placeholder="Zip Code" />
-          <Input image={map} placeholder="City" />
-          <Input image={globe} placeholder="Country" />
+          <Input icon={user2} placeholder="Name" />
+          <Input icon={mailIcon} placeholder="Email Address" />
+          <Input icon={phoneIcon} placeholder="Phone Number" />
+          <Input icon={address} placeholder="Address" />
+          <Input icon={zipCode} placeholder="Zip Code" />
+          <Input icon={map} placeholder="City" />
+          <Input icon={globe} placeholder="Country" />
         </View>
         <Button text="Add Address" />
       </View>

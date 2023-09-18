@@ -34,7 +34,7 @@ export default function PasswordRecoveryScreen() {
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy
         </Text>
-        <Input image={mailIcon} placeholder="Email address" />
+        <Input icon={mailIcon} placeholder="Email address" />
         <Button
           text="Send link"
           style={{ marginTop: 13 }}

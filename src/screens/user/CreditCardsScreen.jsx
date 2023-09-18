@@ -11,7 +11,7 @@ const CreditCardsScreen = () => {
         returnArrow
         title="My Cards"
         addButton
-        addFunction={() => navigation.navigate("Add Credit Card")}
+        addFunction={() => navigation.navigate("Add Credit Card Screen")}
       />
       <View style={{ height: "100%", backgroundColor: "#F4F5F9" }}></View>
     </SafeAreaView>

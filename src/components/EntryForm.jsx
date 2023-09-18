@@ -59,13 +59,13 @@ const RegistrationForm = ({
             behavior="padding"
           >
             <Input
-              image={mailVector}
+              icon={mailVector}
               placeholder="Email address"
               onChangeTextFunction={onChangeEmailTextFunction}
               value={emailInputValue}
             />
             <Input
-              image={lockVector}
+              icon={lockVector}
               placeholder="Enter password"
               onChangeTextFunction={onChangePasswordTextFunction}
               value={passwordInputValue}
@@ -104,14 +104,14 @@ const RegistrationForm = ({
       {register ? (
         <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
           <Input
-            image={mailVector}
+            icon={mailVector}
             placeholder="Email address"
             onChangeTextFunction={onChangeEmailTextFunction}
             value={emailInputValue}
           />
-          <Input image={phoneVector} placeholder="Phone number (optional)" />
+          <Input icon={phoneVector} placeholder="Phone number (optional)" />
           <Input
-            image={lockVector}
+            icon={lockVector}
             placeholder="Enter password"
             onChangeTextFunction={onChangePasswordTextFunction}
             value={passwordInputValue}

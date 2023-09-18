@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import InputComponent from "../../components/Input";
-import ButtonComponent from "../../components/Button";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 import Header from "../../components/Header";
 import {
   lockVector,
@@ -14,7 +14,7 @@ import { userContext } from "../../context/userContext";
 export default function AboutMeScreen() {
   const user = useContext(userContext);
   return (
-    <SafeAreaView style={styles.AboutMe}>
+    <SafeAreaView style={styles.AboutMeScreen}>
       <Header
         returnArrow
         title="About Me"
@@ -25,7 +25,6 @@ export default function AboutMeScreen() {
         <View style={{ gap: 5 }}>
           <Text
             style={{
-              marginLeft: 17,
               marginBottom: 13,
               fontSize: 18,
               fontWeight: 600,
@@ -33,14 +32,13 @@ export default function AboutMeScreen() {
           >
             Personal Details
           </Text>
-          <InputComponent image={nameIcon} placeholder="Admin" />
-          <InputComponent image={mailIcon} placeholder={user.email} />
-          <InputComponent image={phoneIcon} placeholder="Phone Number" />
+          <Input icon={nameIcon} placeholder="Admin" />
+          <Input icon={mailIcon} placeholder={user.email} />
+          <Input icon={phoneIcon} placeholder="Phone Number" />
         </View>
         <View style={{ gap: 5 }}>
           <Text
             style={{
-              marginLeft: 17,
               marginBottom: 13,
               fontSize: 18,
               fontWeight: 600,
@@ -48,22 +46,18 @@ export default function AboutMeScreen() {
           >
             Change Password
           </Text>
-          <InputComponent
-            image={lockVector}
+          <Input
+            icon={lockVector}
             placeholder="Current Password"
             secureTextEntry
           />
-          <InputComponent
-            image={lockVector}
-            placeholder="New Password"
-            secureTextEntry
-          />
-          <InputComponent
-            image={lockVector}
+          <Input icon={lockVector} placeholder="New Password" secureTextEntry />
+          <Input
+            icon={lockVector}
             placeholder="Confirm Password"
             secureTextEntry
           />
-          <ButtonComponent style={{ marginTop: "30%" }} text="Save settings" />
+          <Button style={{ marginTop: "30%" }} text="Save settings" />
         </View>
       </View>
     </SafeAreaView>
@@ -71,7 +65,7 @@ export default function AboutMeScreen() {
 }
 
 const styles = StyleSheet.create({
-  AboutMe: {
+  AboutMeScreen: {
     height: "100%",
     width: "100%",
     display: "flex",
@@ -84,5 +78,6 @@ const styles = StyleSheet.create({
     gap: 35,
     paddingTop: 34,
     backgroundColor: "#F4F5F9",
+    paddingHorizontal: 17,
   },
 });

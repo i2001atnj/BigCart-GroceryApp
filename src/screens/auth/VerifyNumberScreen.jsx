@@ -50,7 +50,7 @@ const VerifyNumberScreen = () => {
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy
         </Text>
-        <Input image={flag} placeholder="Email address" />
+        <Input icon={flag} placeholder="Email address" />
         <Button
           text="Next"
           style={{ marginTop: 13 }}
