@@ -7,7 +7,7 @@ export const PRODUCTS = [
     quantity: "dozen",
     color: "#FFCEC1",
     state: "",
-    type: 2,
+    category: "fruit",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const PRODUCTS = [
     quantity: "2.0 lbs",
     color: "#FCFFD9",
     state: "new",
-    type: 2,
+    category: "fruit",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const PRODUCTS = [
     quantity: "1.50 lbs",
     color: "#FFE6C2",
     state: "",
-    type: 2,
+    category: "fruit",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const PRODUCTS = [
     quantity: "5.0 lbs",
     color: "#cca4ff76",
     state: "-16%",
-    type: 2,
+    category: "fruit",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ export const PRODUCTS = [
     quantity: "1.50 lbs",
     color: "#FFE3E2",
     state: "new",
-    type: 2,
+    category: "fruit",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ export const PRODUCTS = [
     quantity: "1 kg",
     color: "#D2FFD0",
     state: "",
-    type: 1,
+    category: "fruit",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ export const PRODUCTS = [
     quantity: "1.50 lbs",
     color: "#F2FFE6",
     state: "",
-    type: 2,
+    category: "fruit",
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ export const PRODUCTS = [
     quantity: "1 lb",
     color: "#FFF6E3",
     state: "-2%",
-    type: 1,
+    category: "vegetable",
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ export const PRODUCTS = [
     quantity: "1 kg",
     color: "#fce0bd",
     state: "",
-    type: 1,
+    category: "vegetable",
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ export const PRODUCTS = [
     quantity: "16.9 oz",
     color: "#D2EFFF",
     state: "",
-    type: 3,
+    category: "beverage",
   },
   {
     id: 11,
@@ -107,7 +107,7 @@ export const PRODUCTS = [
     quantity: "1 kg",
     color: "#FFE9E5",
     state: "-8%",
-    type: 1,
+    category: "vegetable",
   },
   {
     id: 12,
@@ -117,7 +117,7 @@ export const PRODUCTS = [
     quantity: "1 lb",
     color: "#fceac7",
     state: "new",
-    type: 2,
+    category: "fruit",
   },
   {
     id: 13,
@@ -127,6 +127,6 @@ export const PRODUCTS = [
     quantity: "1 kg",
     color: "#FFF6E3",
     state: "-10%",
-    type: 1,
+    category: "vegetable",
   },
 ];
