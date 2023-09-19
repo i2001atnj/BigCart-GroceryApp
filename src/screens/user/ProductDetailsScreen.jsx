@@ -7,14 +7,14 @@ import {
   TextInput,
   StyleSheet,
 } from "react-native";
-import { useRoute, useNavigation } from "@react-navigation/native";
-import { blackArrow, bag } from "../../assets/icons/index";
+import { useRoute } from "@react-navigation/native";
+import { bag } from "../../assets/icons/index";
 import Button from "../../components/Button";
 import ProductBanner from "../../components/ProductBanner";
+import Header from "../../components/Header";
 
 const ProductDetailsScreen = () => {
   const route = useRoute();
-  const navigation = useNavigation();
 
   const getProductState = () => {
     if (route.params.state === "new") {
@@ -46,12 +46,7 @@ const ProductDetailsScreen = () => {
         style={[styles.Background, { backgroundColor: route.params.color }]}
       ></View>
       <SafeAreaView style={{ flex: 1 }}>
-        <TouchableOpacity
-          style={{ marginLeft: 20, marginTop: 20 }}
-          onPress={() => navigation.goBack()}
-        >
-          <Image source={blackArrow} />
-        </TouchableOpacity>
+        <Header returnArrow style={{ backgroundColor: "transparent" }} />
         <View style={styles.ImageContainer}>
           <Image style={styles.ProductImage} source={route.params.image} />
         </View>
@@ -77,15 +72,36 @@ const ProductDetailsScreen = () => {
             <View
               style={{ flexDirection: "row", gap: 25, paddingHorizontal: 15 }}
             >
-              <TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  borderWidth: 1,
+                  width: 40,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderColor: "#efefef",
+                  borderRadius: 20,
+                }}
+              >
                 <Text style={styles.AddButtonText}>-</Text>
               </TouchableOpacity>
               <TextInput
                 placeholder="0"
                 placeholderTextColor={"#00000062"}
-                style={{ fontSize: 18, color: "#6CC51D" }}
+                style={{
+                  fontSize: 18,
+                  color: "#6CC51D",
+                }}
               />
-              <TouchableOpacity>
+              <TouchableOpacity
+                style={{
+                  borderWidth: 1,
+                  width: 40,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderColor: "#efefef",
+                  borderRadius: 20,
+                }}
+              >
                 <Text style={styles.AddButtonText}>+</Text>
               </TouchableOpacity>
             </View>
@@ -115,7 +131,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingVertical: 10,
     paddingHorizontal: 20,
-    marginHorizontal: 17,
     alignItems: "center",
     borderRadius: 5,
   },
@@ -140,9 +155,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     paddingTop: 30,
     gap: 10,
+    paddingHorizontal: 17,
   },
   TextSection: {
-    paddingHorizontal: 20,
     gap: 10,
   },
   TextBold: {
