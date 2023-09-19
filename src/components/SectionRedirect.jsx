@@ -1,14 +1,9 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { rightVector } from "../assets/icons/index";
-import { useNavigation } from "@react-navigation/native";
 
-const SectionRedirect = ({ title, screen }) => {
-  const navigation = useNavigation();
+const SectionRedirect = ({ title, titleButtonFunction }) => {
   return (
-    <TouchableOpacity
-      style={styles.Title}
-      onPress={() => navigation.navigate(screen)}
-    >
+    <TouchableOpacity style={styles.Title} onPress={titleButtonFunction}>
       <Text style={{ fontWeight: "600", fontSize: 18 }}>{title}</Text>
       <View>
         <Image source={rightVector} />

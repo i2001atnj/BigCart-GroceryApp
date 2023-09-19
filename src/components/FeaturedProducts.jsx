@@ -2,11 +2,16 @@ import { View, StyleSheet } from "react-native";
 import ProductItem from "./ProductItem";
 import SectionRedirect from "./SectionRedirect";
 import { PRODUCTS } from "../data/products";
+import { useNavigation } from "@react-navigation/native";
 
 export default function FeaturedProducts() {
+  const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <SectionRedirect title="Featured products" screen="Products" />
+      <SectionRedirect
+        title="Featured products"
+        titleButtonFunction={() => navigation.navigate("Products Screen")}
+      />
       <View style={styles.ListContainer}>
         {PRODUCTS.map((product) => (
           <ProductItem

@@ -14,7 +14,10 @@ export default function Categories() {
   const navigation = useNavigation();
   return (
     <View style={styles.Container}>
-      <SectionRedirect title="Categories" screen="Categories Screen" />
+      <SectionRedirect
+        title="Categories"
+        titleButtonFunction={() => navigation.navigate("Categories Screen")}
+      />
       <ScrollView
         horizontal
         style={styles.CategoriesMenu}

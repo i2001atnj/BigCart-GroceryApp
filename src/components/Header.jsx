@@ -12,7 +12,7 @@ const Header = ({
   input,
   style,
   titleStyle,
-  reset,
+  refresh,
   addButton,
   addFunction,
   color,
@@ -29,7 +29,7 @@ const Header = ({
       )}
       {filters ? <Filters /> : <></>}
       {input ? <SearchBar /> : <></>}
-      {reset ? <ResetFilters /> : <></>}
+      {refresh ? <ResetFilters /> : <></>}
       {addButton ? <AddButton addFunction={addFunction} /> : <></>}
     </View>
   );
