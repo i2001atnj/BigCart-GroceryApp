@@ -29,10 +29,10 @@ export default function SignupScreen() {
       <ImageBg
         image={createbg}
         returnArrow
-        title="Welcome"
+        title="Sign up"
         bgStyle={{ height: "100%" }}
         arrowColor="#fff"
-        titleStyle={{ marginRight: "40%" }}
+        titleStyle={{ marginRight: "42%" }}
       />
       <EntryForm
         register

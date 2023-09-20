@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { FIREBASE_AUTH } from "../../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import ImageBg from "../../components/ImageBg.jsx";
-import RegistrationForm from "../../components/EntryForm.jsx";
+import EntryForm from "../../components/EntryForm.jsx";
 import { loginbg } from "../../assets/icons/index";
 
 export default function LoginScreen() {
@@ -30,13 +30,13 @@ export default function LoginScreen() {
       <ImageBg
         image={loginbg}
         returnArrow
-        title="Welcome"
+        title="Login"
         bgStyle={{ height: "80%" }}
         headerStyle={{ justifyContent: "space-between" }}
-        titleStyle={{ marginRight: "40%" }}
+        titleStyle={{ marginRight: "44%" }}
         arrowColor={"white"}
       />
-      <RegistrationForm
+      <EntryForm
         login
         titleHeader="Welcome back !"
         titleBody="Sign in to your account"

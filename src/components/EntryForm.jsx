@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import { mailVector, lockVector, phoneVector } from "../assets/icons/index";
 import OptionalButton from "./OptionalButton";
-import ButtonComponent from "./Button";
+import Button from "./Button";
 import Input from "./Input";
 import GoogleButton from "./GoogleButton";
 import Loader from "./Loader";
@@ -124,7 +124,7 @@ const RegistrationForm = ({
       {loading ? (
         <Loader size={"small"} style={{ paddingVertical: 20 }} color="#FFF" />
       ) : (
-        <ButtonComponent
+        <Button
           image={buttonIcon}
           text={buttonTitle}
           buttonFunction={buttonFunction}

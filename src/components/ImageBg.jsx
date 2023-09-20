@@ -26,7 +26,7 @@ const ImageBg = ({
           },
         ]}
         titleStyle={[
-          { color: "#fff", fontWeight: 500, fontSize: 18 },
+          { color: "#fff", fontWeight: 500, fontSize: 20 },
           titleStyle,
         ]}
         returnArrow={returnArrow}
