@@ -63,7 +63,6 @@ export default CreditCardItem;
 
 const styles = StyleSheet.create({
   Card: {
-    paddingHorizontal: 17,
     height: "23%",
     width: "100%",
   },

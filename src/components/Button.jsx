@@ -1,14 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-const ButtonComponent = ({
-  image,
-  text,
-  buttonFunction,
-  left,
-  style,
-  disabled,
-}) => {
+const Button = ({ image, text, buttonFunction, left, style, disabled }) => {
   return (
     <View
       style={[
@@ -52,7 +45,7 @@ const ButtonComponent = ({
   );
 };
 
-export default ButtonComponent;
+export default Button;
 
 const styles = StyleSheet.create({
   ButtonContainer: {

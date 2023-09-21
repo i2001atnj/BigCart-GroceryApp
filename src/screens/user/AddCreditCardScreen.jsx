@@ -1,10 +1,11 @@
-import { View, SafeAreaView, Switch, Text } from "react-native";
+import { View, SafeAreaView, Switch, Text, StyleSheet } from "react-native";
 import React, { useContext, useState } from "react";
 import CreditCardItem from "../../components/CreditCardItem";
 import Header from "../../components/Header";
 import { userContext } from "../../context/userContext";
 import Input from "../../components/Input";
 import { card, user2, calendar, lockVector } from "../../assets/icons/index";
+import Button from "../../components/Button";
 
 const AddCreditCardScreen = () => {
   const user = useContext(userContext);
@@ -19,14 +20,7 @@ const AddCreditCardScreen = () => {
         title="Add Card"
         titleStyle={{ marginRight: "40%" }}
       />
-      <View
-        style={{
-          backgroundColor: "#F4F5F9",
-          height: "100%",
-          alignItems: "center",
-          width: "100%",
-        }}
-      >
+      <View style={styles.Section}>
         <CreditCardItem
           cardBank="Master Card"
           cardNumber={"XXX XXX XXX XXX"}
@@ -39,7 +33,6 @@ const AddCreditCardScreen = () => {
             width: "100%",
             gap: 5,
             marginTop: 18,
-            paddingHorizontal: 17,
           }}
         >
           <Input icon={user2} placeholder="Name on the card" />
@@ -62,27 +55,37 @@ const AddCreditCardScreen = () => {
               placeholder="CVV"
             />
           </View>
-          <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginTop: 10,
-            }}
-          >
-            <Switch
-              trackColor={{ false: "#FFF", true: "#6CC51D" }}
-              thumbColor={isEnabled ? "#FFF" : "#FFF"}
-              ios_backgroundColor="#FFF"
-              onValueChange={toggleSwitch}
-              value={isEnabled}
-              style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }] }}
-            />
-            <Text style={{ fontWeight: 500 }}>Save this card</Text>
-          </View>
         </View>
+        <View
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            marginTop: 10,
+          }}
+        >
+          <Switch
+            trackColor={{ false: "#FFF", true: "#6CC51D" }}
+            thumbColor={isEnabled ? "#FFF" : "#FFF"}
+            ios_backgroundColor="#FFF"
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+            style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }] }}
+          />
+          <Text style={{ fontWeight: 500 }}>Save this card</Text>
+        </View>
+        <Button text="Add credit card" style={{ marginTop: "55%" }} />
       </View>
     </SafeAreaView>
   );
 };
 
 export default AddCreditCardScreen;
+
+const styles = StyleSheet.create({
+  Section: {
+    backgroundColor: "#F4F5F9",
+    height: "100%",
+    width: "100%",
+    paddingHorizontal: 17,
+  },
+});

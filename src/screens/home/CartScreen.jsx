@@ -10,12 +10,17 @@ export default function CartScreen() {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", height: "100%" }}>
       <Header style={{ justifyContent: "center" }} title="Shopping Cart" />
-      <View style={{ height: "80%" }}>
+      <View
+        style={{
+          height: "80%",
+          paddingHorizontal: 17,
+          backgroundColor: "#F4F5F9",
+        }}
+      >
         <EmptyCartInfo text="Your cart is empty !" />
         <ButtonComponent
           text="Start shopping"
           buttonFunction={() => navigation.navigate("Home Screen")}
-          style={{ paddingHorizontal: 17 }}
         />
       </View>
     </SafeAreaView>

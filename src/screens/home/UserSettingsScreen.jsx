@@ -1,5 +1,5 @@
-import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import React, { useContext } from "react";
+import { View, Text, SafeAreaView, StyleSheet, Switch } from "react-native";
+import React, { useContext, useState } from "react";
 import { FIREBASE_AUTH } from "../../../FirebaseConfig";
 import {
   myOrdersVector,
@@ -17,6 +17,8 @@ import { userContext } from "../../context/userContext";
 export default function UserSettingsScreen() {
   const navigation = useNavigation();
   const user = useContext(userContext);
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
     <SafeAreaView style={styles.UserPage}>
       <View
@@ -73,6 +75,24 @@ export default function UserSettingsScreen() {
           optionFunction={() => FIREBASE_AUTH.signOut()}
           signOutButton
         />
+        {/* <View
+          style={{
+            flexDirection: "row",
+            width: "100%",
+            paddingLeft: 37,
+            alignItems: "center",
+          }}
+        >
+          <Text style={{ fontWeight: 600, fontSize: 16 }}>Dark mode</Text>
+          <Switch
+            trackColor={{ false: "#FFF", true: "#6CC51D" }}
+            thumbColor={isEnabled ? "#FFF" : "#FFF"}
+            ios_backgroundColor="#FFF"
+            onValueChange={toggleSwitch}
+            value={isEnabled}
+            style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }] }}
+          />
+        </View> */}
       </View>
     </SafeAreaView>
   );

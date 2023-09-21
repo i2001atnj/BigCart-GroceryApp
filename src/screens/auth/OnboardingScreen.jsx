@@ -29,6 +29,7 @@ export default function OnboardingScreen() {
         optionalText="Already have an account?"
         optionalButtonText="Login"
         optionalScreen="Auth Login Screen"
+        bgColor="#F4F5F9"
       />
     </SafeAreaView>
   );
@@ -42,7 +43,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   Section: {
-    backgroundColor: "#F4F5F9",
     width: "100%",
     zIndex: 2,
     borderTopLeftRadius: 10,
@@ -54,5 +54,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingVertical: 10,
     paddingHorizontal: 17,
+    backgroundColor: "#F4F5F9",
   },
 });
