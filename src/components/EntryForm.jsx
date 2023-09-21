@@ -1,16 +1,10 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  KeyboardAvoidingView,
-  Switch,
-} from "react-native";
-import { mailVector, lockVector, phoneVector } from "../assets/icons/index";
-import OptionalButton from "./OptionalButton";
+import { StyleSheet, Text, View } from "react-native";
+import Optional from "./Optional";
 import Button from "./Button";
-import Input from "./Input";
 import GoogleButton from "./GoogleButton";
 import Loader from "./Loader";
+import LoginForm from "./LoginForm";
+import RegisterForm from "./RegisterForm";
 
 const RegistrationForm = ({
   titleHeader,
@@ -34,90 +28,37 @@ const RegistrationForm = ({
   optionalScreen,
   loading,
   register,
+  addOptionalSection,
 }) => {
   return (
     <View style={sectionStyle}>
       <View style={{ width: "100%", gap: 10, marginTop: "5%" }}>
         <Text style={{ fontWeight: 600, fontSize: 24 }}>{titleHeader}</Text>
-        <Text
-          style={{
-            color: "#868889",
-            marginBottom: 10,
-            fontSize: 15,
-            fontWeight: 400,
-          }}
-        >
+        <Text style={[styles.TitleBodyText, { fontWeight: 500 }]}>
           {titleBody}
         </Text>
       </View>
       {continueWithGoogle ? <GoogleButton /> : <></>}
       {login ? (
-        <>
-          <KeyboardAvoidingView
-            style={{ gap: 5, marginTop: 10 }}
-            enabled
-            behavior="padding"
-          >
-            <Input
-              icon={mailVector}
-              placeholder="Email address"
-              onChangeTextFunction={onChangeEmailTextFunction}
-              value={emailInputValue}
-            />
-            <Input
-              icon={lockVector}
-              placeholder="Enter password"
-              onChangeTextFunction={onChangePasswordTextFunction}
-              value={passwordInputValue}
-              secureTextEntry={true}
-            />
-          </KeyboardAvoidingView>
-          <View style={styles.PasswordOptions}>
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-              }}
-            >
-              <Switch
-                trackColor={{ false: "#FFF", true: "#6CC51D" }}
-                thumbColor={switchIsEnabled ? "#FFF" : "#FFF"}
-                ios_backgroundColor="#FFF"
-                onValueChange={toggleSwitchFunction}
-                value={switchValue}
-                style={{ transform: [{ scaleX: 0.5 }, { scaleY: 0.5 }] }}
-              />
-              <Text style={{ fontSize: 15, fontWeight: 500, color: "#868889" }}>
-                Remember me
-              </Text>
-            </View>
-            <OptionalButton
-              screen="Auth Password Recovery Screen"
-              text="Forgot password?"
-              textColor="#407EC7"
-            />
-          </View>
-        </>
+        <LoginForm
+          onChangeEmailTextFunction={onChangeEmailTextFunction}
+          onChangePasswordTextFunction={onChangePasswordTextFunction}
+          emailInputValue={emailInputValue}
+          passwordInputValue={passwordInputValue}
+          switchIsEnabled={switchIsEnabled}
+          toggleSwitchFunction={toggleSwitchFunction}
+          switchValue={switchValue}
+        />
       ) : (
         <></>
       )}
       {register ? (
-        <KeyboardAvoidingView style={{ gap: 5 }} behavior="padding">
-          <Input
-            icon={mailVector}
-            placeholder="Email address"
-            onChangeTextFunction={onChangeEmailTextFunction}
-            value={emailInputValue}
-          />
-          <Input icon={phoneVector} placeholder="Phone number (optional)" />
-          <Input
-            icon={lockVector}
-            placeholder="Enter password"
-            onChangeTextFunction={onChangePasswordTextFunction}
-            value={passwordInputValue}
-            secureTextEntry={true}
-          />
-        </KeyboardAvoidingView>
+        <RegisterForm
+          onChangeEmailTextFunction={onChangeEmailTextFunction}
+          onChangePasswordTextFunction={onChangePasswordTextFunction}
+          emailInputValue={emailInputValue}
+          passwordInputValue={passwordInputValue}
+        />
       ) : (
         <></>
       )}
@@ -132,10 +73,16 @@ const RegistrationForm = ({
           disabled={disabled}
         />
       )}
-      <View style={styles.OptionalSection}>
-        <Text style={{ color: "#868889" }}>{optionalText}</Text>
-        <OptionalButton screen={optionalScreen} text={optionalButtonText} />
-      </View>
+      {addOptionalSection ? (
+        <Optional
+          optionalText={optionalText}
+          buttonText={optionalButtonText}
+          optionalScreen={optionalScreen}
+          style={styles.OptionalSection}
+        />
+      ) : (
+        <></>
+      )}
     </View>
   );
 };
@@ -155,5 +102,11 @@ const styles = StyleSheet.create({
     width: "100%",
     paddingRight: 10,
     marginVertical: 15,
+  },
+  TitleBodyText: {
+    color: "#868889",
+    marginBottom: 10,
+    fontSize: 15,
+    fontWeight: 400,
   },
 });

@@ -46,6 +46,7 @@ export default function SignupScreen() {
         passwordInputValue={password}
         onChangePasswordTextFunction={(text) => setPassword(text)}
         sectionStyle={styles.Section}
+        addOptionalSection
         optionalText="Already have an account?"
         optionalButtonText="Login"
         optionalScreen="Auth Login Screen"

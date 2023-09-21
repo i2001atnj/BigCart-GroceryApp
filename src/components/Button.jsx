@@ -10,7 +10,13 @@ const ButtonComponent = ({
   disabled,
 }) => {
   return (
-    <View style={disabled ? styles.disabledStyle : [styles.Container, style]}>
+    <View
+      style={[
+        styles.ButtonContainer,
+        disabled ? { opacity: 0.6 } : null,
+        style,
+      ]}
+    >
       <LinearGradient
         colors={["#AEDC81", "#6CC51D"]}
         start={{ x: 0, y: 1 }}
@@ -49,11 +55,15 @@ const ButtonComponent = ({
 export default ButtonComponent;
 
 const styles = StyleSheet.create({
-  Container: {
+  ButtonContainer: {
     width: "100%",
     height: 60,
     borderRadius: 5,
-    backgroundColor: "transparent",
+    backgroundColor: "#fff",
+    shadowColor: "#AEDC81",
+    shadowOffset: { height: 10, width: 1 },
+    shadowOpacity: 0.3,
+    shadowRadius: 2,
   },
   Button: {
     height: "100%",
@@ -62,12 +72,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     display: "flex",
     flexDirection: "row",
-  },
-  disabledStyle: {
-    opacity: 0.7,
-    width: "100%",
-    height: 60,
-    borderRadius: 5,
-    backgroundColor: "transparent",
   },
 });

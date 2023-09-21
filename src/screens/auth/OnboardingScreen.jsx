@@ -25,6 +25,7 @@ export default function OnboardingScreen() {
         buttonTitle="Create an account"
         buttonIcon={signUpVector}
         sectionStyle={styles.Section}
+        addOptionalSection
         optionalText="Already have an account?"
         optionalButtonText="Login"
         optionalScreen="Auth Login Screen"

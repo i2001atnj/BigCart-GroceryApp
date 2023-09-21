@@ -1,6 +1,6 @@
 import { StyleSheet, View, Image, TextInput } from "react-native";
 
-const InputComponent = ({
+const Input = ({
   icon,
   placeholder,
   onChangeTextFunction,
@@ -25,7 +25,7 @@ const InputComponent = ({
   );
 };
 
-export default InputComponent;
+export default Input;
 
 const styles = StyleSheet.create({
   InputContainer: {

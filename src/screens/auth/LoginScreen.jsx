@@ -51,6 +51,7 @@ export default function LoginScreen() {
         switchValue={isEnabled}
         toggleSwitchFunction={toggleSwitch}
         sectionStyle={styles.Section}
+        addOptionalSection
         optionalText="Don't have an account?"
         optionalButtonText="Sign up"
         optionalScreen="Auth Signup Screen"
