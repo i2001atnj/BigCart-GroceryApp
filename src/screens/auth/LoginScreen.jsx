@@ -30,10 +30,10 @@ export default function LoginScreen() {
       <ImageBg
         image={loginbg}
         returnArrow
-        title="Login"
+        title="Welcome"
         bgStyle={{ height: "80%" }}
         headerStyle={{ justifyContent: "space-between" }}
-        titleStyle={{ marginRight: "44%" }}
+        titleStyle={{ marginRight: "40%" }}
         arrowColor={"white"}
       />
       <EntryForm
