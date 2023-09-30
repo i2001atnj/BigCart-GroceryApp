@@ -8,7 +8,7 @@ import UserStack from "./src/navigators/UserStack";
 import { userContext } from "./src/context/userContext";
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(undefined);
   useEffect(() => {
     onAuthStateChanged(FIREBASE_AUTH, (user) => {
       setUser(user);
