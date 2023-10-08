@@ -113,7 +113,7 @@ export const PRODUCTS = [
     id: 12,
     name: "Fresh Oranges",
     image: require("../assets/icons/oranges.png"),
-    price: "$1.59",
+    price: "$1.58",
     quantity: "1 lb",
     color: "#fceac7",
     state: "new",
