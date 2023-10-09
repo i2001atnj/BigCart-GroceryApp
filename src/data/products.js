@@ -123,7 +123,7 @@ export const PRODUCTS = [
     id: 13,
     name: "Brown Onions",
     image: require("../assets/icons/onions.png"),
-    price: "$1.54",
+    price: "$1.44",
     quantity: "1 kg",
     color: "#FFF6E3",
     state: "-13%",
