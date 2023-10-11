@@ -126,7 +126,7 @@ export const PRODUCTS = [
     price: "$1.44",
     quantity: "1 kg",
     color: "#FFF6E3",
-    state: "-13%",
+    state: "-12%",
     category: "vegetable",
   },
 ];
