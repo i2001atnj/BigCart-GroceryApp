@@ -33,7 +33,7 @@ export const PRODUCTS = [
     id: 4,
     name: "Black Grapes",
     image: require("../assets/icons/grapes.png"),
-    price: "$7.05",
+    price: "$7.04",
     quantity: "5.0 lbs",
     color: "#cca4ff76",
     state: "-16%",
