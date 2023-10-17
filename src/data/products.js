@@ -43,7 +43,7 @@ export const PRODUCTS = [
     id: 5,
     name: "Pomegranate",
     image: require("../assets/icons/pomegranate.png"),
-    price: "$2.09",
+    price: "$2.10",
     quantity: "1.50 lbs",
     color: "#FFE3E2",
     state: "new",
