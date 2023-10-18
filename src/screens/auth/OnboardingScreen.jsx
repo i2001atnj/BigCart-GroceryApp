@@ -1,4 +1,4 @@
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet, useWindowDimensions } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import EntryForm from "../../components/EntryForm";
 import ImageBg from "../../components/ImageBg";
@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function OnboardingScreen() {
   const navigation = useNavigation();
+  const window = useWindowDimensions();
   return (
     <SafeAreaView style={styles.OnboardingPage}>
       <StatusBar style="light" />
