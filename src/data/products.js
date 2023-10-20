@@ -23,7 +23,7 @@ export const PRODUCTS = [
     id: 3,
     name: "Pineapple",
     image: require("../assets/icons/pineapple.png"),
-    price: "$9.90",
+    price: "$9.80",
     quantity: "1.50 lbs",
     color: "#FFE6C2",
     state: "",
