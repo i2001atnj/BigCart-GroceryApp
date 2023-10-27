@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     position: "relative",
     bottom: 0,
-    top: "62%",
+    top: "60%",
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,
