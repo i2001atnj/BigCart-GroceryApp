@@ -36,7 +36,7 @@ export const PRODUCTS = [
     price: "$7.02",
     quantity: "5.0 lbs",
     color: "#cca4ff76",
-    state: "-11%",
+    state: "-19%",
     category: "fruit",
   },
   {
