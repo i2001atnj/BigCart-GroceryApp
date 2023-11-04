@@ -19,7 +19,7 @@ export default function CartScreen() {
       >
         <EmptyCartInfo text="Your cart is empty !" />
         <ButtonComponent
-          text="Start shopping"
+          text="Start Shopping"
           buttonFunction={() => navigation.navigate("Home Screen")}
         />
       </View>

@@ -1,4 +1,11 @@
-import { SafeAreaView, StyleSheet } from "react-native";
+import {
+  KeyboardAvoidingView,
+  SafeAreaView,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Keyboard,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import { FIREBASE_AUTH } from "../../../FirebaseConfig.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -31,7 +38,7 @@ export default function LoginScreen() {
         image={loginbg}
         returnArrow
         title="Welcome"
-        bgStyle={{ height: "80%" }}
+        bgStyle={{ height: "80%", zIndex: -1 }}
         headerStyle={{ justifyContent: "space-between" }}
         titleStyle={{ marginRight: "40%" }}
         arrowColor={"white"}
@@ -71,12 +78,12 @@ const styles = StyleSheet.create({
   Section: {
     backgroundColor: "#F4F5F9",
     width: "100%",
-    zIndex: 2,
+    zIndex: 4,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     position: "relative",
     bottom: 0,
-    top: "52%",
+    top: "50%",
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,

@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function OnboardingScreen() {
   const navigation = useNavigation();
-  const window = useWindowDimensions();
   return (
     <SafeAreaView style={styles.OnboardingPage}>
       <StatusBar style="light" />
@@ -50,7 +49,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     position: "relative",
     bottom: 0,
-    top: 500,
+    top: "59%",
     justifyContent: "center",
     alignItems: "center",
     paddingVertical: 10,

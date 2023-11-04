@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 10,
     position: "relative",
     bottom: 0,
-    top: "82%",
+    top: "78%",
     alignItems: "center",
     paddingHorizontal: 17,
     paddingVertical: 10,
