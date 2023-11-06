@@ -44,7 +44,7 @@ export const PRODUCTS = [
     name: "Pomegranate",
     image: require("../assets/icons/pomegranate.png"),
     price: "$2.05",
-    quantity: "1.50 lbs",
+    quantity: "1.51 lbs",
     color: "#FFE3E2",
     state: "new",
     category: "fruit",
